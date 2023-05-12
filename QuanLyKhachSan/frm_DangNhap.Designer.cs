@@ -30,14 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_user = new System.Windows.Forms.TextBox();
-            this.txt_pass = new System.Windows.Forms.TextBox();
             this.checkBox_Hienpass = new System.Windows.Forms.CheckBox();
-            this.btn_dangnhap = new System.Windows.Forms.Button();
+            this.txt_pass = new System.Windows.Forms.TextBox();
+            this.txt_user = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_dangnhap = new System.Windows.Forms.Button();
             this.linkLb_quenmk = new System.Windows.Forms.LinkLabel();
             this.btn_exit = new System.Windows.Forms.Button();
+            this.lb_tb = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,30 +69,6 @@
             this.panel1.Size = new System.Drawing.Size(360, 132);
             this.panel1.TabIndex = 2;
             // 
-            // txt_user
-            // 
-            this.txt_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user.Location = new System.Drawing.Point(71, 13);
-            this.txt_user.Multiline = true;
-            this.txt_user.Name = "txt_user";
-            this.txt_user.Size = new System.Drawing.Size(244, 34);
-            this.txt_user.TabIndex = 2;
-            this.txt_user.Text = "Tên tài khoản";
-            // 
-            // txt_pass
-            // 
-            this.txt_pass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pass.Location = new System.Drawing.Point(71, 62);
-            this.txt_pass.Multiline = true;
-            this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(244, 34);
-            this.txt_pass.TabIndex = 2;
-            this.txt_pass.Text = "Password";
-            // 
             // checkBox_Hienpass
             // 
             this.checkBox_Hienpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -104,19 +81,33 @@
             this.checkBox_Hienpass.Text = "Hiện password";
             this.checkBox_Hienpass.UseVisualStyleBackColor = true;
             // 
-            // btn_dangnhap
+            // txt_pass
             // 
-            this.btn_dangnhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btn_dangnhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_dangnhap.Image = global::QuanLyKhachSan.Properties.Resources.shield_check;
-            this.btn_dangnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dangnhap.Location = new System.Drawing.Point(79, 181);
-            this.btn_dangnhap.Name = "btn_dangnhap";
-            this.btn_dangnhap.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_dangnhap.Size = new System.Drawing.Size(171, 37);
-            this.btn_dangnhap.TabIndex = 3;
-            this.btn_dangnhap.Text = "Đăng Nhập";
-            this.btn_dangnhap.UseVisualStyleBackColor = true;
+            this.txt_pass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pass.Location = new System.Drawing.Point(71, 62);
+            this.txt_pass.Multiline = true;
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.Size = new System.Drawing.Size(244, 34);
+            this.txt_pass.TabIndex = 2;
+            this.txt_pass.Text = "Password";
+            this.txt_pass.Click += new System.EventHandler(this.txt_pass_Click);
+            this.txt_pass.Leave += new System.EventHandler(this.txt_pass_Leave);
+            // 
+            // txt_user
+            // 
+            this.txt_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user.Location = new System.Drawing.Point(71, 13);
+            this.txt_user.Multiline = true;
+            this.txt_user.Name = "txt_user";
+            this.txt_user.Size = new System.Drawing.Size(244, 34);
+            this.txt_user.TabIndex = 2;
+            this.txt_user.Text = "Tên tài khoản";
+            this.txt_user.Click += new System.EventHandler(this.txt_user_Click);
+            this.txt_user.Leave += new System.EventHandler(this.txt_user_Leave);
             // 
             // pictureBox2
             // 
@@ -142,11 +133,26 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_dangnhap
+            // 
+            this.btn_dangnhap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btn_dangnhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_dangnhap.Image = global::QuanLyKhachSan.Properties.Resources.shield_check;
+            this.btn_dangnhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dangnhap.Location = new System.Drawing.Point(92, 202);
+            this.btn_dangnhap.Name = "btn_dangnhap";
+            this.btn_dangnhap.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btn_dangnhap.Size = new System.Drawing.Size(171, 45);
+            this.btn_dangnhap.TabIndex = 3;
+            this.btn_dangnhap.Text = "Đăng Nhập";
+            this.btn_dangnhap.UseVisualStyleBackColor = true;
+            this.btn_dangnhap.Click += new System.EventHandler(this.btn_dangnhap_Click);
+            // 
             // linkLb_quenmk
             // 
             this.linkLb_quenmk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.linkLb_quenmk.AutoSize = true;
-            this.linkLb_quenmk.Location = new System.Drawing.Point(94, 221);
+            this.linkLb_quenmk.Location = new System.Drawing.Point(107, 249);
             this.linkLb_quenmk.Name = "linkLb_quenmk";
             this.linkLb_quenmk.Size = new System.Drawing.Size(146, 20);
             this.linkLb_quenmk.TabIndex = 4;
@@ -164,11 +170,23 @@
             this.btn_exit.TabIndex = 5;
             this.btn_exit.UseVisualStyleBackColor = true;
             // 
+            // lb_tb
+            // 
+            this.lb_tb.AutoSize = true;
+            this.lb_tb.Enabled = false;
+            this.lb_tb.ForeColor = System.Drawing.Color.Brown;
+            this.lb_tb.Location = new System.Drawing.Point(81, 181);
+            this.lb_tb.Name = "lb_tb";
+            this.lb_tb.Size = new System.Drawing.Size(199, 20);
+            this.lb_tb.TabIndex = 6;
+            this.lb_tb.Text = "PassWord không đúng !";
+            // 
             // frm_DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 249);
+            this.ClientSize = new System.Drawing.Size(366, 277);
+            this.Controls.Add(this.lb_tb);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.linkLb_quenmk);
             this.Controls.Add(this.btn_dangnhap);
@@ -198,5 +216,6 @@
         private System.Windows.Forms.Button btn_dangnhap;
         private System.Windows.Forms.LinkLabel linkLb_quenmk;
         private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.Label lb_tb;
     }
 }

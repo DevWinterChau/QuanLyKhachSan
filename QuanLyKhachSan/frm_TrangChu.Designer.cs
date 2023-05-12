@@ -30,40 +30,40 @@
         {
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_TC = new System.Windows.Forms.Button();
+            this.btn_DP = new System.Windows.Forms.Button();
             this.btn_Trangchu = new System.Windows.Forms.Button();
             this.btn_DatPhong = new System.Windows.Forms.Button();
+            this.btn_Phong = new System.Windows.Forms.Button();
             this.btn_p = new System.Windows.Forms.Button();
+            this.btn_KH = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.btn_DV = new System.Windows.Forms.Button();
             this.btn_dichVu = new System.Windows.Forms.Button();
+            this.btn_TN = new System.Windows.Forms.Button();
             this.btn_TienNghi = new System.Windows.Forms.Button();
+            this.btn_NV = new System.Windows.Forms.Button();
             this.btn_NhanVien = new System.Windows.Forms.Button();
             this.lb_banquyen = new System.Windows.Forms.Label();
             this.lb_Quyen = new System.Windows.Forms.Label();
             this.lb_tenNV = new System.Windows.Forms.Label();
             this.lb_manv = new System.Windows.Forms.Label();
-            this.panel_TenForm = new System.Windows.Forms.Panel();
-            this.lb_tenform = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel_Home = new System.Windows.Forms.Panel();
-            this.btn_formLon = new System.Windows.Forms.Button();
-            this.btn_AnForm = new System.Windows.Forms.Button();
-            this.btn_formnho = new System.Windows.Forms.Button();
-            this.btn_EXIT = new System.Windows.Forms.Button();
-            this.btn_TC = new System.Windows.Forms.Button();
-            this.btn_DP = new System.Windows.Forms.Button();
-            this.btn_Phong = new System.Windows.Forms.Button();
-            this.btn_KH = new System.Windows.Forms.Button();
-            this.btn_DV = new System.Windows.Forms.Button();
-            this.btn_TN = new System.Windows.Forms.Button();
-            this.btn_NV = new System.Windows.Forms.Button();
             this.pictureBox_anh = new System.Windows.Forms.PictureBox();
             this.btn_thugon = new System.Windows.Forms.Button();
             this.btn_Thoat = new System.Windows.Forms.Button();
             this.btn_phongto = new System.Windows.Forms.Button();
+            this.panel_TenForm = new System.Windows.Forms.Panel();
+            this.lb_tenform = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_formLon = new System.Windows.Forms.Button();
+            this.btn_AnForm = new System.Windows.Forms.Button();
+            this.btn_formnho = new System.Windows.Forms.Button();
+            this.btn_EXIT = new System.Windows.Forms.Button();
+            this.panel_Home = new System.Windows.Forms.Panel();
             this.panel_Menu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel_TenForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_anh)).BeginInit();
+            this.panel_TenForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Menu
@@ -118,6 +118,28 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(222, 371);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
+            // btn_TC
+            // 
+            this.btn_TC.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._33;
+            this.btn_TC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_TC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_TC.Location = new System.Drawing.Point(3, 3);
+            this.btn_TC.Name = "btn_TC";
+            this.btn_TC.Size = new System.Drawing.Size(65, 47);
+            this.btn_TC.TabIndex = 0;
+            this.btn_TC.UseVisualStyleBackColor = true;
+            // 
+            // btn_DP
+            // 
+            this.btn_DP.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._21;
+            this.btn_DP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_DP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_DP.Location = new System.Drawing.Point(3, 56);
+            this.btn_DP.Name = "btn_DP";
+            this.btn_DP.Size = new System.Drawing.Size(65, 47);
+            this.btn_DP.TabIndex = 1;
+            this.btn_DP.UseVisualStyleBackColor = true;
+            // 
             // btn_Trangchu
             // 
             this.btn_Trangchu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -138,6 +160,17 @@
             this.btn_DatPhong.Text = "Đặt Phòng";
             this.btn_DatPhong.UseVisualStyleBackColor = true;
             // 
+            // btn_Phong
+            // 
+            this.btn_Phong.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._32;
+            this.btn_Phong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Phong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Phong.Location = new System.Drawing.Point(3, 109);
+            this.btn_Phong.Name = "btn_Phong";
+            this.btn_Phong.Size = new System.Drawing.Size(65, 47);
+            this.btn_Phong.TabIndex = 4;
+            this.btn_Phong.UseVisualStyleBackColor = true;
+            // 
             // btn_p
             // 
             this.btn_p.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -147,6 +180,18 @@
             this.btn_p.TabIndex = 5;
             this.btn_p.Text = "Phòng";
             this.btn_p.UseVisualStyleBackColor = true;
+            this.btn_p.Click += new System.EventHandler(this.btn_p_Click);
+            // 
+            // btn_KH
+            // 
+            this.btn_KH.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._34;
+            this.btn_KH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_KH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_KH.Location = new System.Drawing.Point(3, 162);
+            this.btn_KH.Name = "btn_KH";
+            this.btn_KH.Size = new System.Drawing.Size(65, 47);
+            this.btn_KH.TabIndex = 6;
+            this.btn_KH.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -158,6 +203,17 @@
             this.button7.Text = "Khách Hàng";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // btn_DV
+            // 
+            this.btn_DV.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._31;
+            this.btn_DV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_DV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_DV.Location = new System.Drawing.Point(3, 215);
+            this.btn_DV.Name = "btn_DV";
+            this.btn_DV.Size = new System.Drawing.Size(65, 47);
+            this.btn_DV.TabIndex = 8;
+            this.btn_DV.UseVisualStyleBackColor = true;
+            // 
             // btn_dichVu
             // 
             this.btn_dichVu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -168,6 +224,17 @@
             this.btn_dichVu.Text = "Dịch Vụ";
             this.btn_dichVu.UseVisualStyleBackColor = true;
             // 
+            // btn_TN
+            // 
+            this.btn_TN.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._30;
+            this.btn_TN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_TN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_TN.Location = new System.Drawing.Point(3, 268);
+            this.btn_TN.Name = "btn_TN";
+            this.btn_TN.Size = new System.Drawing.Size(65, 47);
+            this.btn_TN.TabIndex = 10;
+            this.btn_TN.UseVisualStyleBackColor = true;
+            // 
             // btn_TienNghi
             // 
             this.btn_TienNghi.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -177,6 +244,17 @@
             this.btn_TienNghi.TabIndex = 11;
             this.btn_TienNghi.Text = "Tiện Nghi";
             this.btn_TienNghi.UseVisualStyleBackColor = true;
+            // 
+            // btn_NV
+            // 
+            this.btn_NV.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._35;
+            this.btn_NV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_NV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_NV.Location = new System.Drawing.Point(3, 321);
+            this.btn_NV.Name = "btn_NV";
+            this.btn_NV.Size = new System.Drawing.Size(65, 47);
+            this.btn_NV.TabIndex = 12;
+            this.btn_NV.UseVisualStyleBackColor = true;
             // 
             // btn_NhanVien
             // 
@@ -229,6 +307,49 @@
             this.lb_manv.TabIndex = 2;
             this.lb_manv.Text = "label2";
             // 
+            // pictureBox_anh
+            // 
+            this.pictureBox_anh.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._181;
+            this.pictureBox_anh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_anh.Location = new System.Drawing.Point(3, 37);
+            this.pictureBox_anh.Name = "pictureBox_anh";
+            this.pictureBox_anh.Size = new System.Drawing.Size(74, 48);
+            this.pictureBox_anh.TabIndex = 1;
+            this.pictureBox_anh.TabStop = false;
+            // 
+            // btn_thugon
+            // 
+            this.btn_thugon.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._4;
+            this.btn_thugon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_thugon.Location = new System.Drawing.Point(0, 0);
+            this.btn_thugon.Name = "btn_thugon";
+            this.btn_thugon.Size = new System.Drawing.Size(46, 34);
+            this.btn_thugon.TabIndex = 0;
+            this.btn_thugon.UseVisualStyleBackColor = true;
+            this.btn_thugon.Click += new System.EventHandler(this.btn_thugon_Click);
+            // 
+            // btn_Thoat
+            // 
+            this.btn_Thoat.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._3;
+            this.btn_Thoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Thoat.Location = new System.Drawing.Point(42, 0);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(46, 34);
+            this.btn_Thoat.TabIndex = 0;
+            this.btn_Thoat.UseVisualStyleBackColor = true;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
+            // 
+            // btn_phongto
+            // 
+            this.btn_phongto.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._2;
+            this.btn_phongto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_phongto.Location = new System.Drawing.Point(3, 0);
+            this.btn_phongto.Name = "btn_phongto";
+            this.btn_phongto.Size = new System.Drawing.Size(46, 34);
+            this.btn_phongto.TabIndex = 0;
+            this.btn_phongto.UseVisualStyleBackColor = true;
+            this.btn_phongto.Click += new System.EventHandler(this.btn_phongto_Click);
+            // 
             // panel_TenForm
             // 
             this.panel_TenForm.BackColor = System.Drawing.Color.LightGoldenrodYellow;
@@ -265,16 +386,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "QUẢN LÝ KHÁCH SẠN ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel_Home
-            // 
-            this.panel_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel_Home.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Home.Location = new System.Drawing.Point(227, 94);
-            this.panel_Home.Name = "panel_Home";
-            this.panel_Home.Size = new System.Drawing.Size(996, 591);
-            this.panel_Home.TabIndex = 2;
-            this.panel_Home.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Home_Paint);
             // 
             // btn_formLon
             // 
@@ -326,125 +437,15 @@
             this.btn_EXIT.UseVisualStyleBackColor = false;
             this.btn_EXIT.Click += new System.EventHandler(this.btn_EXIT_Click);
             // 
-            // btn_TC
+            // panel_Home
             // 
-            this.btn_TC.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._33;
-            this.btn_TC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_TC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_TC.Location = new System.Drawing.Point(3, 3);
-            this.btn_TC.Name = "btn_TC";
-            this.btn_TC.Size = new System.Drawing.Size(65, 47);
-            this.btn_TC.TabIndex = 0;
-            this.btn_TC.UseVisualStyleBackColor = true;
-            // 
-            // btn_DP
-            // 
-            this.btn_DP.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._21;
-            this.btn_DP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_DP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_DP.Location = new System.Drawing.Point(3, 56);
-            this.btn_DP.Name = "btn_DP";
-            this.btn_DP.Size = new System.Drawing.Size(65, 47);
-            this.btn_DP.TabIndex = 1;
-            this.btn_DP.UseVisualStyleBackColor = true;
-            // 
-            // btn_Phong
-            // 
-            this.btn_Phong.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._32;
-            this.btn_Phong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Phong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Phong.Location = new System.Drawing.Point(3, 109);
-            this.btn_Phong.Name = "btn_Phong";
-            this.btn_Phong.Size = new System.Drawing.Size(65, 47);
-            this.btn_Phong.TabIndex = 4;
-            this.btn_Phong.UseVisualStyleBackColor = true;
-            // 
-            // btn_KH
-            // 
-            this.btn_KH.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._34;
-            this.btn_KH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_KH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_KH.Location = new System.Drawing.Point(3, 162);
-            this.btn_KH.Name = "btn_KH";
-            this.btn_KH.Size = new System.Drawing.Size(65, 47);
-            this.btn_KH.TabIndex = 6;
-            this.btn_KH.UseVisualStyleBackColor = true;
-            // 
-            // btn_DV
-            // 
-            this.btn_DV.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._31;
-            this.btn_DV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_DV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_DV.Location = new System.Drawing.Point(3, 215);
-            this.btn_DV.Name = "btn_DV";
-            this.btn_DV.Size = new System.Drawing.Size(65, 47);
-            this.btn_DV.TabIndex = 8;
-            this.btn_DV.UseVisualStyleBackColor = true;
-            // 
-            // btn_TN
-            // 
-            this.btn_TN.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._30;
-            this.btn_TN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_TN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_TN.Location = new System.Drawing.Point(3, 268);
-            this.btn_TN.Name = "btn_TN";
-            this.btn_TN.Size = new System.Drawing.Size(65, 47);
-            this.btn_TN.TabIndex = 10;
-            this.btn_TN.UseVisualStyleBackColor = true;
-            // 
-            // btn_NV
-            // 
-            this.btn_NV.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._35;
-            this.btn_NV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_NV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_NV.Location = new System.Drawing.Point(3, 321);
-            this.btn_NV.Name = "btn_NV";
-            this.btn_NV.Size = new System.Drawing.Size(65, 47);
-            this.btn_NV.TabIndex = 12;
-            this.btn_NV.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox_anh
-            // 
-            this.pictureBox_anh.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._181;
-            this.pictureBox_anh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_anh.Location = new System.Drawing.Point(3, 37);
-            this.pictureBox_anh.Name = "pictureBox_anh";
-            this.pictureBox_anh.Size = new System.Drawing.Size(74, 48);
-            this.pictureBox_anh.TabIndex = 1;
-            this.pictureBox_anh.TabStop = false;
-            // 
-            // btn_thugon
-            // 
-            this.btn_thugon.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._4;
-            this.btn_thugon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_thugon.Location = new System.Drawing.Point(0, 0);
-            this.btn_thugon.Name = "btn_thugon";
-            this.btn_thugon.Size = new System.Drawing.Size(46, 34);
-            this.btn_thugon.TabIndex = 0;
-            this.btn_thugon.UseVisualStyleBackColor = true;
-            this.btn_thugon.Click += new System.EventHandler(this.btn_thugon_Click);
-            // 
-            // btn_Thoat
-            // 
-            this.btn_Thoat.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._3;
-            this.btn_Thoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Thoat.Location = new System.Drawing.Point(42, 0);
-            this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(46, 34);
-            this.btn_Thoat.TabIndex = 0;
-            this.btn_Thoat.UseVisualStyleBackColor = true;
-            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
-            // 
-            // btn_phongto
-            // 
-            this.btn_phongto.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._2;
-            this.btn_phongto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_phongto.Location = new System.Drawing.Point(3, 0);
-            this.btn_phongto.Name = "btn_phongto";
-            this.btn_phongto.Size = new System.Drawing.Size(46, 34);
-            this.btn_phongto.TabIndex = 0;
-            this.btn_phongto.UseVisualStyleBackColor = true;
-            this.btn_phongto.Click += new System.EventHandler(this.btn_phongto_Click);
+            this.panel_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_Home.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Home.Location = new System.Drawing.Point(227, 94);
+            this.panel_Home.Name = "panel_Home";
+            this.panel_Home.Size = new System.Drawing.Size(996, 591);
+            this.panel_Home.TabIndex = 2;
+            this.panel_Home.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Home_Paint);
             // 
             // frm_TrangChu
             // 
@@ -461,9 +462,9 @@
             this.panel_Menu.ResumeLayout(false);
             this.panel_Menu.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_anh)).EndInit();
             this.panel_TenForm.ResumeLayout(false);
             this.panel_TenForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_anh)).EndInit();
             this.ResumeLayout(false);
 
         }

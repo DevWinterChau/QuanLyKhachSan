@@ -15,6 +15,7 @@ namespace QuanLyKhachSan
 {
     public partial class frm_Phong : Form
     {
+        private NguoiDung_DTO nguoidung;
         public frm_Phong()
         {
             InitializeComponent();
@@ -74,6 +75,9 @@ namespace QuanLyKhachSan
             LoadPhongAuTo();
         }
         List<Phong_DTO> listphong;
+
+        public NguoiDung_DTO Nguoidung { get => nguoidung; set => nguoidung = value; }
+
         private ContextMenu CreateContextMenu_PhongTrong(Phong_DTO phongdto)
         {
             ContextMenu cm = new ContextMenu();
@@ -148,7 +152,7 @@ namespace QuanLyKhachSan
         }
         private void item_xemctdp_Click(object sender, EventArgs e, int id_datphong, string tenkh)
         {
-            frm_chitietdatphong chitietdatphong = new frm_chitietdatphong(id_datphong, tenkh, this);
+            frm_chitietdatphong chitietdatphong = new frm_chitietdatphong(id_datphong, tenkh, this,  nguoidung.TenNV);
             chitietdatphong.ShowDialog();
         }
         private void itemTTP_Click(object sender, EventArgs e)

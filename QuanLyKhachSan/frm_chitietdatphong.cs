@@ -20,12 +20,14 @@ namespace QuanLyKhachSan
             InitializeComponent();
         }
         private frm_Phong frmphong;
-        public frm_chitietdatphong(int iddatphong, string tenkh, frm_Phong frmphong)
+        private string tennv;
+        public frm_chitietdatphong(int iddatphong, string tenkh, frm_Phong frmphong,string tennv )
         {
             InitializeComponent();
             this.iddatphong = iddatphong;
             this.tenkh = tenkh;
             this.frmphong = frmphong;
+            this.tennv = tennv;
         }
         private int iddatphong; private string tenkh;
         private List<DatPhong_DichVu_DTO> datPhong_DichVu_list = new List<DatPhong_DichVu_DTO>();
@@ -177,13 +179,13 @@ namespace QuanLyKhachSan
                     hdtt.NgayGD = DateTime.Now;
                     hdtt.TongHD = ShowTienThanhToan();
                     hdtt.IDDatphong = iddatphong;
-                    hdtt.TenNV = "Admintrator";
+                    hdtt.TenNV = tennv;
                     if (HoaDon_BUS.add(hdtt))
                     {
                         MessageBox.Show("Đã thanh toán cho khách hàng!", "THÔNG BÁO");
                         CapNhatTrangThaiPhong();
-                        frm_inhoadonthanhtoan inhoadonthanhtoan = new frm_inhoadonthanhtoan(TongTienPhong());
-                        inhoadonthanhtoan.ShowDialog();
+                        frm_inhoadonthanhtoan inhoadonthanhtoan = new frm_inhoadonthanhtoan(iddatphong);
+                        inhoadonthanhtoan.Show();
                         frmphong.LoadPhongAuTo();
                     }
                 }

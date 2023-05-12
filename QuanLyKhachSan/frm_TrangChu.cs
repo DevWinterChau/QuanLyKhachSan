@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,21 @@ namespace QuanLyKhachSan
 {
     public partial class frm_TrangChu : Form
     {
+         private NguoiDung_DTO nguoidung;
+        private Admin_DTO admin;
         public frm_TrangChu()
         {
             InitializeComponent();
+        }
+        public frm_TrangChu(NguoiDung_DTO ng)
+        {
+            InitializeComponent();
+            this.nguoidung = ng;
+        }
+        public frm_TrangChu(Admin_DTO ng)
+        {
+            InitializeComponent();
+            this.admin = ng;
         }
         private void Openformchild(Form childForm)
         {
@@ -136,6 +149,20 @@ namespace QuanLyKhachSan
         private void panel_Home_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        
+        private void btn_p_Click(object sender, EventArgs e)
+        {
+            frm_Phong phong = new frm_Phong();
+            Openformchild(phong);
+            if(nguoidung != null)
+            {
+                phong.Nguoidung= nguoidung;
+            }   
+            else
+            {
+                phong.Nguoidung = nguoidung;
+            }
         }
     }
 }

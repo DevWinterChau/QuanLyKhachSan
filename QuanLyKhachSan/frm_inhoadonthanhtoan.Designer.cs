@@ -32,8 +32,8 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSet1 = new QuanLyKhachSan.DataSet1();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataTable1TableAdapter = new QuanLyKhachSan.DataSet1TableAdapters.DataTable1TableAdapter();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.SuspendLayout();
@@ -48,27 +48,28 @@
             this.DataSet1.DataSetName = "DataSet1";
             this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // DataTable1TableAdapter
+            // 
+            this.DataTable1TableAdapter.ClearBeforeFill = true;
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.DataTable1BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKhachSan.hoadonthanhtoan.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKhachSan.hoadon.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(582, 636);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // DataTable1TableAdapter
-            // 
-            this.DataTable1TableAdapter.ClearBeforeFill = true;
             // 
             // frm_inhoadonthanhtoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(582, 636);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frm_inhoadonthanhtoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -81,10 +82,9 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource DataTable1BindingSource;
         private DataSet1 DataSet1;
         private DataSet1TableAdapters.DataTable1TableAdapter DataTable1TableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

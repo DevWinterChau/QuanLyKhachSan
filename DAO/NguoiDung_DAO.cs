@@ -144,5 +144,39 @@ namespace DAO
                 }
             }
         }
+        public static NguoiDung_DTO checkTK(string user , string pass)
+        {
+            string sTruyVan = "select nv.ID_NV, nv.HOTEN_NV , nd.username , nd.pass , pq.ID_QUYEN, pq.TEN_QUYEN from NguoiDung nd, PHANQUYEN pq, NHANVIEN nv where nd.ID_NV = nv.ID_NV and nd.ID_QUYEN = pq.ID_QUYEN and nd.username = 'admin' and nd.pass ='admin'";
+            con = KetNoi.MoKetNoi();
+            DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
+            if (dt.Rows.Count == 0)
+            {
+                return null;
+            }
+                NguoiDung_DTO nd = new NguoiDung_DTO();
+                nd.IDNV = int.Parse(dt.Rows[0]["ID_NV"].ToString());
+                nd.TenNV = dt.Rows[0]["HOTEN_NV"].ToString();
+                nd.USERName = dt.Rows[0]["username"].ToString();
+                nd.Password = dt.Rows[0]["pass"].ToString();
+                nd.IDQuyen = int.Parse(dt.Rows[0]["ID_QUYEN"].ToString());
+                nd.TenQuyen = dt.Rows[0]["TEN_QUYEN"].ToString();
+            return nd;
+        }
+        public static Admin_DTO checAdmin(string user, string pass)
+        {
+            string sTruyVan = "select * from Adminn ad, phanquyen pq where username = '"+user.ToUpper()+"' and pass = '"+pass.ToUpper()+"' and ad.id_quyen = pq.id_quyen";
+            con = KetNoi.MoKetNoi();
+            DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
+            if (dt.Rows.Count == 0)
+            {
+                return null;
+            }
+            Admin_DTO nd = new Admin_DTO();
+            nd.Usename = dt.Rows[0]["username"].ToString();
+            nd.Pass = dt.Rows[0]["pass"].ToString();
+            nd.IDQuyen = int.Parse(dt.Rows[0]["ID_QUYEN"].ToString());
+            nd.TenQuyen = dt.Rows[0]["TEN_QUYEN"].ToString();
+            return nd;
+        }
     }
 }

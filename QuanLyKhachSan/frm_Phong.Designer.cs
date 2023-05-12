@@ -46,6 +46,8 @@
             this.rad_tt_thuephong = new System.Windows.Forms.RadioButton();
             this.rad_tt_trong = new System.Windows.Forms.RadioButton();
             this.panel_loaiphong = new System.Windows.Forms.Panel();
+            this.cbb_loaiphong = new System.Windows.Forms.ComboBox();
+            this.loaiPhongDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.tab_loaiPhong = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -66,19 +68,17 @@
             this.btn_xoaloai = new System.Windows.Forms.Button();
             this.btn_sualoai = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cbb_loaiphong = new System.Windows.Forms.ComboBox();
-            this.loaiPhongDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl_Phong.SuspendLayout();
             this.tab_Phong.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_trangthai.SuspendLayout();
             this.panel_loaiphong.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongDTOBindingSource1)).BeginInit();
             this.tab_loaiPhong.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiPhongDTOBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongDTOBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl_Phong
@@ -293,6 +293,23 @@
             this.panel_loaiphong.Size = new System.Drawing.Size(186, 55);
             this.panel_loaiphong.TabIndex = 8;
             // 
+            // cbb_loaiphong
+            // 
+            this.cbb_loaiphong.DataSource = this.loaiPhongDTOBindingSource1;
+            this.cbb_loaiphong.DisplayMember = "TenLoaiP";
+            this.cbb_loaiphong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_loaiphong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbb_loaiphong.FormattingEnabled = true;
+            this.cbb_loaiphong.Location = new System.Drawing.Point(5, 19);
+            this.cbb_loaiphong.Name = "cbb_loaiphong";
+            this.cbb_loaiphong.Size = new System.Drawing.Size(175, 28);
+            this.cbb_loaiphong.TabIndex = 0;
+            this.cbb_loaiphong.ValueMember = "IDLoaiP";
+            // 
+            // loaiPhongDTOBindingSource1
+            // 
+            this.loaiPhongDTOBindingSource1.DataSource = typeof(DTO.Loai_Phong_DTO);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -500,23 +517,6 @@
             this.btn_sualoai.UseVisualStyleBackColor = true;
             this.btn_sualoai.Click += new System.EventHandler(this.btn_sualoai_Click);
             // 
-            // cbb_loaiphong
-            // 
-            this.cbb_loaiphong.DataSource = this.loaiPhongDTOBindingSource1;
-            this.cbb_loaiphong.DisplayMember = "TenLoaiP";
-            this.cbb_loaiphong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_loaiphong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbb_loaiphong.FormattingEnabled = true;
-            this.cbb_loaiphong.Location = new System.Drawing.Point(5, 19);
-            this.cbb_loaiphong.Name = "cbb_loaiphong";
-            this.cbb_loaiphong.Size = new System.Drawing.Size(175, 28);
-            this.cbb_loaiphong.TabIndex = 0;
-            this.cbb_loaiphong.ValueMember = "IDLoaiP";
-            // 
-            // loaiPhongDTOBindingSource1
-            // 
-            this.loaiPhongDTOBindingSource1.DataSource = typeof(DTO.Loai_Phong_DTO);
-            // 
             // frm_Phong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -524,7 +524,7 @@
             this.ClientSize = new System.Drawing.Size(1079, 609);
             this.Controls.Add(this.tabControl_Phong);
             this.Name = "frm_Phong";
-            this.Text = "frm_Phong";
+            this.Text = "QUẢN LÝ PHÒNG";
             this.Load += new System.EventHandler(this.frm_Phong_Load);
             this.Click += new System.EventHandler(this.frm_Phong_Click);
             this.tabControl_Phong.ResumeLayout(false);
@@ -535,6 +535,7 @@
             this.panel_trangthai.ResumeLayout(false);
             this.panel_trangthai.PerformLayout();
             this.panel_loaiphong.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongDTOBindingSource1)).EndInit();
             this.tab_loaiPhong.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -542,7 +543,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.loaiPhongDTOBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loaiPhongDTOBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

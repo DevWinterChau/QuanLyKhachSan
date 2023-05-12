@@ -42,5 +42,13 @@ namespace BUS
         {
             return NguoiDung_DAO.USERName(user);
         }
+        public static NguoiDung_DTO checkTK(string user, string pass)
+        {
+            return NguoiDung_DAO.checkTK(user, pass);
+        }
+        public static Admin_DTO checkAdmin(string user, string pass)
+        {
+            return NguoiDung_DAO.checAdmin(user, pass);
+        }
     }
-}
+    }
