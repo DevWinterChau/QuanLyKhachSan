@@ -19,6 +19,14 @@ namespace QuanLyKhachSan
             InitializeComponent();
             
         }
+        private frm_Phong frmphong;
+        private frm_TienNghi frmtiennghi;
+        public frm_Chitiet_TienNghi(frm_TienNghi frmtiennghi, frm_Phong frmphong)
+        {
+            InitializeComponent();
+            this.frmphong = frmphong;
+            this.frmtiennghi = frmtiennghi;
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {

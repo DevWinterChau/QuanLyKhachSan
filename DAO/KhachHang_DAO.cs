@@ -38,7 +38,7 @@ namespace DAO
         }
         public static bool add(KhachHang_DTO kh)
         {
-            string sTruyVan = "insert into KHang values(N'"+kh.TenKH.Trim().ToUpper()+ "', '"+kh.CCCD_KH+"', '"+kh.SDT_Kh+"', '"+kh.Email_KH+"', '"+kh.Dchi_KH.Trim().ToUpper()+"', '"+kh.Phai+"')";
+            string sTruyVan = "insert into KHang values(N'"+kh.TenKH.Trim().ToUpper()+ "', '"+kh.CCCD_KH+"', '"+kh.SDT_Kh+"', '"+kh.Email_KH+"', N'"+kh.Dchi_KH.Trim().ToUpper()+"', N'"+kh.Phai+"')";
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             KetNoi.Dongketnoi();
@@ -236,6 +236,42 @@ namespace DAO
             kh.Dchi_KH = dt.Rows[0]["DCHI_KH"].ToString();
 
             return kh;
+        }
+        public static bool CheckSDT(string sdt)
+        {
+            using (con)
+            {
+                string sTruyVan = "SELECT COUNT(*) FROM KHang WHERE SDT_KH ='" + sdt + "'";
+                using (SqlCommand command = new SqlCommand(sTruyVan, con))
+                {
+                    KetNoi.MoKetNoi();
+                    int count = (int)command.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        return false;
+                    }
+                    return true;
+
+                }
+            }
+        }
+        public static bool CheckCCCD(string cccd)
+        {
+            using (con)
+            {
+                string sTruyVan = "SELECT COUNT(*) FROM KHang WHERE CCCD_KH ='" + cccd + "'";
+                using (SqlCommand command = new SqlCommand(sTruyVan, con))
+                {
+                    KetNoi.MoKetNoi();
+                    int count = (int)command.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        return false;
+                    }
+                    return true;
+
+                }
+            }
         }
     }
 }

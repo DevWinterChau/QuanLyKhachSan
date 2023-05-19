@@ -14,9 +14,19 @@ namespace BUS
         {
             return ChiTiet_DatPhong_DAO.LayChitietDP();
         }
+        
+         public static bool CapNhat_NhanPhong(ChiTiet_DatPhong_DTO ctdp)
+        {
+            return ChiTiet_DatPhong_DAO.CapNhat_NhanPhong(ctdp);
+        }
         public static List<ChiTiet_DatPhong_DTO> LayCT_DATPHONG_THEOID(int ID_DATPHONG)
         {
             return ChiTiet_DatPhong_DAO.LayChitietDP_THEOID(ID_DATPHONG);
+        }
+        
+              public static bool update_thoigiantraphong(ChiTiet_DatPhong_DTO ctdp)
+        {
+            return ChiTiet_DatPhong_DAO.update_thoigiantraphong(ctdp);
         }
         public static bool add(ChiTiet_DatPhong_DTO ctdp)
         {

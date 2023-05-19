@@ -73,6 +73,15 @@ namespace BUS
         public static List<Phong_DTO> LayDSPHongAll()
         {
             return Phong_DAO.LayDSPHongAll();
+        }
+        public static List<Phong_DTO> LayDSPHongAll_TheoDieuKien(int id_loai, int id_trangthai)
+        {
+            return Phong_DAO.LayDSPHongAll_TheoDieuKien(id_loai, id_trangthai);
+
+        }
+        public static List<Phong_DTO> LayDSPHongAll_TheoTen(string tenphong)
+        {
+            return Phong_DAO.LayDSPHongAll_TheoTen(tenphong);
 
         }
         public static List<Phong_DTO> LayDSPHongAll_ChuyenPhong()

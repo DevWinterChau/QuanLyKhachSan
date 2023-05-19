@@ -55,10 +55,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tienNghiDTOBindingSource)).BeginInit();
@@ -94,9 +94,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.btn_timNV);
             this.groupBox1.Controls.Add(this.txt_timNV);
             this.groupBox1.Controls.Add(this.cbb_chon);
@@ -247,6 +245,9 @@
             // 
             // dgv_ds_chitietTN
             // 
+            this.dgv_ds_chitietTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_ds_chitietTN.AutoGenerateColumns = false;
             this.dgv_ds_chitietTN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ds_chitietTN.BackgroundColor = System.Drawing.Color.White;
@@ -258,9 +259,10 @@
             this.soluongSDDataGridViewTextBoxColumn,
             this.ghiChuTNDataGridViewTextBoxColumn});
             this.dgv_ds_chitietTN.DataSource = this.chitietTienNghiDTOBindingSource;
-            this.dgv_ds_chitietTN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ds_chitietTN.Location = new System.Drawing.Point(0, 0);
+            this.dgv_ds_chitietTN.MultiSelect = false;
             this.dgv_ds_chitietTN.Name = "dgv_ds_chitietTN";
+            this.dgv_ds_chitietTN.ReadOnly = true;
             this.dgv_ds_chitietTN.RowHeadersWidth = 62;
             this.dgv_ds_chitietTN.RowTemplate.Height = 28;
             this.dgv_ds_chitietTN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -274,6 +276,7 @@
             this.TenTN.HeaderText = "Tiện Nghi";
             this.TenTN.MinimumWidth = 8;
             this.TenTN.Name = "TenTN";
+            this.TenTN.ReadOnly = true;
             // 
             // TenPHong
             // 
@@ -281,6 +284,7 @@
             this.TenPHong.HeaderText = "Phòng";
             this.TenPHong.MinimumWidth = 8;
             this.TenPHong.Name = "TenPHong";
+            this.TenPHong.ReadOnly = true;
             // 
             // thgianSuDungDataGridViewTextBoxColumn
             // 
@@ -288,6 +292,7 @@
             this.thgianSuDungDataGridViewTextBoxColumn.HeaderText = "Thời gian BD sử dụng";
             this.thgianSuDungDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.thgianSuDungDataGridViewTextBoxColumn.Name = "thgianSuDungDataGridViewTextBoxColumn";
+            this.thgianSuDungDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // soluongSDDataGridViewTextBoxColumn
             // 
@@ -295,6 +300,7 @@
             this.soluongSDDataGridViewTextBoxColumn.HeaderText = "Số lượng SD";
             this.soluongSDDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.soluongSDDataGridViewTextBoxColumn.Name = "soluongSDDataGridViewTextBoxColumn";
+            this.soluongSDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ghiChuTNDataGridViewTextBoxColumn
             // 
@@ -302,6 +308,7 @@
             this.ghiChuTNDataGridViewTextBoxColumn.HeaderText = "Ghi Chú";
             this.ghiChuTNDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.ghiChuTNDataGridViewTextBoxColumn.Name = "ghiChuTNDataGridViewTextBoxColumn";
+            this.ghiChuTNDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // chitietTienNghiDTOBindingSource
             // 
@@ -354,6 +361,17 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Phòng:";
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(22, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Ghi Chú:";
+            this.label6.Click += new System.EventHandler(this.label2_Click);
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -386,17 +404,6 @@
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 94);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Ghi Chú:";
-            this.label6.Click += new System.EventHandler(this.label2_Click);
             // 
             // frm_Chitiet_TienNghi
             // 

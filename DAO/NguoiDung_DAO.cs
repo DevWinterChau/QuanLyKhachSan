@@ -146,7 +146,7 @@ namespace DAO
         }
         public static NguoiDung_DTO checkTK(string user , string pass)
         {
-            string sTruyVan = "select nv.ID_NV, nv.HOTEN_NV , nd.username , nd.pass , pq.ID_QUYEN, pq.TEN_QUYEN from NguoiDung nd, PHANQUYEN pq, NHANVIEN nv where nd.ID_NV = nv.ID_NV and nd.ID_QUYEN = pq.ID_QUYEN and nd.username = 'admin' and nd.pass ='admin'";
+            string sTruyVan = "select nv.ID_NV, nv.HOTEN_NV , nd.username , nd.pass , pq.ID_QUYEN, pq.TEN_QUYEN from NguoiDung nd, PHANQUYEN pq, NHANVIEN nv where nd.ID_NV = nv.ID_NV and nd.ID_QUYEN = pq.ID_QUYEN and nd.username = '"+user+"' and nd.pass ='"+pass+"'";
             con = KetNoi.MoKetNoi();
             DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
             if (dt.Rows.Count == 0)

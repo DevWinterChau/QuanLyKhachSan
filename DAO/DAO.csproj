@@ -56,6 +56,7 @@
     <Compile Include="HoaDon_DAO.cs" />
     <Compile Include="KetNoi.cs" />
     <Compile Include="KhachHang_DAO.cs" />
+    <Compile Include="LoaiDV_DAO.cs" />
     <Compile Include="LoaiPhong_DAO.cs" />
     <Compile Include="NguoiDung_DAO.cs" />
     <Compile Include="NhanVien_DAO.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Phong_DAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tang_DAO.cs" />
     <Compile Include="TienNghi_DAO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -84,6 +84,20 @@ namespace DAO
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             return kq;
         }
+        public static bool update_thoigiantraphong(ChiTiet_DatPhong_DTO dp)
+        {
+            string sTruyVan = "update CT_DatPhong set NGAYTRA ='"+dp.Ngaytra+"', THANHTIEN_PHONG = " + dp.Thanhtien + " where ID_DATPHONG = " + dp.IDDatPhong + " and ID_PHONG = " + dp.IDPhong + "";
+            con = KetNoi.MoKetNoi();
+            bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
+            return kq;
+        }
+        public static bool CapNhat_NhanPhong(ChiTiet_DatPhong_DTO dp)
+        {
+            string sTruyVan = "update CT_DatPhong set NGAYDAT ='"+dp.Ngaydat+"' , THANHTIEN_PHONG = "+dp.Thanhtien+" where ID_DATPHONG = "+dp.IDDatPhong+ " and ID_PHONG =  "+dp.IDPhong+"";
+            con = KetNoi.MoKetNoi();
+            bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
+            return kq;
+        }
         public static bool Delete(ChiTiet_DatPhong_DTO dp)
         {
             string sTruyVan = " delete CT_DatPhong where ID_DATPHONG = '" + dp.IDDatPhong + "'";

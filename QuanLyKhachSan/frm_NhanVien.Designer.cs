@@ -95,6 +95,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_pass = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tab_Nhanvien.SuspendLayout();
             this.tabPage_NhanVien.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -113,6 +115,8 @@
             this.groupBox3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_Nhanvien
@@ -417,6 +421,7 @@
             this.txt_Dchi.Name = "txt_Dchi";
             this.txt_Dchi.Size = new System.Drawing.Size(529, 26);
             this.txt_Dchi.TabIndex = 0;
+            this.txt_Dchi.TextChanged += new System.EventHandler(this.txt_Dchi_TextChanged);
             // 
             // label1
             // 
@@ -452,8 +457,9 @@
             this.txt_email.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_email.Location = new System.Drawing.Point(775, 4);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(274, 26);
+            this.txt_email.Size = new System.Drawing.Size(265, 26);
             this.txt_email.TabIndex = 0;
+            this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
             // 
             // label3
             // 
@@ -472,6 +478,7 @@
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(179, 26);
             this.txt_SDT.TabIndex = 0;
+            this.txt_SDT.TextChanged += new System.EventHandler(this.txt_SDT_TextChanged);
             // 
             // label5
             // 
@@ -490,6 +497,7 @@
             this.txt_CCCD.Name = "txt_CCCD";
             this.txt_CCCD.Size = new System.Drawing.Size(180, 26);
             this.txt_CCCD.TabIndex = 0;
+            this.txt_CCCD.TextChanged += new System.EventHandler(this.txt_CCCD_TextChanged);
             // 
             // label2
             // 
@@ -508,6 +516,7 @@
             this.txt_HotenNV.Name = "txt_HotenNV";
             this.txt_HotenNV.Size = new System.Drawing.Size(352, 26);
             this.txt_HotenNV.TabIndex = 0;
+            this.txt_HotenNV.TextChanged += new System.EventHandler(this.txt_HotenNV_TextChanged);
             // 
             // tabPage_TaiKhoan
             // 
@@ -861,14 +870,23 @@
             this.txt_pass.Size = new System.Drawing.Size(263, 26);
             this.txt_pass.TabIndex = 0;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // frm_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 589);
             this.Controls.Add(this.tab_Nhanvien);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frm_NhanVien";
-            this.Text = "frm_NhanVien";
+            this.Text = "Nhân Viên";
             this.Load += new System.EventHandler(this.frm_NhanVien_Load);
             this.tab_Nhanvien.ResumeLayout(false);
             this.tabPage_NhanVien.ResumeLayout(false);
@@ -894,6 +912,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.phanQuyenDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -966,5 +986,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn uSERNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

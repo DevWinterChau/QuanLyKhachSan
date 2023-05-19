@@ -58,5 +58,13 @@ namespace BUS
         {
             return KhachHang_DAO.TimKhachhangTheoSDT(SDT);
         }
+        public static bool CheckSDT(string sdt)
+        {
+            return KhachHang_DAO.CheckSDT(sdt);
+        }
+        public static bool CheckCCCD(string cccd)
+        {
+            return KhachHang_DAO.CheckCCCD(cccd);
+        }
     }
 }

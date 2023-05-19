@@ -105,7 +105,7 @@ namespace QuanLyKhachSan
             try
             {
                 DataGridViewRow dr = dgv_TienNghi.SelectedRows[0];
-                if (dr.Cells[0].Value != null && dr.Cells[1].Value != null && dr.Cells[2].Value != null && dr.Cells[3].Value != null)
+                if (dr.Cells[0].Value != null && dr.Cells[1].Value != null && dr.Cells[2].Value != null )
                 {
                     txt_IDTN.Text = dr.Cells[0].Value.ToString();
                     txt_TenTN.Text = dr.Cells[1].Value.ToString();
@@ -114,7 +114,7 @@ namespace QuanLyKhachSan
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi hệ thống 3!", ex.Message);
+                MessageBox.Show("Lỗi hệ thống !", ex.Message);
             }
         }
 
@@ -148,6 +148,56 @@ namespace QuanLyKhachSan
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+        private void dgv_TienNghi_DoubleClick(object sender, EventArgs e)
+        {
+            frm_Chitiet_TienNghi cttn = new frm_Chitiet_TienNghi();
+            cttn.Show();
+        }
+
+        private void btnCTTN_Click(object sender, EventArgs e)
+        {
+            frm_Chitiet_TienNghi cttn = new frm_Chitiet_TienNghi();
+            cttn.Show();
+        }
+
+        private void txt_Dongia_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                if (!Char.IsDigit(control.Text[control.Text.Length - 1]))
+                {
+                    this.errorProvider1.SetError(control, "This is not a valid number");
+
+                }
+                else
+                    this.errorProvider1.Clear();
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void txt_TenTN_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                if (Char.IsDigit(control.Text[control.Text.Length - 1]))
+                {
+                    this.errorProvider1.SetError(control, "This is not a valid char");
+
+                }
+                else
+                    this.errorProvider1.Clear();
+
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }

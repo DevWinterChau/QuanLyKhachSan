@@ -12,7 +12,7 @@ namespace BUS
     {
         public static List<HoaDon_DTO> LayDSHD()
         {
-            return HoaDon_DAO.LayDSHoadon();
+            return HoaDon_DAO.LayDSHoaDon();
         }
         public static bool add(HoaDon_DTO hd)
         {
@@ -30,9 +30,14 @@ namespace BUS
         {
             return HoaDon_DAO.TimHDtheoIDHD(ma);
         }
-        public static List<HoaDon_DTO> TimHDtheoNgayGD(DateTime ngay)
+        public static List<HoaDon_DTO> TimHDtheoNgayGD(string ngay)
         {
             return HoaDon_DAO.TimHDtheoGianGD(ngay);
+        }
+        
+        public static List<HoaDon_DTO> TimHDtheoTenNV(string ten)
+        {
+            return HoaDon_DAO.TimHDtheotenNV(ten);
         }
         public static List<HoaDon_DTO> TimHDtheoTenKH(string ten)
         {
@@ -46,5 +51,10 @@ namespace BUS
         {
             return HoaDon_DAO.TimHD_ID();
         }
+        public static List<DoanhThuDTO> LayDoanhThuHoaDon(int nam)
+        {
+            return HoaDon_DAO.LayDoanhThuHoaDon(nam);
+        }
+
     }
 }

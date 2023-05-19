@@ -66,6 +66,7 @@
             // 
             this.dgv_danhsachphong.AutoGenerateColumns = false;
             this.dgv_danhsachphong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_danhsachphong.BackgroundColor = System.Drawing.Color.White;
             this.dgv_danhsachphong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_danhsachphong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_danhsachphong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -171,7 +172,7 @@
             this.btn_chuyenphong.ForeColor = System.Drawing.Color.Blue;
             this.btn_chuyenphong.Location = new System.Drawing.Point(738, 4);
             this.btn_chuyenphong.Name = "btn_chuyenphong";
-            this.btn_chuyenphong.Size = new System.Drawing.Size(123, 36);
+            this.btn_chuyenphong.Size = new System.Drawing.Size(144, 36);
             this.btn_chuyenphong.TabIndex = 2;
             this.btn_chuyenphong.Text = "Chuyển phòng";
             this.btn_chuyenphong.UseVisualStyleBackColor = true;

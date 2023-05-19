@@ -72,40 +72,43 @@ namespace QuanLyKhachSan
 
         private void btn_thugon_Click(object sender, EventArgs e)
         {
-            int y = 0;
-            y = panel_Home.Width;
-            panel_Home.BringToFront();
             btn_phongto.BringToFront();
-            panel_Menu.SendToBack();
-            panel_Home.Location = new Point(35, 32);
+            btn_thugon.SendToBack();
+      
             if (this.WindowState == FormWindowState.Maximized)
-                panel_Home.Width = y + 130;
+                panel_Menu.Size = new Size(228, 900);
             else
-                panel_Home.Width = y + 130;
-            lb_banquyen.Visible = false;
-            pictureBox_anh.Visible = false;
+                panel_Menu.Size = new Size(228, 700);
+            lb_banquyen.Visible = true;
+            pictureBox_anh.Visible = true;
+            lb_manv.Visible = true;
+            lb_tenNV.Visible = true;
+            lb_Quyen.Visible = true;
         }
 
         private void btn_phongto_Click(object sender, EventArgs e)
         {
-            int y = 0;
-            y = panel_Home.Width;
             btn_phongto.SendToBack();
-            panel_Home.Location = new Point(130, 32);
+            btn_thugon.BringToFront();
             if (this.WindowState == FormWindowState.Maximized)
-                panel_Home.Width = y - 134;
+                panel_Menu.Size = new Size(70, 900);
             else
-                panel_Home.Width = y - 134;
-           lb_banquyen.Visible = true;
-            pictureBox_anh.Visible = true;
+                panel_Menu.Size = new Size(70, 700);
+            lb_banquyen.Visible = false;
+            pictureBox_anh.Visible = false;
+            lb_manv.Visible = false;
+            lb_tenNV.Visible = false;
+            lb_Quyen.Visible = false;
         }
 
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frm_DangNhap f1 = new frm_DangNhap();
+            f1.Show();
+            this.Hide();
         }
-
-       /* private void Openformchild_DASHBOARD(Form childForm)
+        Form currentFomchild;
+        private void Openformchild_DASHBOARD(Form childForm)
         {
 
             frm_dashboard kh = new frm_dashboard();
@@ -117,12 +120,12 @@ namespace QuanLyKhachSan
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panel_home.Controls.Add(childForm);
-            panel_home.Tag = childForm;
-            lb_tenfrm.Text = childForm.Text;
+            panel_Home.Controls.Add(childForm);
+            panel_Home.Tag = childForm;
+            lb_tenform.Text = childForm.Text;
             childForm.BringToFront();
             childForm.Show();
-        }*/
+        }
 
         private void btn_formLon_Click(object sender, EventArgs e)
         {
@@ -140,16 +143,7 @@ namespace QuanLyKhachSan
                 Application.Exit();
             }
         }
-
-        private void panel_TenForm_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void panel_Home_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
         
         private void btn_p_Click(object sender, EventArgs e)
         {
@@ -163,6 +157,91 @@ namespace QuanLyKhachSan
             {
                 phong.Nguoidung = nguoidung;
             }
+        }
+
+        private void btn_Trangchu_Click(object sender, EventArgs e)
+        {
+            Openformchild_DASHBOARD(new frm_dashboard());
+        }
+
+        private void btn_DatPhong_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frm_DS_DatPhong());
+        }
+
+
+        private void btn_dichVu_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frm_DSDichVu());
+        }
+
+        private void btn_TienNghi_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frm_TienNghi());
+        }
+
+        private void btn_NhanVien_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frm_NhanVien());
+        }
+
+        private void frm_TrangChu_Load(object sender, EventArgs e)
+        {
+            lb_manv.Text += "  "+nguoidung.IDNguoiDung.ToString();
+            lb_tenNV.Text = nguoidung.TenNV;
+            lb_Quyen.Text = nguoidung.TenQuyen;
+            btn_Trangchu_Click(sender, e);
+        }
+
+        private void btn_TC_Click(object sender, EventArgs e)
+        {
+            btn_Trangchu_Click(sender, e);
+        }
+
+        private void btn_DP_Click(object sender, EventArgs e)
+        {
+            btn_DatPhong_Click(sender, e);
+        }
+
+        private void btn_Phong_Click(object sender, EventArgs e)
+        {
+            btn_p_Click(sender, e);
+        }
+
+        private void btn_KH_Click(object sender, EventArgs e)
+        {
+            btn_khachhang_Click(sender, e);
+        }
+
+        private void btn_khachhang_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frm_khachHang());
+        }
+
+        private void btn_DV_Click(object sender, EventArgs e)
+        {
+            btn_dichVu_Click(sender, e);
+        }
+
+        private void btn_TN_Click(object sender, EventArgs e)
+        {
+            btn_TienNghi_Click(sender, e);
+        }
+
+        private void btn_NV_Click(object sender, EventArgs e)
+        {
+            btn_NhanVien_Click(sender, e);
+        }
+
+        private void btn_giaodich2_Click(object sender, EventArgs e)
+        {
+            Openformchild(new frm_GiaoDich(nguoidung));
+
+        }
+
+        private void btn_giaodich1_Click(object sender, EventArgs e)
+        {
+            btn_giaodich2_Click(sender, e);
         }
     }
 }

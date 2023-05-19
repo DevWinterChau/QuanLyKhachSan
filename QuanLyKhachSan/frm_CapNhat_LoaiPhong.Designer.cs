@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_idloai = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,17 +55,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 9);
+            this.label1.Location = new System.Drawing.Point(189, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 25);
+            this.label1.Size = new System.Drawing.Size(261, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Cập Nhật Loại Phòng";
+            this.label1.Text = "CẬP NHẬT LOẠI PHÒNG";
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txt_idloai);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -77,17 +77,18 @@
             this.panel1.Controls.Add(this.nume_songuoi);
             this.panel1.Controls.Add(this.txt_dongiaGio);
             this.panel1.Controls.Add(this.txt_tenLoai);
-            this.panel1.Location = new System.Drawing.Point(24, 37);
+            this.panel1.Location = new System.Drawing.Point(24, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 170);
+            this.panel1.Size = new System.Drawing.Size(552, 162);
             this.panel1.TabIndex = 2;
             // 
-            // textBox1
+            // txt_idloai
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 26);
-            this.textBox1.TabIndex = 4;
+            this.txt_idloai.Enabled = false;
+            this.txt_idloai.Location = new System.Drawing.Point(100, 6);
+            this.txt_idloai.Name = "txt_idloai";
+            this.txt_idloai.Size = new System.Drawing.Size(433, 26);
+            this.txt_idloai.TabIndex = 4;
             // 
             // label5
             // 
@@ -95,9 +96,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 131);
+            this.label5.Location = new System.Drawing.Point(30, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 20);
+            this.label5.Size = new System.Drawing.Size(70, 19);
             this.label5.TabIndex = 3;
             this.label5.Text = "Đơn ngày:";
             // 
@@ -109,7 +110,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(30, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 20);
+            this.label7.Size = new System.Drawing.Size(57, 19);
             this.label7.TabIndex = 3;
             this.label7.Text = "ID loại :";
             // 
@@ -119,9 +120,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 37);
+            this.label6.Location = new System.Drawing.Point(22, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 20);
+            this.label6.Size = new System.Drawing.Size(64, 19);
             this.label6.TabIndex = 3;
             this.label6.Text = "Tên loại :";
             // 
@@ -131,9 +132,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 102);
+            this.label4.Location = new System.Drawing.Point(14, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
+            this.label4.Size = new System.Drawing.Size(85, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Đơn giá giờ :";
             // 
@@ -143,9 +144,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 68);
+            this.label3.Location = new System.Drawing.Point(246, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Số giường :";
             // 
@@ -154,10 +155,20 @@
             this.numer_sogiuong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numer_sogiuong.Location = new System.Drawing.Point(265, 66);
+            this.numer_sogiuong.Location = new System.Drawing.Point(341, 63);
+            this.numer_sogiuong.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numer_sogiuong.Name = "numer_sogiuong";
-            this.numer_sogiuong.Size = new System.Drawing.Size(67, 26);
+            this.numer_sogiuong.Size = new System.Drawing.Size(130, 26);
             this.numer_sogiuong.TabIndex = 1;
+            this.numer_sogiuong.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
@@ -165,9 +176,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 68);
+            this.label2.Location = new System.Drawing.Point(14, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.Size = new System.Drawing.Size(71, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Số người :";
             // 
@@ -176,9 +187,9 @@
             this.txt_dongiaNgay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_dongiaNgay.Location = new System.Drawing.Point(117, 129);
+            this.txt_dongiaNgay.Location = new System.Drawing.Point(117, 123);
             this.txt_dongiaNgay.Name = "txt_dongiaNgay";
-            this.txt_dongiaNgay.Size = new System.Drawing.Size(212, 26);
+            this.txt_dongiaNgay.Size = new System.Drawing.Size(416, 26);
             this.txt_dongiaNgay.TabIndex = 0;
             // 
             // nume_songuoi
@@ -186,19 +197,29 @@
             this.nume_songuoi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nume_songuoi.Location = new System.Drawing.Point(100, 66);
+            this.nume_songuoi.Location = new System.Drawing.Point(100, 62);
+            this.nume_songuoi.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nume_songuoi.Name = "nume_songuoi";
-            this.nume_songuoi.Size = new System.Drawing.Size(67, 26);
+            this.nume_songuoi.Size = new System.Drawing.Size(140, 26);
             this.nume_songuoi.TabIndex = 1;
+            this.nume_songuoi.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // txt_dongiaGio
             // 
             this.txt_dongiaGio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_dongiaGio.Location = new System.Drawing.Point(117, 99);
+            this.txt_dongiaGio.Location = new System.Drawing.Point(117, 94);
             this.txt_dongiaGio.Name = "txt_dongiaGio";
-            this.txt_dongiaGio.Size = new System.Drawing.Size(212, 26);
+            this.txt_dongiaGio.Size = new System.Drawing.Size(416, 26);
             this.txt_dongiaGio.TabIndex = 0;
             // 
             // txt_tenLoai
@@ -206,10 +227,9 @@
             this.txt_tenLoai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tenLoai.Enabled = false;
-            this.txt_tenLoai.Location = new System.Drawing.Point(100, 34);
+            this.txt_tenLoai.Location = new System.Drawing.Point(100, 32);
             this.txt_tenLoai.Name = "txt_tenLoai";
-            this.txt_tenLoai.Size = new System.Drawing.Size(229, 26);
+            this.txt_tenLoai.Size = new System.Drawing.Size(433, 26);
             this.txt_tenLoai.TabIndex = 0;
             // 
             // button2
@@ -219,9 +239,9 @@
             this.button2.BackColor = System.Drawing.Color.Firebrick;
             this.button2.Image = global::QuanLyKhachSan.Properties.Resources.times_hexagon__1_;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(209, 213);
+            this.button2.Location = new System.Drawing.Point(337, 210);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 35);
+            this.button2.Size = new System.Drawing.Size(114, 42);
             this.button2.TabIndex = 4;
             this.button2.Text = "Hủy";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -235,9 +255,9 @@
             this.btn_capnhat.BackColor = System.Drawing.Color.Linen;
             this.btn_capnhat.Image = global::QuanLyKhachSan.Properties.Resources.settings;
             this.btn_capnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_capnhat.Location = new System.Drawing.Point(71, 213);
+            this.btn_capnhat.Location = new System.Drawing.Point(151, 210);
             this.btn_capnhat.Name = "btn_capnhat";
-            this.btn_capnhat.Size = new System.Drawing.Size(122, 35);
+            this.btn_capnhat.Size = new System.Drawing.Size(150, 42);
             this.btn_capnhat.TabIndex = 3;
             this.btn_capnhat.Text = "Cập nhật";
             this.btn_capnhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -246,15 +266,18 @@
             // 
             // frm_CapNhat_LoaiPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 258);
+            this.ClientSize = new System.Drawing.Size(611, 266);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_capnhat);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frm_CapNhat_LoaiPhong";
-            this.Text = "frm_CapNhat_LoaiPhong";
+            this.Text = "CẬP NHẬT LOẠI PHÒNG";
+            this.Load += new System.EventHandler(this.frm_CapNhat_LoaiPhong_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numer_sogiuong)).EndInit();
@@ -279,7 +302,7 @@
         private System.Windows.Forms.TextBox txt_dongiaGio;
         private System.Windows.Forms.Button btn_capnhat;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_idloai;
         private System.Windows.Forms.Label label7;
     }
 }

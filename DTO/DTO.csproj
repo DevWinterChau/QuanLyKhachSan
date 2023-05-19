@@ -55,6 +55,7 @@
     <Compile Include="DatPhong_DichVu_DTO.cs" />
     <Compile Include="DatPhong_DTO.cs" />
     <Compile Include="DichVu_DTO.cs" />
+    <Compile Include="DoanhThuDTO.cs" />
     <Compile Include="DVT_SP_DTO.cs" />
     <Compile Include="HoaDon_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />

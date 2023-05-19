@@ -47,7 +47,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panel1.BackColor = System.Drawing.Color.GhostWhite;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btn_huy);
             this.panel1.Controls.Add(this.btn_capnhat);
@@ -216,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(328, 210);
             this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.label5);
@@ -224,6 +224,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_capnhatsoluongdichvu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CẬP NHẬT SỐ LƯỢNG DỊCH VỤ";
             this.Load += new System.EventHandler(this.frm_capnhatsoluongdichvu_Load);
             this.panel1.ResumeLayout(false);

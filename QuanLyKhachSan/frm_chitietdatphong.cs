@@ -37,6 +37,24 @@ namespace QuanLyKhachSan
             frm_themdichvu_datphong themdichvu_Datphong = new frm_themdichvu_datphong(this, dgv_danhsachdichvu, iddatphong);
             themdichvu_Datphong.Show();
         }
+        private void itemCapNhatThoiGianTra_Click(object sender, EventArgs e)
+        {
+            List<ChiTiet_DatPhong_DTO> listctdp = new List<ChiTiet_DatPhong_DTO>();
+            foreach (DataGridViewRow row in dgv_danhsachphongdat.Rows)
+            {
+                ChiTiet_DatPhong_DTO ctdp = new ChiTiet_DatPhong_DTO();
+                ctdp.IDDatPhong = iddatphong;
+                ctdp.IDPhong = int.Parse(row.Cells[0].Value.ToString());
+                ctdp.TenPhong = row.Cells[1].Value.ToString();
+                ctdp.Ngaydat = DateTime.Parse(row.Cells[2].Value.ToString());
+                ctdp.Ngaytra = DateTime.Parse(row.Cells[3].Value.ToString());
+                ctdp.TenLoaiP = row.Cells[4].Value.ToString();
+                ctdp.Thanhtien = double.Parse(row.Cells[5].Value.ToString());
+                listctdp.Add(ctdp);
+            }
+            frm_capnhatthoigiantraphong cntgtp = new frm_capnhatthoigiantraphong(listctdp, this, frmphong);
+            cntgtp.ShowDialog();
+        }
 
         private void itemXoaDV_Click(object sender, EventArgs e)
         {
@@ -145,7 +163,7 @@ namespace QuanLyKhachSan
             }
             return tongtien;
         }
-        private void LoadDanhSachPhongDat()
+        public void LoadDanhSachPhongDat()
         {
             List<ChiTiet_DatPhong_DTO> listctdp = Chitiet_DatPhong_BUS.LayCT_DATPHONG_THEOID(iddatphong);
             dgv_danhsachphongdat.DataSource = listctdp;
@@ -206,6 +224,18 @@ namespace QuanLyKhachSan
                     p.IDPhong = int.Parse(row.Cells[0].Value.ToString());
                     Phong_BUS.UpdateTrangThaiPhong_trangthai(p, 3);
                 }
+            }
+        }
+
+        private void dgv_danhsachphongdat_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {             
+                ContextMenu cm = new ContextMenu();
+                cm.MenuItems.Add("Cập nhật thời gian trả phòng", new EventHandler(itemCapNhatThoiGianTra_Click));
+                //int currentMouseOverRow = dgv_danhsachdichvu.HitTest(e.X, e.Y).RowIndex;
+                cm.Show(dgv_danhsachdichvu, new Point(e.X, e.Y));
+
             }
         }
     }

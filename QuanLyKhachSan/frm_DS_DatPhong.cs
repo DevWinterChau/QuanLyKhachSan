@@ -93,5 +93,17 @@ namespace QuanLyKhachSan
         {
 
         }
+
+        private void btn_DatPhong_Click(object sender, EventArgs e)
+        {
+            frm_DatPhong DP = new frm_DatPhong();
+            DP.Show();
+        }
+
+        private void dgv_DSdatphong_DoubleClick(object sender, EventArgs e)
+        {
+            frm_chitietdatphong CTDP = new frm_chitietdatphong();
+            CTDP.Show();    
+        }
     }
 }

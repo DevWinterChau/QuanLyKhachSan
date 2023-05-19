@@ -79,7 +79,7 @@ namespace DAO
         }
         public static bool add(Phong_DTO p)
         {
-            string sTruyVan = string.Format(@"insert into PHONG values(N'{0}',N'{1}','{2}','{3}')",
+            string sTruyVan = string.Format(@"insert into PHONG values(N'{0}',{1},{2},{3})",
                p.TenPhong, p.IDTrangThai, p.IDTang, p.IDLoaiPhong);
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
@@ -299,6 +299,62 @@ namespace DAO
             }
             return ltsphong;
         }
+        public static List<Phong_DTO> LayDSPHongAll_TheoDieuKien(int id_loaiphong, int id_trangthai)
+        {
+            string sTruyVan = "select * from phong p, loaiphong lp, tang t, TRANGTHAI_PHONG ttp where p.id_lp = lp.ID_LP and p.id_tang = t.id_tang  and p.ID_TT = ttp.ID_TT and p.ID_LP = " + id_loaiphong+" and p.ID_TT ="+id_trangthai+"";
+            con = KetNoi.MoKetNoi();
+            DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
+            if (dt.Rows.Count == 0)
+            {
+                return null;
+            }
+            List<Phong_DTO> ltsphong = new List<Phong_DTO>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Phong_DTO p = new Phong_DTO();
+                p.IDPhong = int.Parse(dt.Rows[i]["ID_PHONG"].ToString());
+                p.TenPhong = dt.Rows[i]["TENPHONG"].ToString();
+                p.IDTrangThai = int.Parse(dt.Rows[i]["ID_TT"].ToString());
+                p.IDTang = int.Parse(dt.Rows[i]["ID_TANG"].ToString());
+                p.IDLoaiPhong = int.Parse(dt.Rows[i]["ID_LP"].ToString());
+                p.DongiaPhong1 = Double.Parse(dt.Rows[i]["DONGIA_LP"].ToString());
+                p.DongiaGio1 = double.Parse(dt.Rows[i]["DONGIA_TIME_LP"].ToString());
+                p.TenLoaiPhong = dt.Rows[i]["TEN_LP"].ToString();
+                p.SoTang = dt.Rows[i]["TEN_TANG"].ToString();
+                p.TenTrangThai = dt.Rows[i]["TEN_TT"].ToString();
+                ltsphong.Add(p);
+            }
+            return ltsphong;
+        }
+        public static List<Phong_DTO> LayDSPHongAll_TheoTen (string tenphong)
+        {
+            string sTruyVan = "select * from phong p, loaiphong lp, tang t, TRANGTHAI_PHONG ttp where p.id_lp = lp.id_lp and p.id_tang = t.id_tang and ttp.ID_TT = p.ID_TT and p.TENPHONG like N'%"+tenphong+"%'";
+            con = KetNoi.MoKetNoi();
+            DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
+            if (dt.Rows.Count == 0)
+            {
+                return null;
+            }
+            List<Phong_DTO> ltsphong = new List<Phong_DTO>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Phong_DTO p = new Phong_DTO();
+                p.IDPhong = int.Parse(dt.Rows[i]["ID_PHONG"].ToString());
+                p.TenPhong = dt.Rows[i]["TENPHONG"].ToString();
+                p.IDTrangThai = int.Parse(dt.Rows[i]["ID_TT"].ToString());
+                p.IDTang = int.Parse(dt.Rows[i]["ID_TANG"].ToString());
+                p.IDLoaiPhong = int.Parse(dt.Rows[i]["ID_LP"].ToString());
+                p.DongiaPhong1 = Double.Parse(dt.Rows[i]["DONGIA_LP"].ToString());
+                p.DongiaGio1 = double.Parse(dt.Rows[i]["DONGIA_TIME_LP"].ToString());
+                p.TenLoaiPhong = dt.Rows[i]["TEN_LP"].ToString();
+                p.SoTang = dt.Rows[i]["TEN_TANG"].ToString();
+                p.TenTrangThai = dt.Rows[i]["TEN_TT"].ToString();
+                ltsphong.Add(p);
+            }
+            return ltsphong;
+        }
+
+
         public static List<Phong_DTO> LayDSPHongAll_ChuyenPhong()
         {
             string sTruyVan = "select * from phong p, loaiphong lp, tang t , TRANGTHAI_PHONG TTP where p.id_lp = lp.id_lp and p.id_tang = t.id_tang and p.id_tt = TTP.ID_TT and p.id_tt=1";

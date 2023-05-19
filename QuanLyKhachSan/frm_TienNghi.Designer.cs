@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCTTN = new System.Windows.Forms.Button();
             this.btn_Loadlai = new System.Windows.Forms.Button();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btn_TimTn = new System.Windows.Forms.Button();
             this.txt_TimTN = new System.Windows.Forms.TextBox();
             this.cbb_chon = new System.Windows.Forms.ComboBox();
@@ -53,9 +53,9 @@
             this.iDTNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenTNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dongiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chitiet = new System.Windows.Forms.DataGridViewImageColumn();
             this.tienNghiDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -63,6 +63,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TienNghi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tienNghiDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,14 +73,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1032, 144);
+            this.panel1.Size = new System.Drawing.Size(1032, 155);
             this.panel1.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCTTN);
             this.groupBox2.Controls.Add(this.btn_Loadlai);
             this.groupBox2.Controls.Add(this.linkLabel2);
-            this.groupBox2.Controls.Add(this.linkLabel1);
             this.groupBox2.Controls.Add(this.btn_TimTn);
             this.groupBox2.Controls.Add(this.txt_TimTN);
             this.groupBox2.Controls.Add(this.cbb_chon);
@@ -89,10 +90,23 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(427, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(605, 144);
+            this.groupBox2.Size = new System.Drawing.Size(605, 155);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
+            // 
+            // btnCTTN
+            // 
+            this.btnCTTN.Image = global::QuanLyKhachSan.Properties.Resources.file_circle_info;
+            this.btnCTTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCTTN.Location = new System.Drawing.Point(347, 20);
+            this.btnCTTN.Name = "btnCTTN";
+            this.btnCTTN.Size = new System.Drawing.Size(203, 35);
+            this.btnCTTN.TabIndex = 6;
+            this.btnCTTN.Text = "Chi Tiết Tiện Nghi";
+            this.btnCTTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCTTN.UseVisualStyleBackColor = true;
+            this.btnCTTN.Click += new System.EventHandler(this.btnCTTN_Click);
             // 
             // btn_Loadlai
             // 
@@ -100,9 +114,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Loadlai.BackgroundImage = global::QuanLyKhachSan.Properties.Resources.Screenshot_2023_04_12_035535;
             this.btn_Loadlai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Loadlai.Location = new System.Drawing.Point(550, 95);
+            this.btn_Loadlai.Location = new System.Drawing.Point(550, 99);
             this.btn_Loadlai.Name = "btn_Loadlai";
-            this.btn_Loadlai.Size = new System.Drawing.Size(56, 49);
+            this.btn_Loadlai.Size = new System.Drawing.Size(56, 56);
             this.btn_Loadlai.TabIndex = 8;
             this.btn_Loadlai.UseVisualStyleBackColor = true;
             this.btn_Loadlai.Click += new System.EventHandler(this.btn_Loadlai_Click);
@@ -113,37 +127,24 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(8, 118);
+            this.linkLabel2.Location = new System.Drawing.Point(6, 119);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(374, 20);
+            this.linkLabel2.Size = new System.Drawing.Size(342, 17);
             this.linkLabel2.TabIndex = 7;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Nhấn click vào tiện nghi nếu muốn chỉnh sửa !";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(8, 95);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(462, 20);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Nhấn double click vào tiện nghi để xem chi tiết tiện nghi !";
-            // 
             // btn_TimTn
             // 
             this.btn_TimTn.BackgroundImage = global::QuanLyKhachSan.Properties.Resources.Screenshot_2023_04_12_040044;
             this.btn_TimTn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_TimTn.Location = new System.Drawing.Point(464, 60);
+            this.btn_TimTn.Location = new System.Drawing.Point(465, 55);
             this.btn_TimTn.Name = "btn_TimTn";
-            this.btn_TimTn.Size = new System.Drawing.Size(51, 34);
-            this.btn_TimTn.TabIndex = 5;
+            this.btn_TimTn.Size = new System.Drawing.Size(51, 40);
+            this.btn_TimTn.TabIndex = 8;
             this.btn_TimTn.UseVisualStyleBackColor = true;
             this.btn_TimTn.Click += new System.EventHandler(this.btn_TimTn_Click);
             // 
@@ -152,11 +153,11 @@
             this.txt_TimTN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_TimTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TimTN.Location = new System.Drawing.Point(210, 65);
+            this.txt_TimTN.Location = new System.Drawing.Point(210, 59);
             this.txt_TimTN.Multiline = true;
             this.txt_TimTN.Name = "txt_TimTN";
-            this.txt_TimTN.Size = new System.Drawing.Size(253, 31);
-            this.txt_TimTN.TabIndex = 4;
+            this.txt_TimTN.Size = new System.Drawing.Size(253, 29);
+            this.txt_TimTN.TabIndex = 7;
             this.txt_TimTN.Text = "Nhập để tìm";
             this.txt_TimTN.Click += new System.EventHandler(this.txt_TimTN_Click);
             this.txt_TimTN.Leave += new System.EventHandler(this.txt_TimTN_Leave);
@@ -171,7 +172,7 @@
             "Tìm theo ID",
             "Tìm theo Tên ",
             "Tìm theo trạng thái"});
-            this.cbb_chon.Location = new System.Drawing.Point(8, 65);
+            this.cbb_chon.Location = new System.Drawing.Point(8, 60);
             this.cbb_chon.Name = "cbb_chon";
             this.cbb_chon.Size = new System.Drawing.Size(200, 25);
             this.cbb_chon.TabIndex = 3;
@@ -184,10 +185,10 @@
             this.btn_Thoat.BackColor = System.Drawing.Color.IndianRed;
             this.btn_Thoat.Image = global::QuanLyKhachSan.Properties.Resources.exit__1_;
             this.btn_Thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Thoat.Location = new System.Drawing.Point(253, 24);
+            this.btn_Thoat.Location = new System.Drawing.Point(253, 20);
             this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(87, 39);
-            this.btn_Thoat.TabIndex = 2;
+            this.btn_Thoat.Size = new System.Drawing.Size(87, 35);
+            this.btn_Thoat.TabIndex = 5;
             this.btn_Thoat.Text = "Exit";
             this.btn_Thoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Thoat.UseVisualStyleBackColor = false;
@@ -199,10 +200,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Capnhat.Image = global::QuanLyKhachSan.Properties.Resources.settings;
             this.btn_Capnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Capnhat.Location = new System.Drawing.Point(121, 26);
+            this.btn_Capnhat.Location = new System.Drawing.Point(121, 22);
             this.btn_Capnhat.Name = "btn_Capnhat";
-            this.btn_Capnhat.Size = new System.Drawing.Size(129, 39);
-            this.btn_Capnhat.TabIndex = 1;
+            this.btn_Capnhat.Size = new System.Drawing.Size(129, 33);
+            this.btn_Capnhat.TabIndex = 4;
             this.btn_Capnhat.Text = "Cập nhật";
             this.btn_Capnhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Capnhat.UseVisualStyleBackColor = true;
@@ -214,10 +215,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_themTN.Image = global::QuanLyKhachSan.Properties.Resources.plus__1_;
             this.btn_themTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_themTN.Location = new System.Drawing.Point(8, 26);
+            this.btn_themTN.Location = new System.Drawing.Point(8, 22);
             this.btn_themTN.Name = "btn_themTN";
-            this.btn_themTN.Size = new System.Drawing.Size(111, 39);
-            this.btn_themTN.TabIndex = 0;
+            this.btn_themTN.Size = new System.Drawing.Size(111, 33);
+            this.btn_themTN.TabIndex = 3;
             this.btn_themTN.Text = "Thêm";
             this.btn_themTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_themTN.UseVisualStyleBackColor = true;
@@ -233,7 +234,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 144);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 155);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -260,7 +261,8 @@
             this.txt_Dongia.Location = new System.Drawing.Point(101, 92);
             this.txt_Dongia.Name = "txt_Dongia";
             this.txt_Dongia.Size = new System.Drawing.Size(287, 26);
-            this.txt_Dongia.TabIndex = 3;
+            this.txt_Dongia.TabIndex = 2;
+            this.txt_Dongia.TextChanged += new System.EventHandler(this.txt_Dongia_TextChanged);
             // 
             // txt_TenTN
             // 
@@ -270,17 +272,19 @@
             this.txt_TenTN.Location = new System.Drawing.Point(101, 60);
             this.txt_TenTN.Name = "txt_TenTN";
             this.txt_TenTN.Size = new System.Drawing.Size(287, 26);
-            this.txt_TenTN.TabIndex = 3;
+            this.txt_TenTN.TabIndex = 1;
+            this.txt_TenTN.TextChanged += new System.EventHandler(this.txt_TenTN_TextChanged);
             // 
             // txt_IDTN
             // 
             this.txt_IDTN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_IDTN.Enabled = false;
             this.txt_IDTN.Location = new System.Drawing.Point(101, 27);
             this.txt_IDTN.Name = "txt_IDTN";
             this.txt_IDTN.Size = new System.Drawing.Size(287, 26);
-            this.txt_IDTN.TabIndex = 3;
+            this.txt_IDTN.TabIndex = 0;
             // 
             // label4
             // 
@@ -323,9 +327,9 @@
             // 
             this.panel2.Controls.Add(this.dgv_TienNghi);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 144);
+            this.panel2.Location = new System.Drawing.Point(0, 155);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1032, 465);
+            this.panel2.Size = new System.Drawing.Size(1032, 454);
             this.panel2.TabIndex = 1;
             // 
             // dgv_TienNghi
@@ -337,8 +341,7 @@
             this.dgv_TienNghi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDTNDataGridViewTextBoxColumn,
             this.tenTNDataGridViewTextBoxColumn,
-            this.dongiaDataGridViewTextBoxColumn,
-            this.chitiet});
+            this.dongiaDataGridViewTextBoxColumn});
             this.dgv_TienNghi.DataSource = this.tienNghiDTOBindingSource;
             this.dgv_TienNghi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_TienNghi.GridColor = System.Drawing.SystemColors.InfoText;
@@ -347,10 +350,11 @@
             this.dgv_TienNghi.RowHeadersWidth = 62;
             this.dgv_TienNghi.RowTemplate.Height = 28;
             this.dgv_TienNghi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_TienNghi.Size = new System.Drawing.Size(1032, 465);
+            this.dgv_TienNghi.Size = new System.Drawing.Size(1032, 454);
             this.dgv_TienNghi.TabIndex = 0;
             this.dgv_TienNghi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TienNghi_CellContentClick);
             this.dgv_TienNghi.Click += new System.EventHandler(this.dgv_TienNghi_Click);
+            this.dgv_TienNghi.DoubleClick += new System.EventHandler(this.dgv_TienNghi_DoubleClick);
             // 
             // iDTNDataGridViewTextBoxColumn
             // 
@@ -373,14 +377,6 @@
             this.dongiaDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dongiaDataGridViewTextBoxColumn.Name = "dongiaDataGridViewTextBoxColumn";
             // 
-            // chitiet
-            // 
-            this.chitiet.HeaderText = "Chi Tiết";
-            this.chitiet.Image = global::QuanLyKhachSan.Properties.Resources.file_circle_info;
-            this.chitiet.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.chitiet.MinimumWidth = 8;
-            this.chitiet.Name = "chitiet";
-            // 
             // tienNghiDTOBindingSource
             // 
             this.tienNghiDTOBindingSource.DataSource = typeof(DTO.TienNghi_DTO);
@@ -393,6 +389,10 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 968;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frm_TienNghi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -402,8 +402,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frm_TienNghi";
-            this.Text = "frm_TienNghi";
+            this.Text = "Tiện Nghi";
             this.Load += new System.EventHandler(this.frm_TienNghi_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -414,6 +415,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TienNghi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tienNghiDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -439,13 +441,13 @@
         private System.Windows.Forms.TextBox txt_IDTN;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btn_Loadlai;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.BindingSource tienNghiDTOBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDTNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenTNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn chitiet;
+        private System.Windows.Forms.Button btnCTTN;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

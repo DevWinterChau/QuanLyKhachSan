@@ -25,20 +25,7 @@ namespace QuanLyKhachSan
 
         private void btn_capnhatphong_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn có muốn cập nhật lại thông tin phòng không ?","XÁC NHẬN CẬP NHẬT",MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
-            {
-                Phong_DTO phongcapnhat = new Phong_DTO();
-                phongcapnhat.IDPhong = phongdto.IDPhong;
-                phongcapnhat.TenPhong = txt_tenphong.Text.Trim().ToUpper();
-                phongcapnhat.IDTang = int.Parse( cbb_tang.SelectedValue.ToString());
-                phongcapnhat.IDTrangThai = int.Parse(cbb_trangthai.SelectedValue.ToString());
-                phongcapnhat.IDLoaiPhong = int.Parse(cbb_loaiphong.SelectedValue.ToString());
-                if (Phong_BUS.Update(phongcapnhat))
-                {
-                    MessageBox.Show("Đã cập nhật thông tin phòng.", "THÔNG BÁO");
-                    frmphong.LoadPhongAuTo();
-                }
-            }    
+           
         }
 
         private void btn_dong_Click(object sender, EventArgs e)

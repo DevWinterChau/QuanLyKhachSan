@@ -38,8 +38,8 @@ namespace DAO
         }
         public static bool add(Loai_Phong_DTO lp)
         {
-            string sTruyVan = string.Format(@"insert into LOAIPHONG values(N'{0}',N'{1}',{2},{3},{4},{5})",
-              lp.IDLoaiP, lp.TenLoaiP, lp.DongiaLP_ngay, lp.Dongia_Time_LP, lp.SoGiuong, lp.SoNguoi );
+            string sTruyVan = string.Format(@"insert into LOAIPHONG values(N'{0}',{1},{2},{3},{4})",
+             lp.TenLoaiP, lp.DongiaLP_ngay, lp.SoNguoi, lp.SoGiuong, lp.Dongia_Time_LP);
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             KetNoi.Dongketnoi();
@@ -48,9 +48,9 @@ namespace DAO
         }
         public static bool update(Loai_Phong_DTO p)
         {
-            string sTruyVan = "update LOAIPHONG set TEN_LP =N'" + p.TenLoaiP +
-                    "',DONGIA_LP = '" + p.DongiaLP_ngay + "', DONGIA_TIME_LP = '" + p.Dongia_Time_LP + "', SOGIUONG= '" + p.SoGiuong + "', SONGUOI= '" + p.SoNguoi +
-                    "' where ID_LP = '" + p.IDLoaiP + "'";
+            string sTruyVan = "update LOAIPHONG set TEN_LP = N'" + p.TenLoaiP +
+                    "',DONGIA_LP = " + p.DongiaLP_ngay + ", DONGIA_TIME_LP = " + p.Dongia_Time_LP + ", SOGIUONG= " + p.SoGiuong + ", SONGUOI= " + p.SoNguoi +
+                    " where ID_LP = '" + p.IDLoaiP + "'";
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             return kq;

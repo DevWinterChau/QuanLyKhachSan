@@ -69,7 +69,7 @@ namespace QuanLyKhachSan
                         }
                         else
                         {
-                            MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            lb_tb.Visible = true;
                         }
                     }
 
@@ -92,7 +92,7 @@ namespace QuanLyKhachSan
                         }
                         else
                         {
-                            MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            lb_tb.Visible = true;
                         }
                     }
 
@@ -107,6 +107,29 @@ namespace QuanLyKhachSan
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void checkBox_Hienpass_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox_Hienpass.Checked)
+            {
+                if (txt_pass.PasswordChar == '*')
+                {
+                    txt_pass.PasswordChar = '\0';
+                }
+            }    
+            else
+            {
+                if (txt_pass.PasswordChar == '\0')
+                {
+                    txt_pass.PasswordChar = '*';
+                }
+            }    
         }
     }
 }

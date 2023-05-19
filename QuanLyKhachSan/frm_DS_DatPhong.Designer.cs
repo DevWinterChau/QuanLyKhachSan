@@ -55,9 +55,11 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Khaki;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.GhostWhite;
             this.panel1.Controls.Add(this.dgv_DSdatphong);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(975, 508);
@@ -65,6 +67,9 @@
             // 
             // dgv_DSdatphong
             // 
+            this.dgv_DSdatphong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_DSdatphong.AutoGenerateColumns = false;
             this.dgv_DSdatphong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_DSdatphong.BackgroundColor = System.Drawing.Color.White;
@@ -80,6 +85,7 @@
             this.dgv_DSdatphong.RowTemplate.Height = 28;
             this.dgv_DSdatphong.Size = new System.Drawing.Size(951, 481);
             this.dgv_DSdatphong.TabIndex = 0;
+            this.dgv_DSdatphong.DoubleClick += new System.EventHandler(this.dgv_DSdatphong_DoubleClick);
             // 
             // iDDatPhongDataGridViewTextBoxColumn
             // 
@@ -108,8 +114,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 45);
             this.label1.Name = "label1";
@@ -136,7 +140,7 @@
             this.dateTime_ngaylap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTime_ngaylap.Location = new System.Drawing.Point(12, 11);
             this.dateTime_ngaylap.Name = "dateTime_ngaylap";
-            this.dateTime_ngaylap.Size = new System.Drawing.Size(138, 26);
+            this.dateTime_ngaylap.Size = new System.Drawing.Size(163, 26);
             this.dateTime_ngaylap.TabIndex = 2;
             this.dateTime_ngaylap.ValueChanged += new System.EventHandler(this.dateTime_ngaylap_ValueChanged);
             // 
@@ -147,7 +151,7 @@
             this.cbb_Chon.Items.AddRange(new object[] {
             "Tìm Theo ID Đặt Phòng",
             "Tìm Theo Tên Khách hàng"});
-            this.cbb_Chon.Location = new System.Drawing.Point(291, 15);
+            this.cbb_Chon.Location = new System.Drawing.Point(284, 12);
             this.cbb_Chon.Name = "cbb_Chon";
             this.cbb_Chon.Size = new System.Drawing.Size(187, 28);
             this.cbb_Chon.TabIndex = 5;
@@ -156,9 +160,10 @@
             // 
             this.txt_Tìm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Tìm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Tìm.Location = new System.Drawing.Point(480, 16);
+            this.txt_Tìm.Location = new System.Drawing.Point(477, 8);
+            this.txt_Tìm.Multiline = true;
             this.txt_Tìm.Name = "txt_Tìm";
-            this.txt_Tìm.Size = new System.Drawing.Size(232, 23);
+            this.txt_Tìm.Size = new System.Drawing.Size(235, 34);
             this.txt_Tìm.TabIndex = 6;
             this.txt_Tìm.Text = "Nhập điều kiện để tìm kiếm";
             this.txt_Tìm.Click += new System.EventHandler(this.txt_Tìm_Click);
@@ -170,7 +175,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(237, 19);
+            this.label2.Location = new System.Drawing.Point(221, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 8;
@@ -183,7 +188,7 @@
             this.btn_Tim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Tim.Location = new System.Drawing.Point(713, 4);
             this.btn_Tim.Name = "btn_Tim";
-            this.btn_Tim.Size = new System.Drawing.Size(50, 43);
+            this.btn_Tim.Size = new System.Drawing.Size(50, 39);
             this.btn_Tim.TabIndex = 7;
             this.btn_Tim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Tim.UseVisualStyleBackColor = true;
@@ -220,12 +225,13 @@
             this.btn_DatPhong.Text = "ĐẶT PHÒNG";
             this.btn_DatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_DatPhong.UseVisualStyleBackColor = false;
+            this.btn_DatPhong.Click += new System.EventHandler(this.btn_DatPhong_Click);
             // 
             // frm_DS_DatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Ivory;
+            this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(975, 561);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Tim);
@@ -238,7 +244,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frm_DS_DatPhong";
-            this.Text = "frm_DS_DatPhong";
+            this.Text = "DANH SÁCH ĐẶT PHÒNG";
             this.Load += new System.EventHandler(this.frm_DS_DatPhong_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSdatphong)).EndInit();

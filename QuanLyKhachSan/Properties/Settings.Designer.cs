@@ -32,5 +32,17 @@ namespace QuanLyKhachSan.Properties {
                 return ((string)(this["QLKSConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string strConnect {
+            get {
+                return ((string)(this["strConnect"]));
+            }
+            set {
+                this["strConnect"] = value;
+            }
+        }
     }
 }

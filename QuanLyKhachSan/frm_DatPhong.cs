@@ -322,12 +322,10 @@ namespace QuanLyKhachSan
                 {
                     if (check_Phong((string)row.Cells[0].Value))
                     {
-                        if (SoSanhNgay(date_NgayStart.Text, date_NgayEnd.Text,Time_start.Text, Time_End.Text))
+                        if (CheckNgayLonHon(DateTime.Parse(date_NgayStart.Text + " " + Time_start.Text), DateTime.Parse(date_NgayEnd.Text + " " + Time_End.Text)))
                         {
-                                dgv_phongChon.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value, date_NgayStart.Text + " " + Time_start.Text, date_NgayEnd.Text + " " + Time_End.Text);
+                            dgv_phongChon.Rows.Add(row.Cells[0].Value, row.Cells[1].Value, row.Cells[2].Value, date_NgayStart.Text + " " + Time_start.Text, date_NgayEnd.Text + " " + Time_End.Text);
                         }
-                        else
-                        MessageBox.Show("Thời gian nhận và trả phòng chưa đúng! Bạn hãy xem lại.", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -411,6 +409,12 @@ namespace QuanLyKhachSan
             int days = GetDaysBetween(DateTime.Now, t1);
             TimeSpan ts = DateTime.Now - t1;
             float minites = (float)ts.TotalMinutes;
+            if (t1 == t2)
+            {
+                MessageBox.Show("Vui lòng chọn lại thời gian đặt phòng. Ngày đặt và ngày trả không được bằng nhau!", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                Time_start.Focus();
+                return false;
+            }
             if (t1 < DateTime.Now  && minites >3)
             {
                 MessageBox.Show("Ngày bắt đầu không được nhỏ hơn ngày hiện tại.", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -494,7 +498,6 @@ namespace QuanLyKhachSan
                                         ctdp.Ngaytra = DateTime.Parse(date_NgayEnd.Text + " " + Time_End.Text);
                                         int days = GetDaysBetween(ctdp.Ngaydat, ctdp.Ngaytra);// lấy số ngày đặt của khách
                                                                                               // MessageBox.Show(days.ToString());
-
                                         float hours = (float)(ctdp.Ngaytra - ctdp.Ngaydat).TotalHours % 24; // Lấy phần dư số giờ
                                                                                                         //  MessageBox.Show(hours.ToString());
                                         Loai_Phong_DTO loaiphong = LoaiPhong_BUS.TimLoai_PhongtheoTenLoai(row.Cells[1].Value.ToString());
@@ -508,8 +511,12 @@ namespace QuanLyKhachSan
                                     if (MessageBox.Show("Lưu thành công! Bạn có thể muốn tiếp tục đặt phòng!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                                     {
                                         LoadDSPhongTRONG();
-                                        frm_Phong.LoadPhongAuTo();// Cập nhật lại trạng thái phòng 
+                                        dgv_phongChon.Rows.Clear();
+                                        if (frm_Phong != null)
+                                            frm_Phong.LoadPhongAuTo();// Cập nhật lại trạng thái phòng 
                                     }
+                                    else
+                                        this.Close();
                             }
                             catch (Exception ex)
                             {
@@ -529,6 +536,11 @@ namespace QuanLyKhachSan
         {
             TimeSpan ts = n2 - n1;
             return (int)ts.TotalDays;
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void cbb_chon_SelectedIndexChanged(object sender, EventArgs e)

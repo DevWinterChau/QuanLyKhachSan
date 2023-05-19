@@ -214,6 +214,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frm_capnhatphong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CẬP NHẬT PHÒNG";
             this.Load += new System.EventHandler(this.frm_capnhatphong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trangThaiPhongDTOBindingSource)).EndInit();

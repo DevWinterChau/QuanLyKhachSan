@@ -33,6 +33,7 @@
             this.tab_Phong = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.check_chontimkiem = new System.Windows.Forms.CheckBox();
             this.btn_timphong = new System.Windows.Forms.Button();
             this.txt_timphong = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -48,7 +49,6 @@
             this.panel_loaiphong = new System.Windows.Forms.Panel();
             this.cbb_loaiphong = new System.Windows.Forms.ComboBox();
             this.loaiPhongDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.tab_loaiPhong = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_loaiPhong = new System.Windows.Forms.DataGridView();
@@ -66,6 +66,7 @@
             this.btn_timloai = new System.Windows.Forms.Button();
             this.btn_thoatLoai = new System.Windows.Forms.Button();
             this.btn_xoaloai = new System.Windows.Forms.Button();
+            this.btn_themloaiphong = new System.Windows.Forms.Button();
             this.btn_sualoai = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl_Phong.SuspendLayout();
@@ -114,10 +115,10 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(840, 570);
             this.flowLayoutPanel1.TabIndex = 1;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.check_chontimkiem);
             this.panel1.Controls.Add(this.btn_timphong);
             this.panel1.Controls.Add(this.txt_timphong);
             this.panel1.Controls.Add(this.linkLabel1);
@@ -126,7 +127,6 @@
             this.panel1.Controls.Add(this.btn_themphong);
             this.panel1.Controls.Add(this.panel_trangthai);
             this.panel1.Controls.Add(this.panel_loaiphong);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -134,33 +134,48 @@
             this.panel1.Size = new System.Drawing.Size(225, 570);
             this.panel1.TabIndex = 0;
             // 
+            // check_chontimkiem
+            // 
+            this.check_chontimkiem.AutoSize = true;
+            this.check_chontimkiem.Location = new System.Drawing.Point(12, 9);
+            this.check_chontimkiem.Name = "check_chontimkiem";
+            this.check_chontimkiem.Size = new System.Drawing.Size(173, 24);
+            this.check_chontimkiem.TabIndex = 22;
+            this.check_chontimkiem.Text = "Chọn để tìm kiếm";
+            this.check_chontimkiem.UseVisualStyleBackColor = true;
+            this.check_chontimkiem.CheckedChanged += new System.EventHandler(this.check_chontimkiem_CheckedChanged);
+            // 
             // btn_timphong
             // 
             this.btn_timphong.BackgroundImage = global::QuanLyKhachSan.Properties.Resources.Screenshot_2023_04_12_040044;
             this.btn_timphong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_timphong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_timphong.Location = new System.Drawing.Point(173, 269);
+            this.btn_timphong.Location = new System.Drawing.Point(173, 307);
             this.btn_timphong.Name = "btn_timphong";
             this.btn_timphong.Size = new System.Drawing.Size(45, 39);
             this.btn_timphong.TabIndex = 20;
             this.btn_timphong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_timphong.UseVisualStyleBackColor = true;
+            this.btn_timphong.Click += new System.EventHandler(this.btn_timphong_Click_1);
             // 
             // txt_timphong
             // 
             this.txt_timphong.Font = new System.Drawing.Font("Times New Roman", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_timphong.Location = new System.Drawing.Point(9, 272);
+            this.txt_timphong.Location = new System.Drawing.Point(9, 310);
             this.txt_timphong.Multiline = true;
             this.txt_timphong.Name = "txt_timphong";
             this.txt_timphong.Size = new System.Drawing.Size(161, 36);
             this.txt_timphong.TabIndex = 19;
             this.txt_timphong.Text = "Nhập phòng để tìm";
             this.txt_timphong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_timphong.Click += new System.EventHandler(this.txt_timphong_Click_1);
+            this.txt_timphong.TextChanged += new System.EventHandler(this.txt_timphong_TextChanged);
+            this.txt_timphong.Leave += new System.EventHandler(this.txt_timphong_Leave_1);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(19, 90);
+            this.linkLabel1.Location = new System.Drawing.Point(7, 112);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(99, 20);
             this.linkLabel1.TabIndex = 18;
@@ -170,7 +185,7 @@
             // linkLabel_loaiphong
             // 
             this.linkLabel_loaiphong.AutoSize = true;
-            this.linkLabel_loaiphong.Location = new System.Drawing.Point(15, 20);
+            this.linkLabel_loaiphong.Location = new System.Drawing.Point(15, 38);
             this.linkLabel_loaiphong.Name = "linkLabel_loaiphong";
             this.linkLabel_loaiphong.Size = new System.Drawing.Size(99, 20);
             this.linkLabel_loaiphong.TabIndex = 17;
@@ -179,26 +194,25 @@
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.BackColor = System.Drawing.Color.IndianRed;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::QuanLyKhachSan.Properties.Resources.exit;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(3, 531);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(49, 39);
+            this.button2.Size = new System.Drawing.Size(216, 39);
             this.button2.TabIndex = 13;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_themphong
             // 
-            this.btn_themphong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_themphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_themphong.Image = global::QuanLyKhachSan.Properties.Resources.plus__1_;
             this.btn_themphong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_themphong.Location = new System.Drawing.Point(11, 312);
+            this.btn_themphong.Location = new System.Drawing.Point(9, 355);
             this.btn_themphong.Name = "btn_themphong";
             this.btn_themphong.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_themphong.Size = new System.Drawing.Size(207, 39);
@@ -209,15 +223,14 @@
             // 
             // panel_trangthai
             // 
-            this.panel_trangthai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_trangthai.Controls.Add(this.rad_tt_dánguachua);
             this.panel_trangthai.Controls.Add(this.rad_tt_chuadon);
             this.panel_trangthai.Controls.Add(this.rad_tt_datphong);
             this.panel_trangthai.Controls.Add(this.rad_tt_thuephong);
             this.panel_trangthai.Controls.Add(this.rad_tt_trong);
+            this.panel_trangthai.Enabled = false;
             this.panel_trangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_trangthai.Location = new System.Drawing.Point(11, 105);
+            this.panel_trangthai.Location = new System.Drawing.Point(11, 137);
             this.panel_trangthai.Name = "panel_trangthai";
             this.panel_trangthai.Size = new System.Drawing.Size(186, 161);
             this.panel_trangthai.TabIndex = 8;
@@ -230,9 +243,9 @@
             this.rad_tt_dánguachua.Name = "rad_tt_dánguachua";
             this.rad_tt_dánguachua.Size = new System.Drawing.Size(133, 23);
             this.rad_tt_dánguachua.TabIndex = 10;
-            this.rad_tt_dánguachua.TabStop = true;
             this.rad_tt_dánguachua.Text = "Đang sửa chữa";
             this.rad_tt_dánguachua.UseVisualStyleBackColor = true;
+            this.rad_tt_dánguachua.CheckedChanged += new System.EventHandler(this.rad_tt_dánguachua_CheckedChanged);
             // 
             // rad_tt_chuadon
             // 
@@ -242,9 +255,9 @@
             this.rad_tt_chuadon.Name = "rad_tt_chuadon";
             this.rad_tt_chuadon.Size = new System.Drawing.Size(125, 23);
             this.rad_tt_chuadon.TabIndex = 6;
-            this.rad_tt_chuadon.TabStop = true;
             this.rad_tt_chuadon.Text = "Chưa dọn dẹp";
             this.rad_tt_chuadon.UseVisualStyleBackColor = true;
+            this.rad_tt_chuadon.CheckedChanged += new System.EventHandler(this.rad_tt_chuadon_CheckedChanged);
             // 
             // rad_tt_datphong
             // 
@@ -254,9 +267,9 @@
             this.rad_tt_datphong.Name = "rad_tt_datphong";
             this.rad_tt_datphong.Size = new System.Drawing.Size(125, 23);
             this.rad_tt_datphong.TabIndex = 7;
-            this.rad_tt_datphong.TabStop = true;
             this.rad_tt_datphong.Text = "Có khách đặt ";
             this.rad_tt_datphong.UseVisualStyleBackColor = true;
+            this.rad_tt_datphong.CheckedChanged += new System.EventHandler(this.rad_tt_datphong_CheckedChanged);
             // 
             // rad_tt_thuephong
             // 
@@ -266,13 +279,14 @@
             this.rad_tt_thuephong.Name = "rad_tt_thuephong";
             this.rad_tt_thuephong.Size = new System.Drawing.Size(128, 23);
             this.rad_tt_thuephong.TabIndex = 8;
-            this.rad_tt_thuephong.TabStop = true;
             this.rad_tt_thuephong.Text = "Có khách thuê";
             this.rad_tt_thuephong.UseVisualStyleBackColor = true;
+            this.rad_tt_thuephong.CheckedChanged += new System.EventHandler(this.rad_tt_thuephong_CheckedChanged);
             // 
             // rad_tt_trong
             // 
             this.rad_tt_trong.AutoSize = true;
+            this.rad_tt_trong.Checked = true;
             this.rad_tt_trong.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rad_tt_trong.Location = new System.Drawing.Point(11, 8);
             this.rad_tt_trong.Name = "rad_tt_trong";
@@ -281,16 +295,16 @@
             this.rad_tt_trong.TabStop = true;
             this.rad_tt_trong.Text = "Trống";
             this.rad_tt_trong.UseVisualStyleBackColor = true;
+            this.rad_tt_trong.CheckedChanged += new System.EventHandler(this.rad_tt_trong_CheckedChanged);
             // 
             // panel_loaiphong
             // 
-            this.panel_loaiphong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_loaiphong.Controls.Add(this.cbb_loaiphong);
+            this.panel_loaiphong.Enabled = false;
             this.panel_loaiphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_loaiphong.Location = new System.Drawing.Point(11, 34);
+            this.panel_loaiphong.Location = new System.Drawing.Point(11, 62);
             this.panel_loaiphong.Name = "panel_loaiphong";
-            this.panel_loaiphong.Size = new System.Drawing.Size(186, 55);
+            this.panel_loaiphong.Size = new System.Drawing.Size(186, 46);
             this.panel_loaiphong.TabIndex = 8;
             // 
             // cbb_loaiphong
@@ -300,25 +314,16 @@
             this.cbb_loaiphong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_loaiphong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbb_loaiphong.FormattingEnabled = true;
-            this.cbb_loaiphong.Location = new System.Drawing.Point(5, 19);
+            this.cbb_loaiphong.Location = new System.Drawing.Point(5, 8);
             this.cbb_loaiphong.Name = "cbb_loaiphong";
             this.cbb_loaiphong.Size = new System.Drawing.Size(175, 28);
             this.cbb_loaiphong.TabIndex = 0;
             this.cbb_loaiphong.ValueMember = "IDLoaiP";
+            this.cbb_loaiphong.SelectedValueChanged += new System.EventHandler(this.cbb_loaiphong_SelectedValueChanged);
             // 
             // loaiPhongDTOBindingSource1
             // 
             this.loaiPhongDTOBindingSource1.DataSource = typeof(DTO.Loai_Phong_DTO);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Chọn để tìm kiếm :";
             // 
             // tab_loaiPhong
             // 
@@ -335,10 +340,12 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.GhostWhite;
             this.panel3.Controls.Add(this.dgv_loaiPhong);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(3, 57);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1065, 516);
@@ -361,11 +368,11 @@
             this.dongiaTimeLPDataGridViewTextBoxColumn,
             this.dongiaLPngayDataGridViewTextBoxColumn});
             this.dgv_loaiPhong.DataSource = this.loaiPhongDTOBindingSource;
-            this.dgv_loaiPhong.Location = new System.Drawing.Point(3, 23);
+            this.dgv_loaiPhong.Location = new System.Drawing.Point(3, 32);
             this.dgv_loaiPhong.Name = "dgv_loaiPhong";
             this.dgv_loaiPhong.RowHeadersWidth = 62;
             this.dgv_loaiPhong.RowTemplate.Height = 28;
-            this.dgv_loaiPhong.Size = new System.Drawing.Size(1057, 493);
+            this.dgv_loaiPhong.Size = new System.Drawing.Size(1057, 484);
             this.dgv_loaiPhong.TabIndex = 1;
             // 
             // iDLoaiPDataGridViewTextBoxColumn
@@ -418,7 +425,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, -3);
+            this.label1.Location = new System.Drawing.Point(13, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 20);
             this.label1.TabIndex = 0;
@@ -428,12 +435,13 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panel2.BackColor = System.Drawing.Color.GhostWhite;
             this.panel2.Controls.Add(this.txt_timloai);
             this.panel2.Controls.Add(this.cbb_chon_timloai);
             this.panel2.Controls.Add(this.btn_timloai);
             this.panel2.Controls.Add(this.btn_thoatLoai);
             this.panel2.Controls.Add(this.btn_xoaloai);
+            this.panel2.Controls.Add(this.btn_themloaiphong);
             this.panel2.Controls.Add(this.btn_sualoai);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
@@ -456,7 +464,7 @@
             this.cbb_chon_timloai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_chon_timloai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_chon_timloai.FormattingEnabled = true;
-            this.cbb_chon_timloai.Location = new System.Drawing.Point(585, 13);
+            this.cbb_chon_timloai.Location = new System.Drawing.Point(580, 13);
             this.cbb_chon_timloai.Name = "cbb_chon_timloai";
             this.cbb_chon_timloai.Size = new System.Drawing.Size(155, 25);
             this.cbb_chon_timloai.TabIndex = 1;
@@ -481,7 +489,7 @@
             this.btn_thoatLoai.BackColor = System.Drawing.Color.IndianRed;
             this.btn_thoatLoai.Image = global::QuanLyKhachSan.Properties.Resources.exit;
             this.btn_thoatLoai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_thoatLoai.Location = new System.Drawing.Point(249, 8);
+            this.btn_thoatLoai.Location = new System.Drawing.Point(393, 8);
             this.btn_thoatLoai.Name = "btn_thoatLoai";
             this.btn_thoatLoai.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_thoatLoai.Size = new System.Drawing.Size(97, 32);
@@ -489,12 +497,13 @@
             this.btn_thoatLoai.Text = "Thoát";
             this.btn_thoatLoai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_thoatLoai.UseVisualStyleBackColor = false;
+            this.btn_thoatLoai.Click += new System.EventHandler(this.btn_thoatLoai_Click);
             // 
             // btn_xoaloai
             // 
             this.btn_xoaloai.Image = global::QuanLyKhachSan.Properties.Resources.trash;
             this.btn_xoaloai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xoaloai.Location = new System.Drawing.Point(144, 8);
+            this.btn_xoaloai.Location = new System.Drawing.Point(284, 8);
             this.btn_xoaloai.Name = "btn_xoaloai";
             this.btn_xoaloai.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_xoaloai.Size = new System.Drawing.Size(104, 32);
@@ -502,12 +511,27 @@
             this.btn_xoaloai.Text = "Xóa";
             this.btn_xoaloai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_xoaloai.UseVisualStyleBackColor = true;
+            this.btn_xoaloai.Click += new System.EventHandler(this.btn_xoaloai_Click);
+            // 
+            // btn_themloaiphong
+            // 
+            this.btn_themloaiphong.Image = global::QuanLyKhachSan.Properties.Resources.settings;
+            this.btn_themloaiphong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_themloaiphong.Location = new System.Drawing.Point(7, 8);
+            this.btn_themloaiphong.Name = "btn_themloaiphong";
+            this.btn_themloaiphong.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_themloaiphong.Size = new System.Drawing.Size(125, 32);
+            this.btn_themloaiphong.TabIndex = 0;
+            this.btn_themloaiphong.Text = "Thêm";
+            this.btn_themloaiphong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_themloaiphong.UseVisualStyleBackColor = true;
+            this.btn_themloaiphong.Click += new System.EventHandler(this.btn_themloaiphong_Click);
             // 
             // btn_sualoai
             // 
             this.btn_sualoai.Image = global::QuanLyKhachSan.Properties.Resources.settings;
             this.btn_sualoai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sualoai.Location = new System.Drawing.Point(5, 8);
+            this.btn_sualoai.Location = new System.Drawing.Point(140, 8);
             this.btn_sualoai.Name = "btn_sualoai";
             this.btn_sualoai.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_sualoai.Size = new System.Drawing.Size(139, 32);
@@ -526,7 +550,6 @@
             this.Name = "frm_Phong";
             this.Text = "QUẢN LÝ PHÒNG";
             this.Load += new System.EventHandler(this.frm_Phong_Load);
-            this.Click += new System.EventHandler(this.frm_Phong_Click);
             this.tabControl_Phong.ResumeLayout(false);
             this.tab_Phong.ResumeLayout(false);
             this.tab_Phong.PerformLayout();
@@ -572,7 +595,6 @@
         private System.Windows.Forms.Button btn_thoatLoai;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_trangthai;
         private System.Windows.Forms.RadioButton rad_tt_chuadon;
         private System.Windows.Forms.RadioButton rad_tt_datphong;
@@ -588,5 +610,7 @@
         private System.Windows.Forms.RadioButton rad_tt_dánguachua;
         private System.Windows.Forms.ComboBox cbb_loaiphong;
         private System.Windows.Forms.BindingSource loaiPhongDTOBindingSource1;
+        private System.Windows.Forms.Button btn_themloaiphong;
+        private System.Windows.Forms.CheckBox check_chontimkiem;
     }
 }

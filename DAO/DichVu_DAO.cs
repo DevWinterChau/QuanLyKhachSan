@@ -37,8 +37,8 @@ namespace DAO
         }
         public static bool add(DichVu_DTO dv)
         {
-            string sTruyVan = string.Format(@"insert into DICHVU values('{0}',N'{1}',N'{2}'),'{3}','{4}'",
-               dv.IDDV, dv.TenDV , dv.IDLoaiDV , dv.DongiaDV, dv.GhiCHu);
+            string sTruyVan = string.Format(@"insert into DICHVU values(N'{0}',{1},{2},N'{3}')",
+               dv.TenDV,dv.IDLoaiDV , dv.DongiaDV, dv.GhiCHu);
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             KetNoi.Dongketnoi();
@@ -47,8 +47,7 @@ namespace DAO
         }
         public static bool update(DichVu_DTO dv)
         {
-            string sTruyVan = "update DICHVU set TEN_DV = '" + dv.TenDV + "',ID_LDV = '" + dv.IDLoaiDV + "',DONGIA_DV = '" + dv.DongiaDV + "',GHICHU_DV = '" +dv.GhiCHu + "'" +
-                    "' where ID_DV = '" + dv.IDDV + "'";
+            string sTruyVan = "update DICHVU set TEN_DV =N'"+dv.TenDV+"', ID_LDV=2, DONGIA_DV="+dv.DongiaDV.ToString()+", GHICHU_DV=N'"+dv.GhiCHu+"' where ID_DV = "+dv.IDDV+"";
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             return kq;
@@ -62,7 +61,7 @@ namespace DAO
         }
         public static List<DichVu_DTO> TimCTDPTheoIDDV(string ma)
         {
-            string sTruyVan = string.Format(@"select dv.ID_DV , dv.TEN_DV , ldv.TEN_LDV , dv.DONGIA_DV, dv.GHICHU_DV from DICHVU dv, LOAI_DV ldv where dv.ID_LDV = ldv.ID_LDV and dv.ID_DV  like {0}", ma);
+            string sTruyVan = string.Format(@"select dv.ID_DV , dv.TEN_DV , ldv.TEN_LDV , dv.DONGIA_DV, dv.GHICHU_DV from DICHVU dv, LOAI_DV ldv where dv.ID_LDV = ldv.ID_LDV and dv.ID_DV = {0}", ma);
             con = KetNoi.MoKetNoi();
             DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
             if (dt.Rows.Count == 0)

@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -394,6 +395,127 @@ namespace QuanLyKhachSan
                 cbb_Quyen.Text = dr.Cells[2].Value.ToString();
                 txt_username.Text = dr.Cells[3].Value.ToString();
                 txt_pass.Text = dr.Cells[4].Value.ToString();
+            }
+        }
+
+        private void txt_email_TextChanged(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            string email = control.Text;
+
+            if (!email.Contains("@"))
+            {
+                errorProvider1.SetError(control, "This is not a valid Gmail address");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            if (!CheckdEmail(email))
+            {
+                errorProvider2.SetError(control, "Invalid characters in the email address");
+            }
+            else
+            {
+                errorProvider2.Clear();
+            }
+        }
+        static bool CheckdEmail(string email)
+        {
+            // Biểu thức chính quy kiểm tra địa chỉ email
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Kiểm tra định dạng email
+            Match match = Regex.Match(email, pattern);
+
+            // Kiểm tra các ký tự không hợp lệ trong địa chỉ email
+            if (match.Success)
+            {
+                string invalidChars = "!#$%^&*()+=[]\\';,/{}|\":<>?";
+                foreach (char c in invalidChars)
+                {
+                    if (email.Contains(c))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        private void txt_CCCD_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                if (!Char.IsDigit(control.Text[control.Text.Length - 1]))
+                {
+                    this.errorProvider1.SetError(control, "This is not a valid number");
+
+                }
+                else
+                    this.errorProvider1.Clear();
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                if (!Char.IsDigit(control.Text[control.Text.Length - 1]))
+                {
+                    this.errorProvider1.SetError(control, "This is not a valid number");
+
+                }
+                else
+                    this.errorProvider1.Clear();
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void txt_HotenNV_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                if (Char.IsDigit(control.Text[control.Text.Length - 1]))
+                {
+                    this.errorProvider1.SetError(control, "This is not a valid char");
+
+                }
+                else
+                    this.errorProvider1.Clear();
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void txt_Dchi_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                if (Char.IsDigit(control.Text[control.Text.Length - 1]))
+                {
+                    this.errorProvider1.SetError(control, "This is not a valid char");
+
+                }
+                else
+                    this.errorProvider1.Clear();
+
+            }
+            catch (Exception ex)
+            {
             }
         }
     }
