@@ -56,11 +56,13 @@
             this.txttenkh = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_capnhatphieudatphong = new System.Windows.Forms.Button();
             this.txt_tongtien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_dong = new System.Windows.Forms.Button();
             this.btn_thanhtoan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.datPhongDichVuDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_danhsachdichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datPhongDichVuDTOBindingSource1)).BeginInit();
@@ -97,8 +99,9 @@
             this.dgv_danhsachdichvu.RowHeadersWidth = 62;
             this.dgv_danhsachdichvu.RowTemplate.Height = 28;
             this.dgv_danhsachdichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_danhsachdichvu.Size = new System.Drawing.Size(600, 456);
+            this.dgv_danhsachdichvu.Size = new System.Drawing.Size(600, 477);
             this.dgv_danhsachdichvu.TabIndex = 0;
+            this.dgv_danhsachdichvu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_danhsachdichvu_CellContentClick);
             this.dgv_danhsachdichvu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgv_danhsachdichvu_MouseClick);
             // 
             // iDPHONG1DataGridViewTextBoxColumn
@@ -182,7 +185,7 @@
             this.groupBox1.Controls.Add(this.dgv_danhsachdichvu);
             this.groupBox1.Location = new System.Drawing.Point(9, 136);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(606, 481);
+            this.groupBox1.Size = new System.Drawing.Size(606, 502);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DANH SÁCH CÁC DỊCH VỤ";
@@ -196,7 +199,7 @@
             this.groupBox2.Controls.Add(this.dgv_danhsachphongdat);
             this.groupBox2.Location = new System.Drawing.Point(621, 136);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(596, 481);
+            this.groupBox2.Size = new System.Drawing.Size(628, 502);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DANH SÁCH PHÒNG ĐẶT";
@@ -217,10 +220,13 @@
             this.dgv_danhsachphongdat.DataSource = this.chiTietDatPhongDTOBindingSource;
             this.dgv_danhsachphongdat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_danhsachphongdat.Location = new System.Drawing.Point(3, 22);
+            this.dgv_danhsachphongdat.MultiSelect = false;
             this.dgv_danhsachphongdat.Name = "dgv_danhsachphongdat";
+            this.dgv_danhsachphongdat.ReadOnly = true;
             this.dgv_danhsachphongdat.RowHeadersWidth = 62;
             this.dgv_danhsachphongdat.RowTemplate.Height = 28;
-            this.dgv_danhsachphongdat.Size = new System.Drawing.Size(590, 456);
+            this.dgv_danhsachphongdat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_danhsachphongdat.Size = new System.Drawing.Size(622, 477);
             this.dgv_danhsachphongdat.TabIndex = 0;
             this.dgv_danhsachphongdat.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgv_danhsachphongdat_MouseClick);
             // 
@@ -230,6 +236,7 @@
             this.iDPhongDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDPhongDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iDPhongDataGridViewTextBoxColumn.Name = "iDPhongDataGridViewTextBoxColumn";
+            this.iDPhongDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDPhongDataGridViewTextBoxColumn.Width = 62;
             // 
             // tenPhongDataGridViewTextBoxColumn
@@ -238,6 +245,7 @@
             this.tenPhongDataGridViewTextBoxColumn.HeaderText = "PHÒNG";
             this.tenPhongDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.tenPhongDataGridViewTextBoxColumn.Name = "tenPhongDataGridViewTextBoxColumn";
+            this.tenPhongDataGridViewTextBoxColumn.ReadOnly = true;
             this.tenPhongDataGridViewTextBoxColumn.Width = 103;
             // 
             // ngaydatDataGridViewTextBoxColumn
@@ -246,6 +254,7 @@
             this.ngaydatDataGridViewTextBoxColumn.HeaderText = "NGÀY ĐẶT";
             this.ngaydatDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.ngaydatDataGridViewTextBoxColumn.Name = "ngaydatDataGridViewTextBoxColumn";
+            this.ngaydatDataGridViewTextBoxColumn.ReadOnly = true;
             this.ngaydatDataGridViewTextBoxColumn.Width = 127;
             // 
             // ngaytraDataGridViewTextBoxColumn
@@ -254,6 +263,7 @@
             this.ngaytraDataGridViewTextBoxColumn.HeaderText = "NGÀY TRẢ";
             this.ngaytraDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.ngaytraDataGridViewTextBoxColumn.Name = "ngaytraDataGridViewTextBoxColumn";
+            this.ngaytraDataGridViewTextBoxColumn.ReadOnly = true;
             this.ngaytraDataGridViewTextBoxColumn.Width = 127;
             // 
             // tenLoaiPDataGridViewTextBoxColumn
@@ -262,6 +272,7 @@
             this.tenLoaiPDataGridViewTextBoxColumn.HeaderText = "LOẠI PHÒNG";
             this.tenLoaiPDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.tenLoaiPDataGridViewTextBoxColumn.Name = "tenLoaiPDataGridViewTextBoxColumn";
+            this.tenLoaiPDataGridViewTextBoxColumn.ReadOnly = true;
             this.tenLoaiPDataGridViewTextBoxColumn.Width = 144;
             // 
             // thanhtienDataGridViewTextBoxColumn
@@ -272,6 +283,7 @@
             this.thanhtienDataGridViewTextBoxColumn.HeaderText = "THÀNH TIỀN";
             this.thanhtienDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.thanhtienDataGridViewTextBoxColumn.Name = "thanhtienDataGridViewTextBoxColumn";
+            this.thanhtienDataGridViewTextBoxColumn.ReadOnly = true;
             this.thanhtienDataGridViewTextBoxColumn.Width = 140;
             // 
             // chiTietDatPhongDTOBindingSource
@@ -306,7 +318,7 @@
             this.groupBox3.Controls.Add(this.txttenkh);
             this.groupBox3.Location = new System.Drawing.Point(9, 30);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(824, 100);
+            this.groupBox3.Size = new System.Drawing.Size(870, 62);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "THÔNG TIN ĐẶT PHÒNG";
@@ -314,21 +326,37 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.Controls.Add(this.btn_capnhatphieudatphong);
             this.panel1.Controls.Add(this.txt_tongtien);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btn_dong);
             this.panel1.Controls.Add(this.btn_thanhtoan);
-            this.panel1.Location = new System.Drawing.Point(839, 35);
+            this.panel1.Location = new System.Drawing.Point(921, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 95);
+            this.panel1.Size = new System.Drawing.Size(325, 121);
             this.panel1.TabIndex = 5;
+            // 
+            // btn_capnhatphieudatphong
+            // 
+            this.btn_capnhatphieudatphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_capnhatphieudatphong.Enabled = false;
+            this.btn_capnhatphieudatphong.Image = global::QuanLyKhachSan.Properties.Resources.edit__1_;
+            this.btn_capnhatphieudatphong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_capnhatphieudatphong.Location = new System.Drawing.Point(16, 79);
+            this.btn_capnhatphieudatphong.Name = "btn_capnhatphieudatphong";
+            this.btn_capnhatphieudatphong.Size = new System.Drawing.Size(186, 39);
+            this.btn_capnhatphieudatphong.TabIndex = 10;
+            this.btn_capnhatphieudatphong.Text = "Chỉnh sửa";
+            this.btn_capnhatphieudatphong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_capnhatphieudatphong.UseVisualStyleBackColor = false;
+            this.btn_capnhatphieudatphong.Click += new System.EventHandler(this.btn_capnhatphieudatphong_Click);
             // 
             // txt_tongtien
             // 
             this.txt_tongtien.AutoSize = true;
             this.txt_tongtien.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tongtien.ForeColor = System.Drawing.Color.Red;
-            this.txt_tongtien.Location = new System.Drawing.Point(138, 15);
+            this.txt_tongtien.Location = new System.Drawing.Point(146, 10);
             this.txt_tongtien.Name = "txt_tongtien";
             this.txt_tongtien.Size = new System.Drawing.Size(96, 20);
             this.txt_tongtien.TabIndex = 6;
@@ -339,7 +367,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 15);
+            this.label2.Location = new System.Drawing.Point(20, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 7;
@@ -349,13 +377,13 @@
             // btn_dong
             // 
             this.btn_dong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_dong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_dong.BackColor = System.Drawing.Color.Red;
             this.btn_dong.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_dong.Image = global::QuanLyKhachSan.Properties.Resources.times_hexagon__1_;
             this.btn_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dong.Location = new System.Drawing.Point(234, 52);
+            this.btn_dong.Location = new System.Drawing.Point(215, 35);
             this.btn_dong.Name = "btn_dong";
-            this.btn_dong.Size = new System.Drawing.Size(96, 38);
+            this.btn_dong.Size = new System.Drawing.Size(98, 38);
             this.btn_dong.TabIndex = 8;
             this.btn_dong.Text = "Đóng";
             this.btn_dong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -369,9 +397,9 @@
             this.btn_thanhtoan.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_thanhtoan.Image = global::QuanLyKhachSan.Properties.Resources.file_invoice_dollar;
             this.btn_thanhtoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_thanhtoan.Location = new System.Drawing.Point(70, 52);
+            this.btn_thanhtoan.Location = new System.Drawing.Point(16, 38);
             this.btn_thanhtoan.Name = "btn_thanhtoan";
-            this.btn_thanhtoan.Size = new System.Drawing.Size(142, 38);
+            this.btn_thanhtoan.Size = new System.Drawing.Size(186, 38);
             this.btn_thanhtoan.TabIndex = 9;
             this.btn_thanhtoan.Text = "Thanh toán";
             this.btn_thanhtoan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -382,11 +410,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(511, 9);
+            this.label1.Location = new System.Drawing.Point(505, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(267, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "CHI TIẾT ĐẶT PHÒNG";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(15, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(478, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "* Nếu chưa tới thời gian trả phòng có thể cập nhật lại thời gian trả phòng cho kh" +
+    "ách hàng.";
             // 
             // datPhongDichVuDTOBindingSource
             // 
@@ -397,7 +437,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1229, 622);
+            this.ClientSize = new System.Drawing.Size(1261, 643);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
@@ -455,5 +496,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaytraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhtienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_capnhatphieudatphong;
     }
 }

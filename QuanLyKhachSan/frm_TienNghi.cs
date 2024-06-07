@@ -120,10 +120,26 @@ namespace QuanLyKhachSan
 
         private void btn_Capnhat_Click(object sender, EventArgs e)
         {
-            TienNghi_DTO tn = new TienNghi_DTO();
-            tn.TenTN = txt_TenTN.Text;
-            tn.Dongia =double.Parse( txt_Dongia.Text);
-            TienNghi_BUS.Update(tn);
+            if (dgv_TienNghi.SelectedRows.Count > 0)
+            {
+                TienNghi_DTO tn = new TienNghi_DTO();
+                tn.IDTN = int.Parse(dgv_TienNghi.CurrentRow.Cells[0].Value.ToString());
+                tn.TenTN = txt_TenTN.Text;
+                tn.Dongia = double.Parse(txt_Dongia.Text);
+                if(TienNghi_BUS.Update(tn))
+                {
+                    MessageBox.Show("Đã cập nhật lại tiện nghi!");
+                    LoadTN();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi. Vui lòng thử lại!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tiện nghi cần cập nhật!");
+            }    
         }
 
         private void btn_Loadlai_Click(object sender, EventArgs e)

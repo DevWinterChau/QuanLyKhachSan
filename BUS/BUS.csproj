@@ -50,6 +50,7 @@
     <Compile Include="Chitiet_DatPhong_BUS.cs" />
     <Compile Include="Chitiet_HoaDon_BUS.cs" />
     <Compile Include="ChiTiet_TienNghi_BUS.cs" />
+    <Compile Include="CSDL_BUS.cs" />
     <Compile Include="DatPhong_BUS.cs" />
     <Compile Include="DatPhong_DichVu_BUS.cs" />
     <Compile Include="DichVu_BUS.cs" />

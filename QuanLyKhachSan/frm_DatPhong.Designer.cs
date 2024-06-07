@@ -203,6 +203,7 @@
             // 
             this.cbb_Gioitinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_Gioitinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_Gioitinh.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbb_Gioitinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_Gioitinh.FormattingEnabled = true;
@@ -213,7 +214,6 @@
             this.cbb_Gioitinh.Name = "cbb_Gioitinh";
             this.cbb_Gioitinh.Size = new System.Drawing.Size(260, 28);
             this.cbb_Gioitinh.TabIndex = 8;
-            this.cbb_Gioitinh.Text = "Chọn giới tính";
             // 
             // txt_DCHi
             // 
@@ -424,6 +424,7 @@
             // 
             this.cbb_chon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_chon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_chon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_chon.FormattingEnabled = true;
             this.cbb_chon.Items.AddRange(new object[] {
@@ -433,7 +434,6 @@
             this.cbb_chon.Name = "cbb_chon";
             this.cbb_chon.Size = new System.Drawing.Size(305, 28);
             this.cbb_chon.TabIndex = 1;
-            this.cbb_chon.Text = "Chọn điều kiệu tìm";
             this.cbb_chon.SelectedIndexChanged += new System.EventHandler(this.cbb_chon_SelectedIndexChanged);
             // 
             // label1

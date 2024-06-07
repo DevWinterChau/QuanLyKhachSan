@@ -23,10 +23,17 @@ namespace QuanLyKhachSan
         ChiTiet_DatPhong_DTO ctdp = new ChiTiet_DatPhong_DTO();
         private float dongiangay, dongiagio;
         private frm_Phong frm_Phong;
+        private frm_DS_DatPhong frmdsdp;
+
         public frm_DatPhong(frm_Phong frm_Phong)
         {
             InitializeComponent();
             this.frm_Phong = frm_Phong;
+        }
+        public frm_DatPhong(frm_DS_DatPhong frmđsdp)
+        {
+            InitializeComponent();
+            this.frmdsdp = frmđsdp;
         }
         public frm_DatPhong()
         {
@@ -152,78 +159,78 @@ namespace QuanLyKhachSan
 
             }
             else
-                txt_TimKH.Text = "Nhập để tìm kiếm";
+                txt_TimKH.Text = "Nhập họ tên";
         }
 
         private void txt_Hoten_Click(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text == "Nhập để tìm kiếm")
-                txt_TimKH.Clear();
+            if (txt_Hoten.Text == "Nhập họ tên")
+                txt_Hoten.Clear();
         }
 
         private void txt_SDT_Leave(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text != "")
+            if (txt_SDT.Text != "")
             {
 
             }
             else
-                txt_TimKH.Text = "Nhập để tìm kiếm";
+                txt_SDT.Text = "Nhập số điện thoại";
         }
 
         private void txt_SDT_Click(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text == "Nhập để tìm kiếm")
-                txt_TimKH.Clear();
+            if (txt_SDT.Text == "Nhập số điện thoại")
+                txt_SDT.Clear();
         }
 
         private void txt_CCCD_Click(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text == "Nhập để tìm kiếm")
-                txt_TimKH.Clear();
+            if (txt_CCCD.Text == "Nhập cccd")
+                txt_CCCD.Clear();
         }
 
         private void txt_CCCD_Leave(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text != "")
+            if (txt_CCCD.Text != "")
             {
 
             }
             else
-                txt_TimKH.Text = "Nhập để tìm kiếm";
+                txt_CCCD.Text = "Nhập cccd";
         }
 
         private void txt_Email_Leave(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text != "")
+            if (txt_Email.Text != "")
             {
 
             }
             else
-                txt_TimKH.Text = "Nhập để tìm kiếm";
+                txt_Email.Text = "Nhập email";
 
         }
 
         private void txt_Email_Click(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text == "Nhập để tìm kiếm")
-                txt_TimKH.Clear();
+            if (txt_Email.Text == "Nhập email")
+                txt_Email.Clear();
         }
 
         private void txt_DCHi_Leave(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text != "")
+            if (txt_DCHi.Text != "")
             {
 
             }
             else
-                txt_TimKH.Text = "Nhập để tìm kiếm";
+                txt_DCHi.Text = "Nhập địa chỉ";
         }
 
         private void txt_DCHi_Click(object sender, EventArgs e)
         {
-            if (txt_TimKH.Text == "Nhập để tìm kiếm")
-                txt_TimKH.Clear();
+            if (txt_DCHi.Text == "Nhập địa chỉ")
+                txt_DCHi.Clear();
         }
 
         private void dgv_PhongTrong_MouseMove(object sender, MouseEventArgs e)
@@ -374,6 +381,12 @@ namespace QuanLyKhachSan
             DatPhong_DTO dp = new DatPhong_DTO();
             dp.IDKH = kh.IDKH;
             dp.NgaylapphieuDP = DateTime.Now;
+            if (DateTime.Parse(date_NgayStart.Text + " " + Time_start.Text) >= DateTime.Now)
+            {
+                dp.ID_trangthai1 = 1;
+            }
+            else
+                dp.ID_trangthai1 = 2;
             DatPhong_BUS.add(dp);
         }
         private void ADDChitietDP()
@@ -450,7 +463,7 @@ namespace QuanLyKhachSan
                         kh1.TenKH = txt_Hoten.Text.Trim();
                         kh1.SDT_Kh = txt_SDT.Text.Trim();
                         kh1.CCCD_KH = txt_CCCD.Text.Trim();
-                        if (txt_Email.Text != "Nhập Email")
+                        if (txt_Email.Text != "Nhập email")
                             kh1.Email_KH = txt_Email.Text.Trim();
                         else
                             kh1.Email_KH = "";
@@ -463,7 +476,7 @@ namespace QuanLyKhachSan
                             MessageBox.Show("Hệ thống đã tự động thêm mới khách hàng.", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         else
                         {
-                            MessageBox.Show("Lỗi: Không thêm mới khách hàng vào hệ thống. Vui lòng kiểm tra lại thông tin nhập vào của khách hàng! ", "LỖI", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                            MessageBox.Show("Vui lòng kiểm tra lại các trường thông tin của khách hàng. (Số điện thoại hoặc CCCD)! ", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                             return;
                         }
 
@@ -485,7 +498,6 @@ namespace QuanLyKhachSan
                                         HoaDon_DTO HD = HoaDon_BUS.TimHDtheoID();// Lấy đặt phòng vừa mới tạo thành công
                                         ctdp.IDDatPhong = HD.IDDatphong;// Gán 
                                         ctdp.IDPhong = p.IDPhong;
-
                                         ctdp.Ngaydat = DateTime.Parse(date_NgayStart.Text + " " + Time_start.Text);
                                         if (ctdp.Ngaydat <= DateTime.Now)
                                         {
@@ -514,9 +526,19 @@ namespace QuanLyKhachSan
                                         dgv_phongChon.Rows.Clear();
                                         if (frm_Phong != null)
                                             frm_Phong.LoadPhongAuTo();// Cập nhật lại trạng thái phòng 
+                                        if (frmdsdp != null)
+                                            frmdsdp.LOADDSDP();// cap nhật lại danh sách dặt phòng
                                     }
                                     else
+                                    {
+                                        LoadDSPhongTRONG();
+                                        dgv_phongChon.Rows.Clear();
+                                        if (frm_Phong != null)
+                                            frm_Phong.LoadPhongAuTo();// Cập nhật lại trạng thái phòng 
+                                        if (frmdsdp != null)
+                                            frmdsdp.LOADDSDP();// cap nhật lại danh sách dặt phòng
                                         this.Close();
+                                    }
                             }
                             catch (Exception ex)
                             {

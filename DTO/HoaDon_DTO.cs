@@ -24,6 +24,7 @@ namespace DTO
         private double tiendichvu;
         private double tienkhachtra;
         private double tientralai;
+        private int trangthai;
 
 
         public int IDHD { get => _IDHD; set => _IDHD = value; }
@@ -38,6 +39,6 @@ namespace DTO
         public string TenPhong { get => _tenPhong; set => _tenPhong = value; }
         public int IDKH { get => _IDKH; set => _IDKH = value; }
         public string Tenkh { get => _tenkh; set => _tenkh = value; }
-
+        public int Trangthai { get => trangthai; set => trangthai = value; }
     }
 }

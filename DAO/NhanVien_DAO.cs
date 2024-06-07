@@ -14,7 +14,7 @@ namespace DAO
         static SqlConnection con;
         public static List<NhanVien_DTO> LayDSNhanVien()
         {
-            string sTruyVan = "select * from NHANVIEN";
+            string sTruyVan = "select * from NHANVIEN where HOTEN_NV not like N'%ADMIN%'";
             con = KetNoi.MoKetNoi();
             DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
             if (dt.Rows.Count == 0)
@@ -47,7 +47,7 @@ namespace DAO
         }
         public static bool update(NhanVien_DTO nv)
         {
-            string sTruyVan = "update NHANVIEN set HOTEN_NV =N'" + nv.TenNV +"',SDT_NV = '" + nv.SDTNV + "',EMAIL_NV = '" + nv.EmailNV + "N',DCHI_NV='" + nv.DchiNV +"' where ID_NV = '" + nv.IDNV + "'";
+            string sTruyVan = "update NHANVIEN set HOTEN_NV = N'" + nv.TenNV +"', SDT_NV = '" + nv.SDTNV + "', EMAIL_NV = '" + nv.EmailNV + "' , DCHI_NV= N'" + nv.DchiNV +"' where ID_NV = '" + nv.IDNV + "'";
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             return kq;

@@ -103,47 +103,61 @@ namespace QuanLyKhachSan
         }
         private void btnthemdv_Click(object sender, EventArgs e)
         {
-            if (txt_thanhtien.Text != "")
+            if(cbb_phongdat.Text =="")
             {
-                if (dgv_dichvu.SelectedRows.Count > 0)
+                MessageBox.Show("Vui lòng chọn phòng cần sử dụng dịch vụ");
+                cbb_phongdat.Focus();
+                return;
+            }    
+            try
+            {   
+                if (txt_thanhtien.Text != "")
                 {
-                    DataGridViewRow selectedrow = dgv_dichvu.CurrentRow;
-                    DatPhong_DichVu_DTO dpdv = new DatPhong_DichVu_DTO();
-                    string idphong = cbb_phongdat.SelectedValue.ToString();
-                    dpdv.IDDP = iddatphong;
-                    dpdv.ID_PHONG1 = int.Parse(idphong);
-                    dpdv.IDDV = int.Parse(selectedrow.Cells[0].Value.ToString());
-                    dpdv.SoluongDV = int.Parse(numericUpDown_soluong.Value.ToString());
-                    dpdv.DongiaDV = double.Parse(selectedrow.Cells[3].Value.ToString());
-                    dpdv.ThanhtienDV = double.Parse(txt_thanhtien.Text);
-                    dpdv.TenDV = selectedrow.Cells[1].Value.ToString();
-                    dpdv.NgaySD_DV = DateTime.Now;
+                    if (dgv_dichvu.SelectedRows.Count > 0)
+                    {
+                        DataGridViewRow selectedrow = dgv_dichvu.CurrentRow;
+                        DatPhong_DichVu_DTO dpdv = new DatPhong_DichVu_DTO();
+                        string idphong = cbb_phongdat.SelectedValue.ToString();
+                        dpdv.IDDP = iddatphong;
+                        dpdv.ID_PHONG1 = int.Parse(idphong);
+                        dpdv.IDDV = int.Parse(selectedrow.Cells[0].Value.ToString());
+                        dpdv.SoluongDV = int.Parse(numericUpDown_soluong.Value.ToString());
+                        dpdv.DongiaDV = double.Parse(selectedrow.Cells[3].Value.ToString());
+                        dpdv.ThanhtienDV = double.Parse(txt_thanhtien.Text);
+                        dpdv.TenDV = selectedrow.Cells[1].Value.ToString();
+                        dpdv.NgaySD_DV = DateTime.Now;
                         if (CheckIDDV(dpdv.IDDV.ToString(), dpdv.ID_PHONG1.ToString()))
                         {
                             if (DatPhong_DichVu_BUS.add(dpdv))
                             {
                                 frm_Chitietdatphong.LoadDanhSachDichVu_Dat();
                                 frm_Chitietdatphong.ShowTienThanhToan();
-                            } else
+                            }
+                            else
                             {
                                 MessageBox.Show("Lỗi không thể lưu dịch vụ. Vui lòng thử lại.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         else
                         {
-                            if(MessageBox.Show("Dịch vụ này đã có trong phòng bạn muốn cập nhật số lượng không ?","XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (MessageBox.Show("Dịch vụ này đã có trong phòng bạn muốn cập nhật số lượng không ?", "XÁC NHẬN", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 frm_capnhatsoluongdichvu cnsldichvu = new frm_capnhatsoluongdichvu(frm_Chitietdatphong, dpdv, dgvdichvu, Soluongdaco, Vitrirow);
                                 cnsldichvu.Show();
                             }
                         }
+                    }
+
                 }
 
-            } 
-
-            else
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn dịch vụ trong bảng dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn dịch vụ trong bảng dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message);
             }
             
         }

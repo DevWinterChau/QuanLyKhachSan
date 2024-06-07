@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgv_DSdatphong = new System.Windows.Forms.DataGridView();
-            this.iDDatPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaylapphieuDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datPhongDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.qLKSDataSet = new QuanLyKhachSan.QLKSDataSet();
             this.dATPHONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,11 +42,16 @@
             this.btn_Tim = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_DatPhong = new System.Windows.Forms.Button();
+            this.datPhongDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDatPhongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaylapphieuDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tranthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSdatphong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datPhongDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLKSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dATPHONGBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datPhongDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,6 +68,8 @@
             // 
             // dgv_DSdatphong
             // 
+            this.dgv_DSdatphong.AllowUserToAddRows = false;
+            this.dgv_DSdatphong.AllowUserToDeleteRows = false;
             this.dgv_DSdatphong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -77,40 +80,17 @@
             this.dgv_DSdatphong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDatPhongDataGridViewTextBoxColumn,
             this.tenKHDataGridViewTextBoxColumn,
-            this.NgaylapphieuDP});
+            this.NgaylapphieuDP,
+            this.Tranthai});
             this.dgv_DSdatphong.DataSource = this.datPhongDTOBindingSource;
             this.dgv_DSdatphong.Location = new System.Drawing.Point(12, 15);
             this.dgv_DSdatphong.Name = "dgv_DSdatphong";
+            this.dgv_DSdatphong.ReadOnly = true;
             this.dgv_DSdatphong.RowHeadersWidth = 62;
             this.dgv_DSdatphong.RowTemplate.Height = 28;
             this.dgv_DSdatphong.Size = new System.Drawing.Size(951, 481);
             this.dgv_DSdatphong.TabIndex = 0;
             this.dgv_DSdatphong.DoubleClick += new System.EventHandler(this.dgv_DSdatphong_DoubleClick);
-            // 
-            // iDDatPhongDataGridViewTextBoxColumn
-            // 
-            this.iDDatPhongDataGridViewTextBoxColumn.DataPropertyName = "IDDatPhong";
-            this.iDDatPhongDataGridViewTextBoxColumn.HeaderText = "ID Đặt Phòng";
-            this.iDDatPhongDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.iDDatPhongDataGridViewTextBoxColumn.Name = "iDDatPhongDataGridViewTextBoxColumn";
-            // 
-            // tenKHDataGridViewTextBoxColumn
-            // 
-            this.tenKHDataGridViewTextBoxColumn.DataPropertyName = "TenKH";
-            this.tenKHDataGridViewTextBoxColumn.HeaderText = "Tên Khách Hàng";
-            this.tenKHDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tenKHDataGridViewTextBoxColumn.Name = "tenKHDataGridViewTextBoxColumn";
-            // 
-            // NgaylapphieuDP
-            // 
-            this.NgaylapphieuDP.DataPropertyName = "NgaylapphieuDP";
-            this.NgaylapphieuDP.HeaderText = "Ngày Lập ";
-            this.NgaylapphieuDP.MinimumWidth = 8;
-            this.NgaylapphieuDP.Name = "NgaylapphieuDP";
-            // 
-            // datPhongDTOBindingSource
-            // 
-            this.datPhongDTOBindingSource.DataSource = typeof(DTO.DatPhong_DTO);
             // 
             // label1
             // 
@@ -140,13 +120,14 @@
             this.dateTime_ngaylap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTime_ngaylap.Location = new System.Drawing.Point(12, 11);
             this.dateTime_ngaylap.Name = "dateTime_ngaylap";
-            this.dateTime_ngaylap.Size = new System.Drawing.Size(163, 26);
+            this.dateTime_ngaylap.Size = new System.Drawing.Size(177, 26);
             this.dateTime_ngaylap.TabIndex = 2;
             this.dateTime_ngaylap.ValueChanged += new System.EventHandler(this.dateTime_ngaylap_ValueChanged);
             // 
             // cbb_Chon
             // 
             this.cbb_Chon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_Chon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_Chon.FormattingEnabled = true;
             this.cbb_Chon.Items.AddRange(new object[] {
             "Tìm Theo ID Đặt Phòng",
@@ -227,6 +208,42 @@
             this.btn_DatPhong.UseVisualStyleBackColor = false;
             this.btn_DatPhong.Click += new System.EventHandler(this.btn_DatPhong_Click);
             // 
+            // datPhongDTOBindingSource
+            // 
+            this.datPhongDTOBindingSource.DataSource = typeof(DTO.DatPhong_DTO);
+            // 
+            // iDDatPhongDataGridViewTextBoxColumn
+            // 
+            this.iDDatPhongDataGridViewTextBoxColumn.DataPropertyName = "IDDatPhong";
+            this.iDDatPhongDataGridViewTextBoxColumn.HeaderText = "ID Đặt Phòng";
+            this.iDDatPhongDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.iDDatPhongDataGridViewTextBoxColumn.Name = "iDDatPhongDataGridViewTextBoxColumn";
+            this.iDDatPhongDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenKHDataGridViewTextBoxColumn
+            // 
+            this.tenKHDataGridViewTextBoxColumn.DataPropertyName = "TenKH";
+            this.tenKHDataGridViewTextBoxColumn.HeaderText = "Tên Khách Hàng";
+            this.tenKHDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tenKHDataGridViewTextBoxColumn.Name = "tenKHDataGridViewTextBoxColumn";
+            this.tenKHDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // NgaylapphieuDP
+            // 
+            this.NgaylapphieuDP.DataPropertyName = "NgaylapphieuDP";
+            this.NgaylapphieuDP.HeaderText = "Ngày Lập ";
+            this.NgaylapphieuDP.MinimumWidth = 8;
+            this.NgaylapphieuDP.Name = "NgaylapphieuDP";
+            this.NgaylapphieuDP.ReadOnly = true;
+            // 
+            // Tranthai
+            // 
+            this.Tranthai.DataPropertyName = "Tranthai";
+            this.Tranthai.HeaderText = "Tranthai";
+            this.Tranthai.MinimumWidth = 8;
+            this.Tranthai.Name = "Tranthai";
+            this.Tranthai.ReadOnly = true;
+            // 
             // frm_DS_DatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -242,15 +259,15 @@
             this.Controls.Add(this.dateTime_ngaylap);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_DS_DatPhong";
             this.Text = "DANH SÁCH ĐẶT PHÒNG";
             this.Load += new System.EventHandler(this.frm_DS_DatPhong_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSdatphong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datPhongDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLKSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dATPHONGBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datPhongDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDatPhongDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenKHDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaylapphieuDP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tranthai;
     }
 }

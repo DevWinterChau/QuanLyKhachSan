@@ -40,8 +40,8 @@ namespace QuanLyKhachSan
         {
             Loai_Phong_DTO lp = new Loai_Phong_DTO();
             lp.TenLoaiP = txt_tenLoai.Text;
-            lp.SoNguoi = nume_songuoi.Bottom;
-            lp.SoGiuong = numer_sogiuong.Bottom;
+            lp.SoNguoi = int.Parse(nume_songuoi.Value.ToString());
+            lp.SoGiuong = int.Parse(numer_sogiuong.Value.ToString());
             lp.Dongia_Time_LP = float.Parse(txt_dongiaGio.Text);
             lp.DongiaLP_ngay = float.Parse(txt_dongiaNgay.Text);
         }
@@ -54,8 +54,8 @@ namespace QuanLyKhachSan
                     Loai_Phong_DTO loaiphong = new Loai_Phong_DTO();
                     loaiphong.IDLoaiP = int.Parse(txt_idloai.Text);
                     loaiphong.TenLoaiP = txt_tenLoai.Text.Trim();
-                    loaiphong.SoNguoi = nume_songuoi.Bottom;
-                    loaiphong.SoGiuong = numer_sogiuong.Bottom;
+                    loaiphong.SoNguoi = int.Parse(nume_songuoi.Value.ToString());
+                    loaiphong.SoGiuong = int.Parse(numer_sogiuong.Value.ToString());
                     loaiphong.Dongia_Time_LP = float.Parse(txt_dongiaGio.Text);
                     loaiphong.DongiaLP_ngay = float.Parse(txt_dongiaNgay.Text);
                     if (LoaiPhong_BUS.Update(loaiphong))

@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DataTable3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSet1 = new QuanLyKhachSan.DataSet1();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_xem = new System.Windows.Forms.Button();
             this.dateTime_ketthuc = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +44,6 @@
             this.dataTable3TableAdapter1 = new QuanLyKhachSan.DataSet1TableAdapters.DataTable3TableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataTable3TableAdapter = new QuanLyKhachSan.DataSet1TableAdapters.DataTable3TableAdapter();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,14 +75,25 @@
             this.panel1.Size = new System.Drawing.Size(1075, 126);
             this.panel1.TabIndex = 0;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Brown;
+            this.label4.Location = new System.Drawing.Point(16, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(356, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Chọn thời gian để thống kê doanh thu khách sạn!";
+            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(292, 6);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(292, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(458, 29);
+            this.label3.Size = new System.Drawing.Size(443, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "THỐNG KÊ DOANH THU KHÁCH SẠN";
             // 
@@ -155,9 +166,9 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.DataTable3BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DataTable3BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyKhachSan.baocaodoanhthu.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 126);
             this.reportViewer1.Name = "reportViewer1";
@@ -169,17 +180,6 @@
             // 
             this.DataTable3TableAdapter.ClearBeforeFill = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Brown;
-            this.label4.Location = new System.Drawing.Point(16, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(356, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Chọn thời gian để thống kê doanh thu khách sạn!";
-            // 
             // frm_THONGKEDOANHTHU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -187,6 +187,7 @@
             this.ClientSize = new System.Drawing.Size(1075, 608);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_THONGKEDOANHTHU";
             this.Text = "THỐNG KÊ DOANH THU";
             this.Load += new System.EventHandler(this.frm_THONGKEDOANHTHU_Load);

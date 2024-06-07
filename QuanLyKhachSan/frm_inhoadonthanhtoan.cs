@@ -22,10 +22,21 @@ namespace QuanLyKhachSan
 
         private void frm_inhoadonthanhtoan_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'DataSet1.DataTable1' table. You can move, or remove it, as needed.
-            this.DataTable1TableAdapter.Fill(this.DataSet1.DataTable1,id_datphobg);
-            this.reportViewer1.RefreshReport();
+            try
+            {
+                // TODO: This line of code loads data into the 'DataSet1.DataTable1' table. You can move, or remove it, as needed.
+                this.DataTable1TableAdapter.Fill(this.DataSet1.DataTable1, id_datphobg);
+                this.reportViewer1.RefreshReport();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

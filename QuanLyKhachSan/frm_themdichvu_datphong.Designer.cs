@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnthemdv = new System.Windows.Forms.Button();
             this.btnhuy = new System.Windows.Forms.Button();
             this.dgv_dichvu = new System.Windows.Forms.DataGridView();
@@ -139,9 +139,9 @@
             // dongiaDVDataGridViewTextBoxColumn
             // 
             this.dongiaDVDataGridViewTextBoxColumn.DataPropertyName = "DongiaDV";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.Format = "N1";
-            this.dongiaDVDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.Format = "N1";
+            this.dongiaDVDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.dongiaDVDataGridViewTextBoxColumn.HeaderText = "ĐƠN GIÁ DỊCH VỤ";
             this.dongiaDVDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dongiaDVDataGridViewTextBoxColumn.Name = "dongiaDVDataGridViewTextBoxColumn";
@@ -225,6 +225,7 @@
             // 
             this.cbb_phongdat.DataSource = this.chiTietDatPhongDTOBindingSource2;
             this.cbb_phongdat.DisplayMember = "TenPhong";
+            this.cbb_phongdat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_phongdat.FormattingEnabled = true;
             this.cbb_phongdat.Location = new System.Drawing.Point(629, 60);
             this.cbb_phongdat.Name = "cbb_phongdat";
@@ -280,8 +281,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(768, 388);
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(766, 388);
             this.Controls.Add(this.cbb_chontimkiem);
             this.Controls.Add(this.cbb_phongdat);
             this.Controls.Add(this.txt_thanhtien);
@@ -295,7 +296,7 @@
             this.Controls.Add(this.btnhuy);
             this.Controls.Add(this.btnthemdv);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frm_themdichvu_datphong";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

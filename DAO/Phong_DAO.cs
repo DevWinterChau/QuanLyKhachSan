@@ -297,6 +297,7 @@ namespace DAO
                 p.TenTrangThai = dt.Rows[i]["TEN_TT"].ToString();
                 ltsphong.Add(p);
             }
+            KetNoi.Dongketnoi();
             return ltsphong;
         }
         public static List<Phong_DTO> LayDSPHongAll_TheoDieuKien(int id_loaiphong, int id_trangthai)
@@ -324,6 +325,7 @@ namespace DAO
                 p.TenTrangThai = dt.Rows[i]["TEN_TT"].ToString();
                 ltsphong.Add(p);
             }
+            KetNoi.Dongketnoi();
             return ltsphong;
         }
         public static List<Phong_DTO> LayDSPHongAll_TheoTen (string tenphong)
@@ -432,7 +434,7 @@ namespace DAO
         }
         public static List<TrangThai_Phong_DTO> LayDanhSachTrangThai()
         {
-            string sTruyVan = "select * from TRANGTHAI_PHONG";
+            string sTruyVan = "select * from TRANGTHAI_PHONG where ID_TT not like '4' and ID_TT not like '5'";
             con = KetNoi.MoKetNoi();
             DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
             if (dt.Rows.Count == 0)

@@ -66,5 +66,17 @@ namespace BUS
         {
             return DatPhong_DAO.ChuyenPhong(id_datphong, id_phong, id_phongchuyen);
         }
+        public static bool CapNhatTrangthaiDatPhong(DatPhong_DTO dp)
+        {
+            return DatPhong_DAO.CapNhatTrangthaiDatPhong(dp);
+        }
+        public static bool CapNhatTrangthaiDatPhong_Dangthue(int IDDatPhong)
+        {
+            return DatPhong_DAO.CapNhatTrangthaiDatPhong_Dangthue(IDDatPhong);
+        }
+        public static DatPhong_DTO LayTrangThaiDatPhong(int iddatphong)
+        {
+            return DatPhong_DAO.LayTrangThaiDatPhong(iddatphong);
+        }
     }
 }

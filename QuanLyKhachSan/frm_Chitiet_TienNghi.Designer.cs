@@ -149,7 +149,7 @@
             // btnHuy
             // 
             this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnHuy.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnHuy.BackColor = System.Drawing.Color.Red;
             this.btnHuy.Image = global::QuanLyKhachSan.Properties.Resources.time_delete;
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHuy.Location = new System.Drawing.Point(706, 17);
@@ -164,6 +164,7 @@
             // btn_capnhat
             // 
             this.btn_capnhat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_capnhat.BackColor = System.Drawing.Color.White;
             this.btn_capnhat.Image = global::QuanLyKhachSan.Properties.Resources.settings;
             this.btn_capnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_capnhat.Location = new System.Drawing.Point(575, 19);
@@ -172,12 +173,13 @@
             this.btn_capnhat.TabIndex = 10;
             this.btn_capnhat.Text = "Cập nhật";
             this.btn_capnhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_capnhat.UseVisualStyleBackColor = true;
+            this.btn_capnhat.UseVisualStyleBackColor = false;
             this.btn_capnhat.Click += new System.EventHandler(this.btn_capnhat_Click);
             // 
             // btn_them
             // 
             this.btn_them.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_them.BackColor = System.Drawing.Color.White;
             this.btn_them.Image = global::QuanLyKhachSan.Properties.Resources.plus__1_;
             this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_them.Location = new System.Drawing.Point(479, 18);
@@ -186,7 +188,7 @@
             this.btn_them.TabIndex = 9;
             this.btn_them.Text = "Thêm";
             this.btn_them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.UseVisualStyleBackColor = false;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // cbb_tiennghi
@@ -326,16 +328,16 @@
             // 
             this.NgaySD_Datetime.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.NgaySD_Datetime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.NgaySD_Datetime.Location = new System.Drawing.Point(302, 45);
+            this.NgaySD_Datetime.Location = new System.Drawing.Point(301, 45);
             this.NgaySD_Datetime.Name = "NgaySD_Datetime";
-            this.NgaySD_Datetime.Size = new System.Drawing.Size(169, 26);
+            this.NgaySD_Datetime.Size = new System.Drawing.Size(177, 26);
             this.NgaySD_Datetime.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 48);
+            this.label4.Location = new System.Drawing.Point(60, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(222, 20);
             this.label4.TabIndex = 3;
@@ -345,7 +347,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(490, 48);
+            this.label5.Location = new System.Drawing.Point(484, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 20);
             this.label5.TabIndex = 1;
@@ -409,13 +411,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(836, 499);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_Chitiet_TienNghi";
             this.Text = "Chi tiết tiện nghi";
             this.Load += new System.EventHandler(this.frm_Chitiet_TienNghi_Load);

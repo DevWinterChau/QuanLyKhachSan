@@ -85,7 +85,7 @@ namespace QuanLyKhachSan
                         Admin_DTO nd = NguoiDung_BUS.checkAdmin(txt_user.Text, txt_pass.Text);
                         if (nd!= null)
                         {
-                            frm_TrangChu trangchu = new frm_TrangChu();
+                            frm_TrangChu trangchu = new frm_TrangChu(nd);
                             this.Hide();
                             MessageBox.Show("Đăng nhập thành công. Quyền: " + nd.TenQuyen, "THÔNG BÁO");
                             trangchu.Show();

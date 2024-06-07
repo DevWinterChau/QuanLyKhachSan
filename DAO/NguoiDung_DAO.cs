@@ -36,7 +36,7 @@ namespace DAO
         }
         public static bool add(NguoiDung_DTO nd)
         {
-            string sTruyVan = string.Format(@"insert into NguoiDung values('{0}','{1}','{2}','{3}')",
+            string sTruyVan = string.Format(@"insert into nguoidung values({0}, '{1}', '{2}', {3} )",
                nd.IDNV, nd.USERName , nd.Password , nd.IDQuyen);
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
@@ -44,11 +44,17 @@ namespace DAO
             return kq;
 
         }
+        public static bool updateMatKhau(NguoiDung_DTO nd)
+        {
+            string sTruyVan = "update NguoiDung set pass = '" + nd.Password + "' where username = '" + nd.USERName + "'";
+            con = KetNoi.MoKetNoi();
+            bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
+            return kq;
+        }
         public static bool update(NguoiDung_DTO nd)
         {
-            string sTruyVan = "update NguoiDung set ID_NV =N'" + nd.IDNV+
-                    "', pass = '" +nd.Password+ "', ID_QUYEN= '" +nd.IDQuyen +
-                    "' where username = '"+ nd.USERName+"'";
+            string sTruyVan = "update NguoiDung set pass = '" +nd.Password+ "', ID_QUYEN= " +nd.IDQuyen +
+                    " where username = '"+ nd.USERName+"'";
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             return kq;
@@ -176,6 +182,20 @@ namespace DAO
             nd.Pass = dt.Rows[0]["pass"].ToString();
             nd.IDQuyen = int.Parse(dt.Rows[0]["ID_QUYEN"].ToString());
             nd.TenQuyen = dt.Rows[0]["TEN_QUYEN"].ToString();
+            return nd;
+        }
+        public static NguoiDung_DTO LayLaiPass(string username)
+        {
+            string sTruyVan = "select nd.ID_NV, nd.username from NguoiDung nd where nd.username = '"+username+"'";
+            con = KetNoi.MoKetNoi();
+            DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
+            if (dt.Rows.Count == 0)
+            {
+                return null;
+            }
+            NguoiDung_DTO nd = new NguoiDung_DTO();
+            nd.IDNV = int.Parse(dt.Rows[0]["ID_NV"].ToString());
+            nd.USERName = dt.Rows[0]["username"].ToString();
             return nd;
         }
     }

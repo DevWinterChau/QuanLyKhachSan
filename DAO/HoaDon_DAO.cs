@@ -52,8 +52,7 @@ namespace DAO
         }
         public static bool update(HoaDon_DTO hd)
         {
-            string sTruyVan = "update HD_THANHTOAN set TONG_HDTT = " + hd.TongHD + " , ID_NV = "+hd.IDNV+"" +
-                    " where ID_HDTT = " +hd.IDHD + "";
+            string sTruyVan = "update HD_THANHTOAN set TONG_HDTT = " + hd.TongHD + " , ID_NV = "+hd.IDNV+ ", NGAYGD_HDTT ='"+hd.NgayGD+"' where ID_DATPHONG = " + hd.IDDatphong + "";
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             return kq;

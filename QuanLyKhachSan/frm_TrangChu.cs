@@ -1,4 +1,5 @@
 ﻿using DTO;
+using Microsoft.SqlServer.Management.HadrModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,9 +104,12 @@ namespace QuanLyKhachSan
 
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
-            frm_DangNhap f1 = new frm_DangNhap();
-            f1.Show();
-            this.Hide();
+            if (MessageBox.Show("Bạn có muốn đăng xuất không ? ", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+                frm_DangNhap f1 = new frm_DangNhap();
+                f1.Show();
+            }       
         }
         Form currentFomchild;
         private void Openformchild_DASHBOARD(Form childForm)
@@ -166,7 +170,7 @@ namespace QuanLyKhachSan
 
         private void btn_DatPhong_Click(object sender, EventArgs e)
         {
-            Openformchild(new frm_DS_DatPhong());
+            Openformchild(new frm_DS_DatPhong(nguoidung));
         }
 
 
@@ -187,10 +191,31 @@ namespace QuanLyKhachSan
 
         private void frm_TrangChu_Load(object sender, EventArgs e)
         {
-            lb_manv.Text += "  "+nguoidung.IDNguoiDung.ToString();
-            lb_tenNV.Text = nguoidung.TenNV;
-            lb_Quyen.Text = nguoidung.TenQuyen;
-            btn_Trangchu_Click(sender, e);
+            if (nguoidung != null)
+            {
+                lb_manv.Text += "  " + nguoidung.IDNguoiDung.ToString();
+                lb_tenNV.Text = nguoidung.TenNV;
+                lb_Quyen.Text = nguoidung.TenQuyen;
+                btn_Trangchu_Click(sender, e);
+                if (nguoidung.TenQuyen.ToLower() == "lễ tân" )
+                {
+                    btn_dichVu.Enabled = false;
+                    btn_DV.Enabled = false;
+                    btn_TienNghi.Enabled = false;
+                    btn_TN.Enabled = false;
+                    btn_NhanVien.Enabled = false;
+                    btn_NV.Enabled = false;
+                    btn_giaodich1.Enabled = false;
+                    btn_giaodich2.Enabled = false;
+                }
+            }
+            else
+            {
+                lb_manv.Text += "  " + admin.Usename.ToString();
+                lb_tenNV.Text = admin.Usename;
+                lb_Quyen.Text = admin.TenQuyen;
+                btn_Trangchu_Click(sender, e);
+            }
         }
 
         private void btn_TC_Click(object sender, EventArgs e)
@@ -242,6 +267,23 @@ namespace QuanLyKhachSan
         private void btn_giaodich1_Click(object sender, EventArgs e)
         {
             btn_giaodich2_Click(sender, e);
+        }
+
+        private void btn_AnForm_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_hethong_Click(object sender, EventArgs e)
+        {
+            if (nguoidung != null)
+            {
+                frm_hethong hethong = new frm_hethong(nguoidung); hethong.ShowDialog();
+            }
+            else
+            {
+                frm_hethong hethong = new frm_hethong(); hethong.ShowDialog();
+            }
         }
     }
 }

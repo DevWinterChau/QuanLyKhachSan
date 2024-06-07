@@ -101,8 +101,11 @@ namespace QuanLyKhachSan
         {
             try
             {
+                DataGridViewRow row = dgv_dskhachhang.CurrentRow;
+                
                 KhachHang_DTO kh = new KhachHang_DTO();
-                if (txt_hoten.Text != "" && txt_cccd.Text != "" && txt_sdt.Text != "" && txt_Dchi.Text != "")
+                kh.IDKH = int.Parse(row.Cells[0].Value.ToString());
+                if (txt_hoten.Text != "" && txt_sdt.Text != "" && txt_Dchi.Text != "")
                 {
                     kh.TenKH = txt_hoten.Text;
                     if (txt_cccd.Text.Length == 12)
@@ -365,6 +368,27 @@ namespace QuanLyKhachSan
             catch (Exception ex)
             {
             }
+        }
+
+        private void dgv_dskhachhang_Click_1(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dgv_dskhachhang.SelectedRows[0];
+            if (dr.Cells[0].Value != null && dr.Cells[1].Value != null && dr.Cells[2].Value != null && dr.Cells[3].Value != null && dr.Cells[4].Value != null && dr.Cells[5].Value != null)
+            {
+                txt_hoten.Text = dr.Cells[1].Value.ToString();
+                txtEmail.Text = dr.Cells[5].Value.ToString();
+                txt_cccd.Text = dr.Cells[2].Value.ToString();
+                txt_sdt.Text = dr.Cells[3].Value.ToString();
+                txt_Dchi.Text = dr.Cells[6].Value.ToString();
+                string gioitinh = dr.Cells[4].Value.ToString();
+                if (gioitinh == "Nam") rad_Nam.Checked = true; else rad_nu.Checked= true;     
+            }
+            btn_capnhat.Enabled = true;
+        }
+
+        private void btn_dong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

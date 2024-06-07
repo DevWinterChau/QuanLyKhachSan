@@ -55,10 +55,10 @@
             this.btn_thugon = new System.Windows.Forms.Button();
             this.btn_Thoat = new System.Windows.Forms.Button();
             this.panel_TenForm = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lb_tenform = new System.Windows.Forms.Label();
             this.btn_formLon = new System.Windows.Forms.Button();
-            this.btn_AnForm = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_hethong = new System.Windows.Forms.Button();
             this.btn_formnho = new System.Windows.Forms.Button();
             this.btn_EXIT = new System.Windows.Forms.Button();
             this.panel_Home = new System.Windows.Forms.Panel();
@@ -89,27 +89,33 @@
             // lb_Quyen
             // 
             this.lb_Quyen.AutoSize = true;
+            this.lb_Quyen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lb_Quyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lb_Quyen.Location = new System.Drawing.Point(76, 91);
             this.lb_Quyen.Name = "lb_Quyen";
-            this.lb_Quyen.Size = new System.Drawing.Size(64, 20);
+            this.lb_Quyen.Size = new System.Drawing.Size(66, 22);
             this.lb_Quyen.TabIndex = 8;
             this.lb_Quyen.Text = "Lễ Tân";
             // 
             // lb_tenNV
             // 
             this.lb_tenNV.AutoSize = true;
+            this.lb_tenNV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lb_tenNV.ForeColor = System.Drawing.Color.Blue;
             this.lb_tenNV.Location = new System.Drawing.Point(76, 63);
             this.lb_tenNV.Name = "lb_tenNV";
-            this.lb_tenNV.Size = new System.Drawing.Size(149, 20);
+            this.lb_tenNV.Size = new System.Drawing.Size(151, 22);
             this.lb_tenNV.TabIndex = 8;
             this.lb_tenNV.Text = "Đặng Thị Thúy Vy";
             // 
             // lb_manv
             // 
             this.lb_manv.AutoSize = true;
+            this.lb_manv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lb_manv.ForeColor = System.Drawing.Color.Blue;
             this.lb_manv.Location = new System.Drawing.Point(76, 37);
             this.lb_manv.Name = "lb_manv";
-            this.lb_manv.Size = new System.Drawing.Size(38, 20);
+            this.lb_manv.Size = new System.Drawing.Size(40, 22);
             this.lb_manv.TabIndex = 8;
             this.lb_manv.Text = "ID: ";
             // 
@@ -347,6 +353,7 @@
             // 
             this.pictureBox_anh.BackgroundImage = global::QuanLyKhachSan.Properties.Resources._181;
             this.pictureBox_anh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_anh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox_anh.Location = new System.Drawing.Point(3, 37);
             this.pictureBox_anh.Name = "pictureBox_anh";
             this.pictureBox_anh.Size = new System.Drawing.Size(67, 61);
@@ -389,10 +396,10 @@
             // panel_TenForm
             // 
             this.panel_TenForm.BackColor = System.Drawing.Color.MintCream;
-            this.panel_TenForm.Controls.Add(this.label1);
             this.panel_TenForm.Controls.Add(this.lb_tenform);
             this.panel_TenForm.Controls.Add(this.btn_formLon);
-            this.panel_TenForm.Controls.Add(this.btn_AnForm);
+            this.panel_TenForm.Controls.Add(this.button1);
+            this.panel_TenForm.Controls.Add(this.btn_hethong);
             this.panel_TenForm.Controls.Add(this.btn_formnho);
             this.panel_TenForm.Controls.Add(this.btn_EXIT);
             this.panel_TenForm.Dock = System.Windows.Forms.DockStyle.Top;
@@ -401,24 +408,13 @@
             this.panel_TenForm.Size = new System.Drawing.Size(995, 68);
             this.panel_TenForm.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(327, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(363, 36);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "QUẢN LÝ KHÁCH SẠN";
-            // 
             // lb_tenform
             // 
             this.lb_tenform.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_tenform.AutoSize = true;
             this.lb_tenform.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_tenform.Location = new System.Drawing.Point(813, 41);
+            this.lb_tenform.Location = new System.Drawing.Point(739, 41);
             this.lb_tenform.Name = "lb_tenform";
             this.lb_tenform.Size = new System.Drawing.Size(57, 20);
             this.lb_tenform.TabIndex = 3;
@@ -431,22 +427,34 @@
             this.btn_formLon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_formLon.Location = new System.Drawing.Point(928, 4);
             this.btn_formLon.Name = "btn_formLon";
-            this.btn_formLon.Size = new System.Drawing.Size(30, 30);
+            this.btn_formLon.Size = new System.Drawing.Size(30, 37);
             this.btn_formLon.TabIndex = 1;
             this.btn_formLon.UseVisualStyleBackColor = true;
             this.btn_formLon.Click += new System.EventHandler(this.btn_formLon_Click);
             // 
-            // btn_AnForm
+            // button1
             // 
-            this.btn_AnForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_AnForm.BackgroundImage = global::QuanLyKhachSan.Properties.Resources.Screenshot_20221105_094236;
-            this.btn_AnForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_AnForm.Location = new System.Drawing.Point(894, 4);
-            this.btn_AnForm.Name = "btn_AnForm";
-            this.btn_AnForm.Size = new System.Drawing.Size(30, 30);
-            this.btn_AnForm.TabIndex = 0;
-            this.btn_AnForm.UseVisualStyleBackColor = true;
-            this.btn_AnForm.Click += new System.EventHandler(this.btn_AnForm_Click);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = global::QuanLyKhachSan.Properties.Resources.Screenshot_20221105_094236;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(895, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 37);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_AnForm_Click);
+            // 
+            // btn_hethong
+            // 
+            this.btn_hethong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_hethong.BackgroundImage = global::QuanLyKhachSan.Properties.Resources.settings;
+            this.btn_hethong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_hethong.Location = new System.Drawing.Point(856, 4);
+            this.btn_hethong.Name = "btn_hethong";
+            this.btn_hethong.Size = new System.Drawing.Size(36, 37);
+            this.btn_hethong.TabIndex = 0;
+            this.btn_hethong.UseVisualStyleBackColor = true;
+            this.btn_hethong.Click += new System.EventHandler(this.btn_hethong_Click);
             // 
             // btn_formnho
             // 
@@ -455,7 +463,7 @@
             this.btn_formnho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_formnho.Location = new System.Drawing.Point(928, 4);
             this.btn_formnho.Name = "btn_formnho";
-            this.btn_formnho.Size = new System.Drawing.Size(30, 30);
+            this.btn_formnho.Size = new System.Drawing.Size(30, 37);
             this.btn_formnho.TabIndex = 0;
             this.btn_formnho.UseVisualStyleBackColor = true;
             this.btn_formnho.Click += new System.EventHandler(this.btn_formnho_Click);
@@ -469,7 +477,7 @@
             this.btn_EXIT.ForeColor = System.Drawing.Color.Black;
             this.btn_EXIT.Location = new System.Drawing.Point(962, 3);
             this.btn_EXIT.Name = "btn_EXIT";
-            this.btn_EXIT.Size = new System.Drawing.Size(30, 30);
+            this.btn_EXIT.Size = new System.Drawing.Size(30, 37);
             this.btn_EXIT.TabIndex = 0;
             this.btn_EXIT.UseVisualStyleBackColor = false;
             this.btn_EXIT.Click += new System.EventHandler(this.btn_EXIT_Click);
@@ -478,6 +486,7 @@
             // 
             this.panel_Home.BackColor = System.Drawing.Color.White;
             this.panel_Home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_Home.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel_Home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Home.Location = new System.Drawing.Point(228, 68);
             this.panel_Home.Name = "panel_Home";
@@ -495,6 +504,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_TrangChu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frm_TrangChu_Load);
             this.panel_Menu.ResumeLayout(false);
@@ -517,7 +527,7 @@
         private System.Windows.Forms.Button btn_Thoat;
         private System.Windows.Forms.Button btn_EXIT;
         private System.Windows.Forms.Button btn_formnho;
-        private System.Windows.Forms.Button btn_AnForm;
+        private System.Windows.Forms.Button btn_hethong;
         private System.Windows.Forms.Button btn_formLon;
         private System.Windows.Forms.Label lb_tenform;
         private System.Windows.Forms.PictureBox pictureBox_anh;
@@ -537,12 +547,12 @@
         private System.Windows.Forms.Button btn_TienNghi;
         private System.Windows.Forms.Button btn_NV;
         private System.Windows.Forms.Button btn_NhanVien;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_giaodich1;
         private System.Windows.Forms.Button btn_giaodich2;
         private System.Windows.Forms.Label lb_Quyen;
         private System.Windows.Forms.Label lb_tenNV;
         private System.Windows.Forms.Label lb_manv;
+        private System.Windows.Forms.Button button1;
     }
 }
 

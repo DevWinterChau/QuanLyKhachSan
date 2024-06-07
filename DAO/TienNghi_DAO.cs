@@ -46,7 +46,7 @@ namespace DAO
         }
         public static bool update(TienNghi_DTO tn)
         {
-            string sTruyVan = "update TIENNGHI set TEN_TN ='" + tn.TenTN + "', DONGIA_TN= '" +tn.Dongia + "'" +"' where ID_TN = '" + tn.IDTN + "'";
+            string sTruyVan = "update TIENNGHI set TEN_TN =N'" + tn.TenTN + "', DONGIA_TN = " +tn.Dongia + " where ID_TN = " + tn.IDTN + "";
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             return kq;

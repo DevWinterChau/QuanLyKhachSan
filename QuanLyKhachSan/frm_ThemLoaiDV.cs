@@ -49,6 +49,7 @@ namespace QuanLyKhachSan
         private void button2_Click(object sender, EventArgs e)
         {
             txt_tenloai.Text = "";
+            this.Close();
         }
     }
 }

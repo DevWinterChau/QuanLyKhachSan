@@ -50,6 +50,7 @@
     <Compile Include="ChiTiet_DatPhong_DAO.cs" />
     <Compile Include="Chitiet_HoaDon_DAO.cs" />
     <Compile Include="Chitiet_TienNghi_DAO.cs" />
+    <Compile Include="CSDL_DAO.cs" />
     <Compile Include="DatPhong_DAO.cs" />
     <Compile Include="DatPhong_DichVu_DAO.cs" />
     <Compile Include="DichVu_DAO.cs" />

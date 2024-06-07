@@ -14,16 +14,18 @@ namespace QuanLyKhachSan
 {
     public partial class frm_DS_DatPhong : Form
     {
-        public frm_DS_DatPhong()
+        private NguoiDung_DTO nguoiDung_DTO;
+        public frm_DS_DatPhong(NguoiDung_DTO nguoiDung_DTO)
         {
             InitializeComponent();
+            this.nguoiDung_DTO = nguoiDung_DTO;
         }
 
         private void frm_DS_DatPhong_Load(object sender, EventArgs e)
         {
             LOADDSDP();
         }
-        private void LOADDSDP()
+        public void LOADDSDP()
         {
             List<DatPhong_DTO> lstDSDP = DatPhong_BUS.LayDSDatPhong();
             dgv_DSdatphong.DataSource = lstDSDP;
@@ -31,7 +33,14 @@ namespace QuanLyKhachSan
 
         private void dateTime_ngaylap_ValueChanged(object sender, EventArgs e)
         {
-            dgv_DSdatphong.DataSource = DatPhong_BUS.TimDPtheoNgaylap(dateTime_ngaylap.Text);
+            try
+            {
+                dgv_DSdatphong.DataSource = DatPhong_BUS.TimDPtheoNgaylap(dateTime_ngaylap.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txt_Tìm_Leave(object sender, EventArgs e)
@@ -80,7 +89,7 @@ namespace QuanLyKhachSan
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Lỗi!", "Thông báo");
+                MessageBox.Show("Lỗi: "+ex.Message+" !", "Thông báo");
             }
         }
 
@@ -96,14 +105,25 @@ namespace QuanLyKhachSan
 
         private void btn_DatPhong_Click(object sender, EventArgs e)
         {
-            frm_DatPhong DP = new frm_DatPhong();
+            frm_DatPhong DP = new frm_DatPhong(this);
             DP.Show();
         }
 
         private void dgv_DSdatphong_DoubleClick(object sender, EventArgs e)
         {
-            frm_chitietdatphong CTDP = new frm_chitietdatphong();
-            CTDP.Show();    
+            try
+            {
+                DataGridViewRow row = dgv_DSdatphong.CurrentRow;
+                if (row != null)
+                {
+                    frm_chitietdatphong CTDP = new frm_chitietdatphong(int.Parse(row.Cells[0].Value.ToString()), row.Cells[1].Value.ToString(), nguoiDung_DTO, this);
+                    CTDP.Show();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -333,12 +333,6 @@
     <Compile Include="frm_capnhatthoigiantraphong.Designer.cs">
       <DependentUpon>frm_capnhatthoigiantraphong.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_capnhattrangthaiphong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_capnhattrangthaiphong.Designer.cs">
-      <DependentUpon>frm_capnhattrangthaiphong.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Chitiet_TienNghi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +403,12 @@
     </Compile>
     <Compile Include="frm_GiaoDich.Designer.cs">
       <DependentUpon>frm_GiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_hethong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_hethong.Designer.cs">
+      <DependentUpon>frm_hethong.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_inhoadonthanhtoan.cs">
       <SubType>Form</SubType>
@@ -505,9 +505,6 @@
     <EmbeddedResource Include="frm_capnhatthoigiantraphong.resx">
       <DependentUpon>frm_capnhatthoigiantraphong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_capnhattrangthaiphong.resx">
-      <DependentUpon>frm_capnhattrangthaiphong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_CapNhat_LoaiPhong.resx">
       <DependentUpon>frm_CapNhat_LoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -537,6 +534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_GiaoDich.resx">
       <DependentUpon>frm_GiaoDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_hethong.resx">
+      <DependentUpon>frm_hethong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_inhoadonthanhtoan.resx">
       <DependentUpon>frm_inhoadonthanhtoan.cs</DependentUpon>
@@ -855,6 +855,7 @@
     <None Include="Resources\printer.png" />
     <None Include="Resources\print.png" />
     <None Include="Resources\loading.png" />
+    <None Include="Resources\edit %281%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

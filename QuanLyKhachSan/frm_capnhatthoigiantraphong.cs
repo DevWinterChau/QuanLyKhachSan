@@ -64,7 +64,8 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Đã cập nhật thời gian trả phòng.");
                 frmctdp.LoadDanhSachPhongDat();
                 frmctdp.ShowTienThanhToan();
-                frm_Phong.LoadPhongAuTo();
+                if(frm_Phong != null)
+                    frm_Phong.LoadPhongAuTo();
             }
             else
                 MessageBox.Show("Cập nhật thời gian trả phòng KHÔNG thành công.");
@@ -76,6 +77,19 @@ namespace QuanLyKhachSan
             TimeSpan ts = n2 - n1;
             return (int)ts.TotalDays;
         }
-       
+
+        private void check_ngahientai_CheckedChanged(object sender, EventArgs e)
+        {
+            if(check_ngahientai.Checked)
+            {
+                date_NgayEnd.Text = DateTime.Now.ToString();
+                Time_End.Text = DateTime.Now.ToString();
+            }    
+            else
+            {
+                date_NgayEnd.Text = ctdp[0].Ngaytra.ToString();
+                Time_End.Text = ctdp[0].Ngaytra.ToString();
+            }    
+        }
     }
 }

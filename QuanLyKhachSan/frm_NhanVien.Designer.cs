@@ -133,7 +133,7 @@
             // 
             // tabPage_NhanVien
             // 
-            this.tabPage_NhanVien.BackColor = System.Drawing.Color.LemonChiffon;
+            this.tabPage_NhanVien.BackColor = System.Drawing.Color.Silver;
             this.tabPage_NhanVien.Controls.Add(this.panel3);
             this.tabPage_NhanVien.Controls.Add(this.groupBox2);
             this.tabPage_NhanVien.Controls.Add(this.groupBox1);
@@ -150,6 +150,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel3.Controls.Add(this.dgv_DSNV);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Location = new System.Drawing.Point(0, 185);
@@ -177,7 +178,9 @@
             this.dgv_DSNV.DataSource = this.nhanVienDTOBindingSource;
             this.dgv_DSNV.GridColor = System.Drawing.Color.Black;
             this.dgv_DSNV.Location = new System.Drawing.Point(10, 23);
+            this.dgv_DSNV.MultiSelect = false;
             this.dgv_DSNV.Name = "dgv_DSNV";
+            this.dgv_DSNV.ReadOnly = true;
             this.dgv_DSNV.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgv_DSNV.RowHeadersWidth = 62;
             this.dgv_DSNV.RowTemplate.Height = 28;
@@ -193,6 +196,7 @@
             this.iDNVDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDNVDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iDNVDataGridViewTextBoxColumn.Name = "iDNVDataGridViewTextBoxColumn";
+            this.iDNVDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenNVDataGridViewTextBoxColumn
             // 
@@ -200,6 +204,7 @@
             this.tenNVDataGridViewTextBoxColumn.HeaderText = "Họ Tên";
             this.tenNVDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.tenNVDataGridViewTextBoxColumn.Name = "tenNVDataGridViewTextBoxColumn";
+            this.tenNVDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cCCDNVDataGridViewTextBoxColumn
             // 
@@ -207,6 +212,7 @@
             this.cCCDNVDataGridViewTextBoxColumn.HeaderText = "CCCD";
             this.cCCDNVDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cCCDNVDataGridViewTextBoxColumn.Name = "cCCDNVDataGridViewTextBoxColumn";
+            this.cCCDNVDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sDTNVDataGridViewTextBoxColumn
             // 
@@ -214,6 +220,7 @@
             this.sDTNVDataGridViewTextBoxColumn.HeaderText = "Số ĐT";
             this.sDTNVDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.sDTNVDataGridViewTextBoxColumn.Name = "sDTNVDataGridViewTextBoxColumn";
+            this.sDTNVDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailNVDataGridViewTextBoxColumn
             // 
@@ -221,6 +228,7 @@
             this.emailNVDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailNVDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.emailNVDataGridViewTextBoxColumn.Name = "emailNVDataGridViewTextBoxColumn";
+            this.emailNVDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dchiNVDataGridViewTextBoxColumn
             // 
@@ -228,6 +236,7 @@
             this.dchiNVDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
             this.dchiNVDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dchiNVDataGridViewTextBoxColumn.Name = "dchiNVDataGridViewTextBoxColumn";
+            this.dchiNVDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nhanVienDTOBindingSource
             // 
@@ -244,7 +253,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.groupBox2.BackColor = System.Drawing.Color.Silver;
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(3, 103);
@@ -256,7 +265,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.panel2.BackColor = System.Drawing.Color.Snow;
             this.panel2.Controls.Add(this.btn_timNV);
             this.panel2.Controls.Add(this.txt_timNV);
             this.panel2.Controls.Add(this.cbb_chonTimNV);
@@ -327,7 +336,7 @@
             // btn_exitNV
             // 
             this.btn_exitNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_exitNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_exitNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_exitNV.Image = global::QuanLyKhachSan.Properties.Resources.times_hexagon__1_;
             this.btn_exitNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_exitNV.Location = new System.Drawing.Point(961, 6);
@@ -372,7 +381,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
@@ -384,7 +393,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.panel1.BackColor = System.Drawing.Color.Snow;
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txt_Dchi);
             this.panel1.Controls.Add(this.label1);
@@ -417,9 +426,9 @@
             // txt_Dchi
             // 
             this.txt_Dchi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_Dchi.Location = new System.Drawing.Point(511, 37);
+            this.txt_Dchi.Location = new System.Drawing.Point(543, 37);
             this.txt_Dchi.Name = "txt_Dchi";
-            this.txt_Dchi.Size = new System.Drawing.Size(529, 26);
+            this.txt_Dchi.Size = new System.Drawing.Size(497, 26);
             this.txt_Dchi.TabIndex = 0;
             this.txt_Dchi.TextChanged += new System.EventHandler(this.txt_Dchi_TextChanged);
             // 
@@ -546,6 +555,11 @@
             // 
             // dgv_TaiKhoan
             // 
+            this.dgv_TaiKhoan.AllowUserToAddRows = false;
+            this.dgv_TaiKhoan.AllowUserToDeleteRows = false;
+            this.dgv_TaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_TaiKhoan.AutoGenerateColumns = false;
             this.dgv_TaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_TaiKhoan.BackgroundColor = System.Drawing.Color.FloralWhite;
@@ -560,7 +574,9 @@
             this.dgv_TaiKhoan.DataSource = this.nguoiDungDTOBindingSource;
             this.dgv_TaiKhoan.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgv_TaiKhoan.Location = new System.Drawing.Point(8, 24);
+            this.dgv_TaiKhoan.MultiSelect = false;
             this.dgv_TaiKhoan.Name = "dgv_TaiKhoan";
+            this.dgv_TaiKhoan.ReadOnly = true;
             this.dgv_TaiKhoan.RowHeadersWidth = 62;
             this.dgv_TaiKhoan.RowTemplate.Height = 28;
             this.dgv_TaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -574,6 +590,7 @@
             this.iDNVDataGridViewTextBoxColumn1.HeaderText = "ID Nhân Viên";
             this.iDNVDataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.iDNVDataGridViewTextBoxColumn1.Name = "iDNVDataGridViewTextBoxColumn1";
+            this.iDNVDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // tenNVDataGridViewTextBoxColumn1
             // 
@@ -581,6 +598,7 @@
             this.tenNVDataGridViewTextBoxColumn1.HeaderText = "Họ Tên";
             this.tenNVDataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.tenNVDataGridViewTextBoxColumn1.Name = "tenNVDataGridViewTextBoxColumn1";
+            this.tenNVDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // tenQuyenDataGridViewTextBoxColumn
             // 
@@ -588,6 +606,7 @@
             this.tenQuyenDataGridViewTextBoxColumn.HeaderText = "Quyền";
             this.tenQuyenDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.tenQuyenDataGridViewTextBoxColumn.Name = "tenQuyenDataGridViewTextBoxColumn";
+            this.tenQuyenDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // uSERNameDataGridViewTextBoxColumn
             // 
@@ -595,6 +614,7 @@
             this.uSERNameDataGridViewTextBoxColumn.HeaderText = "User Name";
             this.uSERNameDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.uSERNameDataGridViewTextBoxColumn.Name = "uSERNameDataGridViewTextBoxColumn";
+            this.uSERNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
@@ -602,6 +622,7 @@
             this.passwordDataGridViewTextBoxColumn.HeaderText = "PassWord";
             this.passwordDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nguoiDungDTOBindingSource
             // 
@@ -884,7 +905,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 589);
             this.Controls.Add(this.tab_Nhanvien);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_NhanVien";
             this.Text = "Nhân Viên";
             this.Load += new System.EventHandler(this.frm_NhanVien_Load);
@@ -980,13 +1001,13 @@
         private System.Windows.Forms.ComboBox cbb_IDNV;
         private System.Windows.Forms.ComboBox cbb_Quyen;
         private System.Windows.Forms.BindingSource phanQuyenDTOBindingSource;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDNVDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNVDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenQuyenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uSERNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }

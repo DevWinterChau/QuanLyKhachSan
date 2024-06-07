@@ -89,9 +89,16 @@ namespace QuanLyKhachSan
 
                     nv.EmailNV = txt_email.Text;
                     nv.DchiNV = txt_Dchi.Text;
-                    NhanVien_BUS.add(nv);
-                    loadDSNV();
-                    clearText();
+                    if (NhanVien_BUS.add(nv))
+                    {
+                        MessageBox.Show("Thêm nhân viên thành công!");
+                        loadDSNV();
+                        clearText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm không thành công. Vui lòng thử lại!");
+                    }
                 }
                else
                 {
@@ -106,7 +113,7 @@ namespace QuanLyKhachSan
         private void btn_capnhat_NV_Click(object sender, EventArgs e)
         {
             NhanVien_DTO nv = new NhanVien_DTO();
-            if (txt_HotenNV.Text != "" && txt_CCCD.Text != "" && txt_SDT.Text != "" && txt_email.Text != "" && txt_Dchi.Text != "")
+            if (txt_HotenNV.Text != "" && txt_SDT.Text != "" && txt_email.Text != "" && txt_Dchi.Text != "")
             {
                 nv.IDNV =int.Parse (txt_IDNV.Text);
                 nv.TenNV = txt_HotenNV.Text;
@@ -252,21 +259,33 @@ namespace QuanLyKhachSan
         {
             try
             {
-                if ( cbb_IDNV.Text != "" && txt_pass.Text != "" && txt_username.Text != "" && cbb_Quyen.Text != "")
+                if (cbb_IDNV.Text != "" && txt_pass.Text != "" && txt_username.Text != "" && cbb_Quyen.Text != "")
                 {
                     NguoiDung_DTO nd = new NguoiDung_DTO();
+
                     nd.IDNV = int.Parse(cbb_IDNV.SelectedValue.ToString());
+                    MessageBox.Show(nd.IDNV.ToString());
                     if (NguoiDung_BUS.CheckUSer(txt_username.Text))
                     {
                         nd.USERName = txt_username.Text;
+                        MessageBox.Show(nd.USERName.ToString());
                     }
                     else
                         MessageBox.Show("Usernaem này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     nd.Password = txt_pass.Text;
                     nd.IDQuyen = int.Parse(cbb_Quyen.SelectedValue.ToString());
-                    NguoiDung_BUS.add(nd);
-                    loadDSTK();
-                    clearText();
+                    MessageBox.Show(nd.IDQuyen.ToString());
+                    MessageBox.Show(nd.Password.ToString());
+                    if (NguoiDung_BUS.add(nd))
+                    {
+                        MessageBox.Show("Thêm mới tài khoản thành công!");
+                        loadDSTK();
+                        clearText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm không thành công. Vui lòng thử lại!");
+                    }
                 }
                 else
                 {
@@ -290,9 +309,14 @@ namespace QuanLyKhachSan
                     nd.USERName = txt_username.Text;
                     nd.Password = txt_pass.Text;
                     nd.IDQuyen = int.Parse(cbb_Quyen.SelectedValue.ToString());
-                    NguoiDung_BUS.Update(nd);
-                    loadDSTK();
-                    clearText();
+                    if (NguoiDung_BUS.Update(nd))
+                    {
+                        MessageBox.Show("Đã cập nhật lại thông tin tài khoản!");
+                        loadDSTK();
+                        clearText();
+                    }
+                    else
+                        MessageBox.Show("Cập nhật không thành công. Vui lòng thử lại!");
                 }
                 else
                 {
@@ -518,5 +542,6 @@ namespace QuanLyKhachSan
             {
             }
         }
+
     }
 }

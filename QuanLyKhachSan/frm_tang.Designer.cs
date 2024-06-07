@@ -48,7 +48,7 @@
             this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_them.Location = new System.Drawing.Point(334, 12);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(110, 35);
+            this.btn_them.Size = new System.Drawing.Size(115, 35);
             this.btn_them.TabIndex = 1;
             this.btn_them.Text = "Thêm";
             this.btn_them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -75,9 +75,9 @@
             // 
             this.btn_sua.Image = global::QuanLyKhachSan.Properties.Resources.settings;
             this.btn_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sua.Location = new System.Drawing.Point(446, 12);
+            this.btn_sua.Location = new System.Drawing.Point(463, 12);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(119, 35);
+            this.btn_sua.Size = new System.Drawing.Size(132, 35);
             this.btn_sua.TabIndex = 1;
             this.btn_sua.Text = "Cập nhật";
             this.btn_sua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -88,9 +88,9 @@
             // 
             this.btndong.Image = global::QuanLyKhachSan.Properties.Resources.Screenshot_20221102_080018;
             this.btndong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btndong.Location = new System.Drawing.Point(578, 9);
+            this.btndong.Location = new System.Drawing.Point(601, 10);
             this.btndong.Name = "btndong";
-            this.btndong.Size = new System.Drawing.Size(110, 35);
+            this.btndong.Size = new System.Drawing.Size(128, 35);
             this.btndong.TabIndex = 1;
             this.btndong.Text = "Đóng";
             this.btndong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,25 +108,30 @@
             this.tenTangDataGridViewTextBoxColumn});
             this.dgv_tang.DataSource = this.tangDTOBindingSource;
             this.dgv_tang.Location = new System.Drawing.Point(12, 53);
+            this.dgv_tang.MultiSelect = false;
             this.dgv_tang.Name = "dgv_tang";
+            this.dgv_tang.ReadOnly = true;
             this.dgv_tang.RowHeadersWidth = 62;
             this.dgv_tang.RowTemplate.Height = 28;
-            this.dgv_tang.Size = new System.Drawing.Size(676, 348);
+            this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_tang.Size = new System.Drawing.Size(717, 348);
             this.dgv_tang.TabIndex = 3;
             // 
             // iDtangDataGridViewTextBoxColumn
             // 
             this.iDtangDataGridViewTextBoxColumn.DataPropertyName = "IDtang";
-            this.iDtangDataGridViewTextBoxColumn.HeaderText = "IDtang";
+            this.iDtangDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDtangDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iDtangDataGridViewTextBoxColumn.Name = "iDtangDataGridViewTextBoxColumn";
+            this.iDtangDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenTangDataGridViewTextBoxColumn
             // 
             this.tenTangDataGridViewTextBoxColumn.DataPropertyName = "TenTang";
-            this.tenTangDataGridViewTextBoxColumn.HeaderText = "TenTang";
+            this.tenTangDataGridViewTextBoxColumn.HeaderText = "Số Tầng";
             this.tenTangDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.tenTangDataGridViewTextBoxColumn.Name = "tenTangDataGridViewTextBoxColumn";
+            this.tenTangDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tangDTOBindingSource
             // 
@@ -136,14 +141,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 416);
+            this.ClientSize = new System.Drawing.Size(741, 416);
             this.Controls.Add(this.dgv_tang);
             this.Controls.Add(this.txt_tentang);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btndong);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_them);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frm_tang";
             this.Text = "QUẢN LÝ TẦNG";
             this.Load += new System.EventHandler(this.frm_tang_Load);
@@ -162,8 +167,8 @@
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btndong;
         private System.Windows.Forms.DataGridView dgv_tang;
+        private System.Windows.Forms.BindingSource tangDTOBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDtangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenTangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tangDTOBindingSource;
     }
 }

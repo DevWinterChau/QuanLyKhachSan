@@ -45,6 +45,7 @@
             // 
             // btn_dong
             // 
+            this.btn_dong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_dong.Image = global::QuanLyKhachSan.Properties.Resources.Screenshot_20221102_080018;
             this.btn_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_dong.Location = new System.Drawing.Point(276, 230);
@@ -58,6 +59,7 @@
             // 
             // btn_themmoiphong
             // 
+            this.btn_themmoiphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_themmoiphong.Image = global::QuanLyKhachSan.Properties.Resources.plus__1_;
             this.btn_themmoiphong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_themmoiphong.Location = new System.Drawing.Point(129, 230);
@@ -71,6 +73,7 @@
             // 
             // btn_themloaiphong
             // 
+            this.btn_themloaiphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_themloaiphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_themloaiphong.Location = new System.Drawing.Point(469, 171);
             this.btn_themloaiphong.Name = "btn_themloaiphong";
@@ -82,6 +85,7 @@
             // 
             // btn_themtang
             // 
+            this.btn_themtang.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_themtang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_themtang.Location = new System.Drawing.Point(469, 137);
             this.btn_themtang.Name = "btn_themtang";
@@ -93,6 +97,7 @@
             // 
             // cbb_loaiphong
             // 
+            this.cbb_loaiphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbb_loaiphong.DisplayMember = "TenLoaiP";
             this.cbb_loaiphong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_loaiphong.FormattingEnabled = true;
@@ -105,6 +110,7 @@
             // 
             // cbb_tang
             // 
+            this.cbb_tang.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbb_tang.DisplayMember = "TenTang";
             this.cbb_tang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_tang.FormattingEnabled = true;
@@ -117,6 +123,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(8, 172);
@@ -127,6 +134,7 @@
             // 
             // cbb_trangthai
             // 
+            this.cbb_trangthai.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbb_trangthai.DisplayMember = "TenTTPhong";
             this.cbb_trangthai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_trangthai.FormattingEnabled = true;
@@ -139,6 +147,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(8, 138);
@@ -149,6 +158,7 @@
             // 
             // txt_tenphong
             // 
+            this.txt_tenphong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_tenphong.Location = new System.Drawing.Point(157, 73);
             this.txt_tenphong.Name = "txt_tenphong";
             this.txt_tenphong.Size = new System.Drawing.Size(298, 26);
@@ -156,6 +166,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(8, 107);
@@ -166,6 +177,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
@@ -177,6 +189,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 77);
@@ -203,7 +216,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frm_themphong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "THÊM PHÒNG";

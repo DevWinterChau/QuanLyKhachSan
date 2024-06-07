@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCTTN = new System.Windows.Forms.Button();
@@ -50,12 +51,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_TienNghi = new System.Windows.Forms.DataGridView();
-            this.iDTNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenTNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dongiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tienNghiDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.iDTNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenTNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -78,6 +79,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Lavender;
             this.groupBox2.Controls.Add(this.btnCTTN);
             this.groupBox2.Controls.Add(this.btn_Loadlai);
             this.groupBox2.Controls.Add(this.linkLabel2);
@@ -99,7 +101,7 @@
             // 
             this.btnCTTN.Image = global::QuanLyKhachSan.Properties.Resources.file_circle_info;
             this.btnCTTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCTTN.Location = new System.Drawing.Point(347, 20);
+            this.btnCTTN.Location = new System.Drawing.Point(359, 20);
             this.btnCTTN.Name = "btnCTTN";
             this.btnCTTN.Size = new System.Drawing.Size(203, 35);
             this.btnCTTN.TabIndex = 6;
@@ -114,9 +116,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Loadlai.BackgroundImage = global::QuanLyKhachSan.Properties.Resources.Screenshot_2023_04_12_035535;
             this.btn_Loadlai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Loadlai.Location = new System.Drawing.Point(550, 99);
+            this.btn_Loadlai.Location = new System.Drawing.Point(550, 113);
             this.btn_Loadlai.Name = "btn_Loadlai";
-            this.btn_Loadlai.Size = new System.Drawing.Size(56, 56);
+            this.btn_Loadlai.Size = new System.Drawing.Size(56, 42);
             this.btn_Loadlai.TabIndex = 8;
             this.btn_Loadlai.UseVisualStyleBackColor = true;
             this.btn_Loadlai.Click += new System.EventHandler(this.btn_Loadlai_Click);
@@ -129,7 +131,7 @@
             this.linkLabel2.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(6, 119);
+            this.linkLabel2.Location = new System.Drawing.Point(6, 113);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(342, 17);
             this.linkLabel2.TabIndex = 7;
@@ -166,6 +168,7 @@
             // 
             this.cbb_chon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbb_chon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_chon.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_chon.FormattingEnabled = true;
             this.cbb_chon.Items.AddRange(new object[] {
@@ -176,7 +179,6 @@
             this.cbb_chon.Name = "cbb_chon";
             this.cbb_chon.Size = new System.Drawing.Size(200, 25);
             this.cbb_chon.TabIndex = 3;
-            this.cbb_chon.Text = "Chọn điều kiện tìm";
             // 
             // btn_Thoat
             // 
@@ -185,7 +187,7 @@
             this.btn_Thoat.BackColor = System.Drawing.Color.IndianRed;
             this.btn_Thoat.Image = global::QuanLyKhachSan.Properties.Resources.exit__1_;
             this.btn_Thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Thoat.Location = new System.Drawing.Point(253, 20);
+            this.btn_Thoat.Location = new System.Drawing.Point(262, 20);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(87, 35);
             this.btn_Thoat.TabIndex = 5;
@@ -200,7 +202,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_Capnhat.Image = global::QuanLyKhachSan.Properties.Resources.settings;
             this.btn_Capnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Capnhat.Location = new System.Drawing.Point(121, 22);
+            this.btn_Capnhat.Location = new System.Drawing.Point(124, 22);
             this.btn_Capnhat.Name = "btn_Capnhat";
             this.btn_Capnhat.Size = new System.Drawing.Size(129, 33);
             this.btn_Capnhat.TabIndex = 4;
@@ -239,6 +241,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.GhostWhite;
             this.groupBox1.Controls.Add(this.txt_Dongia);
             this.groupBox1.Controls.Add(this.txt_TenTN);
             this.groupBox1.Controls.Add(this.txt_IDTN);
@@ -247,7 +250,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(421, 138);
+            this.groupBox1.Size = new System.Drawing.Size(421, 149);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -346,7 +349,9 @@
             this.dgv_TienNghi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_TienNghi.GridColor = System.Drawing.SystemColors.InfoText;
             this.dgv_TienNghi.Location = new System.Drawing.Point(0, 0);
+            this.dgv_TienNghi.MultiSelect = false;
             this.dgv_TienNghi.Name = "dgv_TienNghi";
+            this.dgv_TienNghi.ReadOnly = true;
             this.dgv_TienNghi.RowHeadersWidth = 62;
             this.dgv_TienNghi.RowTemplate.Height = 28;
             this.dgv_TienNghi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -355,27 +360,6 @@
             this.dgv_TienNghi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TienNghi_CellContentClick);
             this.dgv_TienNghi.Click += new System.EventHandler(this.dgv_TienNghi_Click);
             this.dgv_TienNghi.DoubleClick += new System.EventHandler(this.dgv_TienNghi_DoubleClick);
-            // 
-            // iDTNDataGridViewTextBoxColumn
-            // 
-            this.iDTNDataGridViewTextBoxColumn.DataPropertyName = "IDTN";
-            this.iDTNDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDTNDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.iDTNDataGridViewTextBoxColumn.Name = "iDTNDataGridViewTextBoxColumn";
-            // 
-            // tenTNDataGridViewTextBoxColumn
-            // 
-            this.tenTNDataGridViewTextBoxColumn.DataPropertyName = "TenTN";
-            this.tenTNDataGridViewTextBoxColumn.HeaderText = "Tiện Nghi";
-            this.tenTNDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tenTNDataGridViewTextBoxColumn.Name = "tenTNDataGridViewTextBoxColumn";
-            // 
-            // dongiaDataGridViewTextBoxColumn
-            // 
-            this.dongiaDataGridViewTextBoxColumn.DataPropertyName = "Dongia";
-            this.dongiaDataGridViewTextBoxColumn.HeaderText = "Đơn Giá";
-            this.dongiaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.dongiaDataGridViewTextBoxColumn.Name = "dongiaDataGridViewTextBoxColumn";
             // 
             // tienNghiDTOBindingSource
             // 
@@ -393,6 +377,32 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // iDTNDataGridViewTextBoxColumn
+            // 
+            this.iDTNDataGridViewTextBoxColumn.DataPropertyName = "IDTN";
+            this.iDTNDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDTNDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.iDTNDataGridViewTextBoxColumn.Name = "iDTNDataGridViewTextBoxColumn";
+            this.iDTNDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenTNDataGridViewTextBoxColumn
+            // 
+            this.tenTNDataGridViewTextBoxColumn.DataPropertyName = "TenTN";
+            this.tenTNDataGridViewTextBoxColumn.HeaderText = "Tiện Nghi";
+            this.tenTNDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tenTNDataGridViewTextBoxColumn.Name = "tenTNDataGridViewTextBoxColumn";
+            this.tenTNDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dongiaDataGridViewTextBoxColumn
+            // 
+            this.dongiaDataGridViewTextBoxColumn.DataPropertyName = "Dongia";
+            dataGridViewCellStyle1.Format = "N2";
+            this.dongiaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dongiaDataGridViewTextBoxColumn.HeaderText = "Đơn Giá";
+            this.dongiaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dongiaDataGridViewTextBoxColumn.Name = "dongiaDataGridViewTextBoxColumn";
+            this.dongiaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frm_TienNghi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -402,7 +412,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_TienNghi";
             this.Text = "Tiện Nghi";
             this.Load += new System.EventHandler(this.frm_TienNghi_Load);
@@ -444,10 +454,10 @@
         private System.Windows.Forms.Button btn_Loadlai;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.BindingSource tienNghiDTOBindingSource;
+        private System.Windows.Forms.Button btnCTTN;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDTNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenTNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dongiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnCTTN;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

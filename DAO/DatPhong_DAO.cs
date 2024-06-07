@@ -57,7 +57,7 @@ namespace DAO
         }
         public static List<DatPhong_DTO> LayDSDatPhong()
         {
-            string sTruyVan = "select dp.ID_DATPHONG , kh.HOTEN_KH , dp.NgaylapPhieuDP from DATPHONG dp, KHang kh where dp.ID_KH = kh.ID_KH";
+            string sTruyVan = "select dp.ID_DATPHONG , kh.HOTEN_KH , dp.NgaylapPhieuDP, tt.Ten_TTDP from DATPHONG dp, KHang kh , TRANGTHAI_DP tt where dp.ID_KH = kh.ID_KH and tt.ID_TTDP = dp.ID_TTDP";
             con = KetNoi.MoKetNoi();
             DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
             if (dt.Rows.Count == 0)
@@ -71,14 +71,35 @@ namespace DAO
                 Dp.IDDatPhong =int.Parse( dt.Rows[i]["ID_DATPHONG"].ToString());
                 Dp.TenKH = dt.Rows[i]["HOTEN_KH"].ToString();
                 Dp.NgaylapphieuDP = DateTime.Parse(dt.Rows[i]["NgaylapPhieuDP"].ToString());
+                Dp.Tranthai = dt.Rows[i]["Ten_TTDP"].ToString();
                 ltsDSDatPhong.Add(Dp);
             }
             return ltsDSDatPhong;
         }
         public static bool add(DatPhong_DTO dp)
         {
-            string sTruyVan = string.Format(@"insert into DATPHONG values('{0}','{1}')",
-                dp.IDKH , dp.NgaylapphieuDP);
+            string sTruyVan = string.Format(@"insert into DATPHONG values({0},'{1}',{2})",
+                dp.IDKH , dp.NgaylapphieuDP,dp.ID_trangthai1);
+            con = KetNoi.MoKetNoi();
+            bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
+            KetNoi.Dongketnoi();
+            return kq;
+
+        }
+        public static bool CapNhatTrangthaiDatPhong(DatPhong_DTO dp)
+        {
+            string sTruyVan = string.Format(@"update datphong set ID_TTDP = 3 where ID_DATPHONG = {0}",
+                dp.IDDatPhong);
+            con = KetNoi.MoKetNoi();
+            bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
+            KetNoi.Dongketnoi();
+            return kq;
+
+        }
+        public static bool CapNhatTrangthaiDatPhong_Dangthue(int IDDatPhong)
+        {
+            string sTruyVan = string.Format(@"update datphong set ID_TTDP = 2 where ID_DATPHONG = {0}",
+                IDDatPhong);
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             KetNoi.Dongketnoi();
@@ -111,7 +132,7 @@ namespace DAO
         }
         public static List<DatPhong_DTO> TimPhongtheomaDP(string ma)
         {
-            string sTruyVan = "select * from DATPHONG dp, KHang kh where dp.ID_KH = kh.ID_KH and dp.ID_DATPHONG ='"+ma+"'";
+            string sTruyVan = "select * from DATPHONG dp, KHang kh where dp.ID_KH = kh.ID_KH and dp.ID_DATPHONG = '"+ma+"'";
             con = KetNoi.MoKetNoi();
             DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
             if (dt.Rows.Count == 0)
@@ -125,7 +146,7 @@ namespace DAO
                 Dp.IDDatPhong = int.Parse(dt.Rows[i]["ID_DATPHONG"].ToString());
                 Dp.TenKH = dt.Rows[i]["HOTEN_KH"].ToString();
                 Dp.NgaylapphieuDP = DateTime.Parse(dt.Rows[i]["NgaylapPhieuDP"].ToString());
-                
+                Dp.Tranthai = dt.Rows[i]["Ten_TTDP"].ToString();
                 ltsDSDatPhong.Add(Dp);
             }
             return ltsDSDatPhong;
@@ -240,5 +261,22 @@ namespace DAO
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);
             return kq;
         }
+        public static DatPhong_DTO LayTrangThaiDatPhong(int id_datphong)
+        {
+            string sTruyVan = "select dp.*, tt.Ten_TTDP from DATPHONG dp, TRANGTHAI_DP tt WHERE tt.ID_TTDP = dp.ID_TTDP and dp.ID_DATPHONG= " + id_datphong+"";
+            con = KetNoi.MoKetNoi();
+            DataTable dt = KetNoi.TruyVanLayDuLieu(sTruyVan, con);
+            if (dt.Rows.Count == 0)
+            {
+                return null;
+            }
+            DatPhong_DTO Dp = new DatPhong_DTO();
+            Dp.IDDatPhong = int.Parse(dt.Rows[0]["ID_DATPHONG"].ToString());
+            Dp.NgaylapphieuDP = DateTime.Parse(dt.Rows[0]["NgaylapPhieuDP"].ToString());
+            Dp.Tranthai = dt.Rows[0]["Ten_TTDP"].ToString();
+            Dp.ID_trangthai1 = int.Parse(dt.Rows[0]["ID_TTDP"].ToString());
+            return Dp;
+        }
+        
     }
 }

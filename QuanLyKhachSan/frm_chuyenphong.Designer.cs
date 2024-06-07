@@ -57,7 +57,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(882, 386);
+            this.groupBox1.Size = new System.Drawing.Size(924, 386);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách phòng trống";
@@ -86,7 +86,7 @@
             this.dgv_danhsachphong.RowHeadersWidth = 62;
             this.dgv_danhsachphong.RowTemplate.Height = 28;
             this.dgv_danhsachphong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_danhsachphong.Size = new System.Drawing.Size(876, 361);
+            this.dgv_danhsachphong.Size = new System.Drawing.Size(918, 361);
             this.dgv_danhsachphong.TabIndex = 0;
             // 
             // iDPhongDataGridViewTextBoxColumn
@@ -172,7 +172,7 @@
             this.btn_chuyenphong.ForeColor = System.Drawing.Color.Blue;
             this.btn_chuyenphong.Location = new System.Drawing.Point(738, 4);
             this.btn_chuyenphong.Name = "btn_chuyenphong";
-            this.btn_chuyenphong.Size = new System.Drawing.Size(144, 36);
+            this.btn_chuyenphong.Size = new System.Drawing.Size(186, 36);
             this.btn_chuyenphong.TabIndex = 2;
             this.btn_chuyenphong.Text = "Chuyển phòng";
             this.btn_chuyenphong.UseVisualStyleBackColor = true;
@@ -186,11 +186,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 432);
+            this.ClientSize = new System.Drawing.Size(931, 432);
             this.Controls.Add(this.btn_chuyenphong);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frm_chuyenphong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHUYỂN PHÒNG";

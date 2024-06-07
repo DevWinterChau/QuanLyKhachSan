@@ -48,7 +48,7 @@ namespace DAO
         public static bool update(KhachHang_DTO kh)
         {
             string sTruyVan = "update KHang set HOTEN_KH =N'" + kh.TenKH +
-                    "',phai = N'" + kh.Phai + "', SDT_KH = '" + kh.SDT_Kh + "', CCCD_KH = '" + kh.CCCD_KH+ "',EMAIL = '" +kh.Email_KH+ "',DCHI_KH='" + kh.Dchi_KH +
+                    "',phai = N'" + kh.Phai + "', SDT_KH = '" + kh.SDT_Kh + "', EMAIL = '" +kh.Email_KH+ "',DCHI_KH= N'" + kh.Dchi_KH +
                     "' where ID_KH = '" +kh.IDKH+ "'";
             con = KetNoi.MoKetNoi();
             bool kq = KetNoi.TruyVanKhongLayDuLieu(sTruyVan, con);

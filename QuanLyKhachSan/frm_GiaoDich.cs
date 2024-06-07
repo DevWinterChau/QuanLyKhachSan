@@ -32,41 +32,55 @@ namespace QuanLyKhachSan
 
         private void btn_tim_Click(object sender, EventArgs e)
         {
-            if (txt_tim.Text != "Nhập để tìm" && txt_tim.Text != "")
+            try
             {
-                if (cbb_chon.SelectedIndex == 0)// số hóa đơn
+                if (txt_tim.Text != "Nhập để tìm" && txt_tim.Text != "")
                 {
-                    List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoIDHD(int.Parse(txt_tim.Text.Trim()));
-                    dgv_hd.DataSource = hd;
+                    if (cbb_chon.SelectedIndex == 0)// số hóa đơn
+                    {
+                        List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoIDHD(int.Parse(txt_tim.Text.Trim()));
+                        dgv_hd.DataSource = hd;
+                    }
+                    else if (cbb_chon.SelectedIndex == 1)// số phiếu đặt
+                    {
+                        List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoIDDATPHONG(int.Parse(txt_tim.Text.Trim()));
+                        dgv_hd.DataSource = hd;
+                    }
+                    else if (cbb_chon.SelectedIndex == 2)// mã khách hàng
+                    {
+                        List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoTenKH(txt_tim.Text.Trim());
+                        dgv_hd.DataSource = hd;
+                    }
+                    else// mã nhân vien
+                    {
+                        List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoTenNV(txt_tim.Text.Trim());
+                        dgv_hd.DataSource = hd;
+                    }
                 }
-                else if (cbb_chon.SelectedIndex == 1)// số phiếu đặt
+                else
                 {
-                    List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoIDDATPHONG(int.Parse(txt_tim.Text.Trim()));
-                    dgv_hd.DataSource = hd;
-                }
-                else if (cbb_chon.SelectedIndex == 2)// mã khách hàng
-                {
-                    List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoTenKH(txt_tim.Text.Trim());
-                    dgv_hd.DataSource = hd;
-                }
-                else// mã nhân vien
-                {
-                    List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoTenNV(txt_tim.Text.Trim());
+                    List<HoaDon_DTO> hd = HoaDon_BUS.LayDSHD();
                     dgv_hd.DataSource = hd;
                 }
             }
-            else
+            catch(Exception ex)
             {
-                List<HoaDon_DTO> hd = HoaDon_BUS.LayDSHD();
-                dgv_hd.DataSource = hd;
-            }    
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgv_hd_DoubleClick(object sender, EventArgs e)
         {
-            DataGridViewRow dr = dgv_hd.CurrentRow;
-            frm_inhoadonthanhtoan f1 = new frm_inhoadonthanhtoan(int.Parse(dr.Cells[3].Value.ToString()));
-            f1.Show();
+            try
+            {
+                DataGridViewRow dr = dgv_hd.CurrentRow;
+                frm_inhoadonthanhtoan f1 = new frm_inhoadonthanhtoan(int.Parse(dr.Cells[3].Value.ToString()));
+                f1.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void frm_GiaoDich_Load(object sender, EventArgs e)
@@ -88,19 +102,27 @@ namespace QuanLyKhachSan
 
         private void btn_timkiemngay_Click(object sender, EventArgs e)
         {
-            List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoNgayGD(Ngay.Text.Trim());
-            dgv_hd.DataSource = hd;
+            try
+            {
+                List<HoaDon_DTO> hd = HoaDon_BUS.TimHDtheoNgayGD(Ngay.Text.Trim());
+                dgv_hd.DataSource = hd;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void dgv_hd_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             frm_THONGKEDOANHTHU f1 = new frm_THONGKEDOANHTHU(nguoidug.TenNV);
             f1.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

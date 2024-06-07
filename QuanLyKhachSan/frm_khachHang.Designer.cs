@@ -33,6 +33,7 @@
             this.txt_tim = new System.Windows.Forms.TextBox();
             this.cbb_chon = new System.Windows.Forms.ComboBox();
             this.btn_tim = new System.Windows.Forms.Button();
+            this.btn_dong = new System.Windows.Forms.Button();
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_capnhat = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
@@ -78,6 +79,7 @@
             this.groupBox3.Controls.Add(this.txt_tim);
             this.groupBox3.Controls.Add(this.cbb_chon);
             this.groupBox3.Controls.Add(this.btn_tim);
+            this.groupBox3.Controls.Add(this.btn_dong);
             this.groupBox3.Controls.Add(this.btn_huy);
             this.groupBox3.Controls.Add(this.btn_capnhat);
             this.groupBox3.Controls.Add(this.btn_them);
@@ -127,13 +129,28 @@
             this.btn_tim.UseVisualStyleBackColor = true;
             this.btn_tim.Click += new System.EventHandler(this.btn_tim_Click);
             // 
+            // btn_dong
+            // 
+            this.btn_dong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_dong.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_dong.Image = global::QuanLyKhachSan.Properties.Resources.exit__1_;
+            this.btn_dong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dong.Location = new System.Drawing.Point(346, 98);
+            this.btn_dong.Name = "btn_dong";
+            this.btn_dong.Size = new System.Drawing.Size(84, 40);
+            this.btn_dong.TabIndex = 11;
+            this.btn_dong.Text = "Exit";
+            this.btn_dong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_dong.UseVisualStyleBackColor = false;
+            this.btn_dong.Click += new System.EventHandler(this.btn_dong_Click);
+            // 
             // btn_huy
             // 
             this.btn_huy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_huy.BackColor = System.Drawing.Color.IndianRed;
             this.btn_huy.Image = global::QuanLyKhachSan.Properties.Resources.time_delete;
             this.btn_huy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_huy.Location = new System.Drawing.Point(314, 98);
+            this.btn_huy.Location = new System.Drawing.Point(245, 99);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(84, 40);
             this.btn_huy.TabIndex = 11;
@@ -147,9 +164,9 @@
             this.btn_capnhat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_capnhat.Image = global::QuanLyKhachSan.Properties.Resources.settings;
             this.btn_capnhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_capnhat.Location = new System.Drawing.Point(160, 98);
+            this.btn_capnhat.Location = new System.Drawing.Point(111, 98);
             this.btn_capnhat.Name = "btn_capnhat";
-            this.btn_capnhat.Size = new System.Drawing.Size(129, 40);
+            this.btn_capnhat.Size = new System.Drawing.Size(119, 40);
             this.btn_capnhat.TabIndex = 10;
             this.btn_capnhat.Text = "Cập nhật";
             this.btn_capnhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -161,9 +178,9 @@
             this.btn_them.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_them.Image = global::QuanLyKhachSan.Properties.Resources.plus__1_;
             this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_them.Location = new System.Drawing.Point(19, 98);
+            this.btn_them.Location = new System.Drawing.Point(15, 98);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(117, 40);
+            this.btn_them.Size = new System.Drawing.Size(90, 40);
             this.btn_them.TabIndex = 9;
             this.btn_them.Text = "Thêm";
             this.btn_them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -360,12 +377,15 @@
             this.dgv_dskhachhang.DataSource = this.khachHangDTOBindingSource;
             this.dgv_dskhachhang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_dskhachhang.Location = new System.Drawing.Point(3, 22);
+            this.dgv_dskhachhang.MultiSelect = false;
             this.dgv_dskhachhang.Name = "dgv_dskhachhang";
+            this.dgv_dskhachhang.ReadOnly = true;
             this.dgv_dskhachhang.RowHeadersWidth = 62;
             this.dgv_dskhachhang.RowTemplate.Height = 28;
             this.dgv_dskhachhang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_dskhachhang.Size = new System.Drawing.Size(972, 426);
             this.dgv_dskhachhang.TabIndex = 0;
+            this.dgv_dskhachhang.Click += new System.EventHandler(this.dgv_dskhachhang_Click_1);
             // 
             // iDKHDataGridViewTextBoxColumn
             // 
@@ -373,6 +393,7 @@
             this.iDKHDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDKHDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.iDKHDataGridViewTextBoxColumn.Name = "iDKHDataGridViewTextBoxColumn";
+            this.iDKHDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // tenKHDataGridViewTextBoxColumn
             // 
@@ -380,6 +401,7 @@
             this.tenKHDataGridViewTextBoxColumn.HeaderText = "Tên ";
             this.tenKHDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.tenKHDataGridViewTextBoxColumn.Name = "tenKHDataGridViewTextBoxColumn";
+            this.tenKHDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cCCDKHDataGridViewTextBoxColumn
             // 
@@ -387,6 +409,7 @@
             this.cCCDKHDataGridViewTextBoxColumn.HeaderText = "CCCD";
             this.cCCDKHDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.cCCDKHDataGridViewTextBoxColumn.Name = "cCCDKHDataGridViewTextBoxColumn";
+            this.cCCDKHDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sDTKhDataGridViewTextBoxColumn
             // 
@@ -394,6 +417,7 @@
             this.sDTKhDataGridViewTextBoxColumn.HeaderText = "SĐT";
             this.sDTKhDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.sDTKhDataGridViewTextBoxColumn.Name = "sDTKhDataGridViewTextBoxColumn";
+            this.sDTKhDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // phaiDataGridViewTextBoxColumn
             // 
@@ -401,6 +425,7 @@
             this.phaiDataGridViewTextBoxColumn.HeaderText = "Giới Tính";
             this.phaiDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.phaiDataGridViewTextBoxColumn.Name = "phaiDataGridViewTextBoxColumn";
+            this.phaiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailKHDataGridViewTextBoxColumn
             // 
@@ -408,6 +433,7 @@
             this.emailKHDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailKHDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.emailKHDataGridViewTextBoxColumn.Name = "emailKHDataGridViewTextBoxColumn";
+            this.emailKHDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dchiKHDataGridViewTextBoxColumn
             // 
@@ -415,6 +441,7 @@
             this.dchiKHDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
             this.dchiKHDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.dchiKHDataGridViewTextBoxColumn.Name = "dchiKHDataGridViewTextBoxColumn";
+            this.dchiKHDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frm_khachHang
             // 
@@ -425,7 +452,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_khachHang";
             this.Text = "DANH SÁCH KHÁCH HÀNG";
             this.groupBox3.ResumeLayout(false);
@@ -477,5 +504,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phaiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailKHDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dchiKHDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_dong;
     }
 }

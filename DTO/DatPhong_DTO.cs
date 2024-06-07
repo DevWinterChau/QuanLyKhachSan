@@ -15,6 +15,8 @@ namespace DTO
         private string _tenKH;
         private double _thanhtienphong;
         private int _id_phong;
+        private int ID_trangthai;
+        private string tranthai;
 
 
         public int IDDatPhong { get => _IDDatPhong; set => _IDDatPhong = value; }
@@ -24,5 +26,7 @@ namespace DTO
         public string TenKH { get => _tenKH; set => _tenKH = value; }
         public double Thanhtienphong { get => _thanhtienphong; set => _thanhtienphong = value; }
         public int Id_phong { get => _id_phong; set => _id_phong = value; }
+        public int ID_trangthai1 { get => ID_trangthai; set => ID_trangthai = value; }
+        public string Tranthai { get => tranthai; set => tranthai = value; }
     }
 }
